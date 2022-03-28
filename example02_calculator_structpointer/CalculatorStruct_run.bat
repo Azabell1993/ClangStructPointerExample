@@ -1,0 +1,1 @@
+gcc CalculatorStruct.c -o CalculatorStruct

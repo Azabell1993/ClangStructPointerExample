@@ -11,7 +11,7 @@ struct _CALC_DATA {
     double result;
 
     double    (*SETCUL)(struct _CALC_DATA *this, double operand1, double operand2, char operator, double result);
-    double     (*GETCUL)(const struct _CALC_DATA *this);
+    double    (*GETCUL)(const struct _CALC_DATA *this);
 };
 
 double
@@ -124,3 +124,5 @@ int main()
     //소멸자
     Destory(&test4);
 }
+
+
