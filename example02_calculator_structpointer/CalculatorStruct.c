@@ -124,5 +124,8 @@ int main()
     //소멸자
     Destory(&test4);
 }
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 3325ccc4458ec4e0fb4c66188da5d94b60501123
