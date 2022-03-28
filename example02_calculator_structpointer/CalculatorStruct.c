@@ -5,13 +5,15 @@
 char  op_tb[4] = {'+', '-', '*', '/'};
 
 struct _CALC_DATA {
+    // 필드 선언
     double operand1;
     double operand2;
     char operator;
     double result;
-
+    
+    // 메서드 선언
     double    (*SETCUL)(struct _CALC_DATA *this, double operand1, double operand2, char operator, double result);
-    double    (*GETCUL)(const struct _CALC_DATA *this);
+    double     (*GETCUL)(const struct _CALC_DATA *this);
 };
 
 double
@@ -68,21 +70,22 @@ Destory(struct _CALC_DATA *this)
 
 int main()
 {
-    // 첫 번째 클래스 선언
+    // 첫번째 객체 생성
     struct _CALC_DATA test;
+    // 필드 -> 객체의 데이터가 저장되는 곳
     test.operand1 = 10;
     test.operand2 = 30;
     test.operator = '+';
     test.result=0; 
-    // 생성자 호출
+    // 생성자 호출 -> 객체 생성 시 초기화 역할 담당
     Init(&test);
-    // 출력
+    // 출력 / 메서드 -> 객체의 동작에 해당사는 실행 블록
     test.SETCUL(&test, test.operand1, test.operand2, test.operator, test.result);
     test.GETCUL(&test);
     //소멸자
     Destory(&test);
 
-    // 두번째 클래스 선언
+    // 두번째 객체 생성
     struct _CALC_DATA test2;
     test2.operand1 = 110;
     test2.operand2 = 100;
@@ -96,7 +99,7 @@ int main()
     //소멸자
     Destory(&test2);
 
-    // 세 번째 클래스 선언
+    // 세번째 객체 생성
     struct _CALC_DATA test3;
     test3.operand1 = 30;
     test3.operand2 = 100;
@@ -110,7 +113,7 @@ int main()
     //소멸자
     Destory(&test3);
     
-    // 네 번째 클래스 선언
+    // 네번째 객체 생성
     struct _CALC_DATA test4;
     test4.operand1 = 20;
     test4.operand2 = 100;
