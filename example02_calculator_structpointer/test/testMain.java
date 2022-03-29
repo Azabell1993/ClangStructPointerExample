@@ -13,6 +13,5 @@ public class testMain {
         System.out.print(test.operator);
         System.out.print(test.operand2);
         System.out.println("=" + test.result);
-        
 	}
 }

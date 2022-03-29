@@ -3,6 +3,7 @@
         "calculatorlib.h": "c",
         "print.h": "c",
         "define.h": "c",
-        "stdlib.h": "c"
+        "stdlib.h": "c",
+        "stdio.h": "c"
     }
 }
