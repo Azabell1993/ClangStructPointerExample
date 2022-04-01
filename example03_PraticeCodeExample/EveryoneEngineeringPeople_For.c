@@ -154,8 +154,6 @@ void TwoTwoHackBun()
 int main() 
 {
     srand(time(NULL));
-    int RandValue1[4];
-    int RandValue2[7];
 
     struct PersonInfoStru   personOuterObj[4];
 	struct Select           outerObj[7];
