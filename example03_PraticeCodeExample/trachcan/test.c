@@ -4,7 +4,6 @@
 char  op_tb[4] = {'+', '-', '*', '/'};
 
 typedef struct _CALC_DATA {
-    
     // this pointer
     struct _CALC_DATA *this;
     // 필드 선언
@@ -13,7 +12,6 @@ typedef struct _CALC_DATA {
     char operator;
     double result;
 
-    
     // 멤버 함수, 메서드
     void (*PrintInfo)(struct _CALC_DATA *this);
 
@@ -34,7 +32,7 @@ double GETCUL_(const struct _CALC_DATA *this);
 // 상속 선언
 typedef struct _CALC_DATA_Child {
     _CD _CALC_DATA_Child;
-    struct _CD *this;
+    struct _CD_CHILD *this;
 
     // // 필드 선언
     // double operand1;
@@ -56,22 +54,22 @@ void Delete_CH_CHILD(struct _CALC_DATA *make_cd_child_ptr);
 double SETCUL_Child(struct _CALC_DATA_Child *this, double operand1, double operand2, char operator, double result, double money);
 double GETCUL_Child(const struct _CALC_DATA_Child *this);
 
-double add(struct _CALC_DATA *this, double operand1, double operand2, char operator, double result)
+double add(_CD *this, double operand1, double operand2, char operator, double result)
 {
     return this -> result = this -> operand1 + this -> operand2;
 }
 
-double sub(struct _CALC_DATA *this, double operand1, double operand2, char operator, double result)
+double sub(_CD *this, double operand1, double operand2, char operator, double result)
 {
     return this -> result = this -> operand1 - this -> operand2;
 }
 
-double mul(struct _CALC_DATA *this, double operand1, double operand2, char operator, double result)
+double mul(_CD *this, double operand1, double operand2, char operator, double result)
 {
     return this -> result = this -> operand1 * this -> operand2;
 }
 
-double divf(struct _CALC_DATA *this, double operand1, double operand2, char operator, double result)
+double divf(_CD *this, double operand1, double operand2, char operator, double result)
 {
     return this -> result = (double)this -> operand1 / (double)this -> operand2;
 }
@@ -115,6 +113,7 @@ void Delete_CH_CHILD(struct Parent *make_cd_child_ptr)
 	free(make_cd_child_ptr);
 }
 
+
 /* 
     자식 구조체 상속
     setter, getter
@@ -125,6 +124,7 @@ void Delete_CH_CHILD(struct Parent *make_cd_child_ptr)
     temp -> SETCUL = SETCUL_;
     temp -> GETCUL = GETCUL_;
 */
+
 void PrintInfo_(struct _CALC_DATA *this)
 {
     Printf("이곳은 출력 테스트 장소입니다. 인자 값 : %d \n", this -> operand1);
@@ -184,18 +184,18 @@ int main()
 
     Delete_CD(make_cd_ptr);
 
-    // printf("---");
-    // // 두번째 객체 생성
-    // struct _CALC_DATA_Child test2;
-    // // 필드 -> 객체의 데이터가 저장되는 곳
-    // test2.money=1000000;
-    // _CD_CHILD *make_cd_child_ptr = new_Child(test.operand1, test.operator, test.operand2, test.result, test2.money);
-    // printf("\nmoney\n");
-    // make_cd_child_ptr->_CALC_DATA_Child.PrintInfo((_CD*)make_cd_child_ptr);
-    // test2.money = make_cd_child_ptr -> GETCUL_Child(make_cd_child_ptr);
-    // printf("test print : %d", test2.money);
-    // Delete_CH_CHILD(make_cd_child_ptr);
+    printf("---");
+    // 두번째 객체 생성
+    struct _CALC_DATA_Child test2;
+    // 필드 -> 객체의 데이터가 저장되는 곳
+    test2.money=1000000;
+    _CD_CHILD *make_cd_child_ptr = new_Child(test.operand1, test.operator, test.operand2, txest.result, test2.money);
+    printf("\nmoney\n");
+    make_cd_child_ptr->_CALC_DATA_Child.PrintInfo((_CD*)make_cd_child_ptr);
+    test2.money = make_cd_child_ptr -> GETCUL_Child(make_cd_child_ptr);
+    printf("test print : %d", test2.money);
+    Delete_CH_CHILD(make_cd_child_ptr);
 
-    // system("pause");
-    // return (0);
+    system("pause");
+    return (0);
 }
