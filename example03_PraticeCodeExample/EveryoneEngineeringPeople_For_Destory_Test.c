@@ -29,7 +29,10 @@ struct Select {
 // 전방 선언
 void set(struct Select *this, int input_Method_Value);
 int  get(const struct Select *this);
+// 생성자 전방 선언
 void init(struct Select *this);
+// 소멸자 전방 선언
+void Select_Destory(struct Select *this);
 
 struct PersonInfoStru {
     // 필드 값 선언
@@ -43,7 +46,10 @@ struct PersonInfoStru {
 // 전방 선언
 void Person_Set(struct PersonInfoStru *select_this, int Select_Person_Info);
 int Person_Get(const struct PersonInfoStru *select_this);
+// 생성자 전방 선언
 void PersionInfo_Init(struct PersonInfoStru *select_this);
+// 소멸자 전방 선언
+void Person_Destory(struct PersonInfoStru *select_this);
 
 // void const name print
 void WanGang();
@@ -97,6 +103,17 @@ void PersionInfo_Init(struct PersonInfoStru *select_this)
 {
 	select_this -> PERSON_SET = Person_Set;
     select_this -> PERSON_GET = Person_Get;
+}
+
+// 소멸자 선언
+void Person_Destory(struct PersonInfoStru *select_this)
+{
+    free(select_this);
+}
+
+void Select_Destory(struct Select *this)
+{
+    free(this);
 }
 
 //완장_견장_잇츠_컴퓨터잘못해요_문돌공돌_행인1_22학번
@@ -154,7 +171,6 @@ void TwoTwoHackBun()
 int main() 
 {
     srand(time(NULL));
-
     struct PersonInfoStru   personOuterObj[4];
 	struct Select           outerObj[7];
     
@@ -170,10 +186,12 @@ int main()
             PersionInfo_Init(&personOuterObj[j]);
             personOuterObj[j].PERSON_SET(&personOuterObj[j], personOuterObj[j].Select_Person_Info);
             personOuterObj[j].PERSON_GET(&personOuterObj[j]);
+            Person_Destory(personOuterObj);
             outerObj[i].input_Method_Value = selectChoice_OutputValue;
             init(&outerObj[i]);
             outerObj[i].SET(&outerObj[i], outerObj[i].input_Method_Value);
             outerObj[i].GET(&outerObj[i]);
+            Select_Destory(outerObj);
         }
         printf("---\n");
     }
