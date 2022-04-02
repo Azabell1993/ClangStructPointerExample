@@ -9,13 +9,13 @@
     1이안없어질때 When there is no one
     읽고넘어간다 read and pass
 */
+
 const char NAME[] = "완장_견장_잇츠_컴퓨터잘못해요_문돌공돌_행인1_22학번";
+#define FUNCTIONPOINTER_PERSONINFORMATION_MAX_VALULE 7
 #define RemainFriends       0
 #define IDontMindFriends    1
 #define WhenThereIsNoOne    2
 #define ReadAndPass         3
-
-#define FUNCTIONPOINTER_PERSONINFORMATION_MAX_VALULE 7
 
 struct Select {
     // 필드 값 선언
@@ -79,7 +79,6 @@ void Person_Set(struct PersonInfoStru *select_this, int Select_Person_Info)
 
 int Person_Get(const struct PersonInfoStru *select_this)
 {
-    
     void (*Person[FUNCTIONPOINTER_PERSONINFORMATION_MAX_VALULE])() = {&WanGang, &GunJang, &Its, &IcandoComputer, &MundolGongDol, &HangInOne, &TwoTwoHackBun};
 
     (Person[select_this->Select_Person_Info]());
@@ -98,8 +97,6 @@ void PersionInfo_Init(struct PersonInfoStru *select_this)
 	select_this -> PERSON_SET = Person_Set;
     select_this -> PERSON_GET = Person_Get;
 }
-
-//완장_견장_잇츠_컴퓨터잘못해요_문돌공돌_행인1_22학번
 void WanGang()
 {
     for(int i=0; i<4; i+=1) {
@@ -149,7 +146,6 @@ void TwoTwoHackBun()
     }
     printf(" : ");
 }
-
 
 int main() 
 {

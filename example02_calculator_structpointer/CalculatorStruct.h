@@ -66,5 +66,5 @@ Init(struct _CALC_DATA *this)
 void
 Destory(struct _CALC_DATA *this)
 {
-
+    free(this);
 }
