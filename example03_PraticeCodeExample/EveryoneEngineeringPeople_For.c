@@ -20,30 +20,30 @@ const char NAME[] = "완장_견장_잇츠_컴퓨터잘못해요_문돌공돌_행인1_22학번";
 struct Select {
     // 필드 값 선언
     int input_Method_Value;
-    
+
     // 메서드 선언
-    void (*SET)(struct Select *this, int input_Method_Value);
-    int  (*GET)(const struct Select *this);
+    void (*SET)(struct Select* this, int input_Method_Value);
+    int  (*GET)(const struct Select* this);
 };
 
 // 전방 선언
-void set(struct Select *this, int input_Method_Value);
-int  get(const struct Select *this);
-void init(struct Select *this);
+void set(struct Select* this, int input_Method_Value);
+int  get(const struct Select* this);
+void init(struct Select* this);
 
 struct PersonInfoStru {
     // 필드 값 선언
     int Select_Person_Info;
 
     // 메서드 선언
-    void (*PERSON_SET)(struct PersonInfoStru *select_this, int Select_Person_Info);
-    int  (*PERSON_GET)(const struct PersonInfoStru *select_this);
+    void (*PERSON_SET)(struct PersonInfoStru* select_this, int Select_Person_Info);
+    int  (*PERSON_GET)(const struct PersonInfoStru* select_this);
 };
 
 // 전방 선언
-void Person_Set(struct PersonInfoStru *select_this, int Select_Person_Info);
-int Person_Get(const struct PersonInfoStru *select_this);
-void PersionInfo_Init(struct PersonInfoStru *select_this);
+void Person_Set(struct PersonInfoStru* select_this, int Select_Person_Info);
+int Person_Get(const struct PersonInfoStru* select_this);
+void PersionInfo_Init(struct PersonInfoStru* select_this);
 
 // void const name print
 void WanGang();
@@ -54,119 +54,122 @@ void MundolGongDol();
 void HangInOne();
 void TwoTwoHackBun();
 
-void set(struct Select *this, int input_Method_Value)
+void set(struct Select* this, int input_Method_Value)
 {
-    this -> input_Method_Value = input_Method_Value;
+    this->input_Method_Value = input_Method_Value;
 }
 
-int  get(const struct Select *this)
+int  get(const struct Select* this)
 {
-    if((*this).input_Method_Value == RemainFriends) {
-        return printf("\t우리 그냥 친구로 남자....\n\n", this -> input_Method_Value);
-    } else if((*this).input_Method_Value == IDontMindFriends) {
-        return printf("\t우리 친구도 못될 거 같아....\n\n", this -> input_Method_Value);
-    } else if((*this).input_Method_Value == WhenThereIsNoOne) {
-        return printf("\t1이 없어지지 않아...\n\n", this -> input_Method_Value);
-    } else if((*this).input_Method_Value == ReadAndPass) {
-        return printf("\t읽고 그냥 넘어가는데 어쩌지...\n\n", this -> input_Method_Value);
+    if ((*this).input_Method_Value == RemainFriends) {
+        return puts("     우리 그냥 친구로 남자....");
+    }
+    else if ((*this).input_Method_Value == IDontMindFriends) {
+        return puts("     우리 친구도 못될 거 같아....");
+    }
+    else if ((*this).input_Method_Value == WhenThereIsNoOne) {
+        return puts("     1이 없어지지 않아...");
+    }
+    else if ((*this).input_Method_Value == ReadAndPass) {
+        return puts("     읽고 그냥 넘어가는데 어쩌지...");
     }
 }
 
-void Person_Set(struct PersonInfoStru *select_this, int Select_Person_Info)
+void Person_Set(struct PersonInfoStru* select_this, int Select_Person_Info)
 {
-    select_this -> Select_Person_Info = Select_Person_Info;
+    select_this->Select_Person_Info = Select_Person_Info;
 }
 
-int Person_Get(const struct PersonInfoStru *select_this)
+int Person_Get(const struct PersonInfoStru* select_this)
 {
-    
-    void (*Person[FUNCTIONPOINTER_PERSONINFORMATION_MAX_VALULE])() = {&WanGang, &GunJang, &Its, &IcandoComputer, &MundolGongDol, &HangInOne, &TwoTwoHackBun};
+
+    void (*Person[FUNCTIONPOINTER_PERSONINFORMATION_MAX_VALULE])() = { &WanGang, &GunJang, &Its, &IcandoComputer, &MundolGongDol, &HangInOne, &TwoTwoHackBun };
 
     (Person[select_this->Select_Person_Info]());
 }
 
 // 생성자
-void init(struct Select *this)
+void init(struct Select* this)
 {
-	this -> SET = set;
-    this -> GET = get;
+    this->SET = set;
+    this->GET = get;
 }
 
 // 생성자
-void PersionInfo_Init(struct PersonInfoStru *select_this)
+void PersionInfo_Init(struct PersonInfoStru* select_this)
 {
-	select_this -> PERSON_SET = Person_Set;
-    select_this -> PERSON_GET = Person_Get;
+    select_this->PERSON_SET = Person_Set;
+    select_this->PERSON_GET = Person_Get;
 }
 
 //완장_견장_잇츠_컴퓨터잘못해요_문돌공돌_행인1_22학번
 void WanGang()
 {
-    for(int i=0; i<4; i+=1) {
+    for (int i = 0; i < 4; i += 1) {
         printf("%c", NAME[i]);
     }
     printf(" : ");
 }
 void GunJang()
 {
-    for(int i=5; i<9; i+=1) {
+    for (int i = 5; i < 9; i += 1) {
         printf("%c", NAME[i]);
     }
     printf(" : ");
 }
 void Its()
 {
-    for(int i=10; i<14; i+=1) {
+    for (int i = 10; i < 14; i += 1) {
         printf("%c", NAME[i]);
     }
     printf(" : ");
 }
 void IcandoComputer()
 {
-    for(int i=15; i<29; i+=1) {
+    for (int i = 15; i < 29; i += 1) {
         printf("%c", NAME[i]);
     }
     printf(" : ");
 }
 void MundolGongDol()
 {
-    for(int i=30; i<38; i+=1) {
+    for (int i = 30; i < 38; i += 1) {
         printf("%c", NAME[i]);
     }
     printf(" : ");
 }
 void HangInOne()
 {
-    for(int i=39; i<44; i+=1) {
+    for (int i = 39; i < 44; i += 1) {
         printf("%c", NAME[i]);
     }
     printf(" : ");
 }
 void TwoTwoHackBun()
 {
-    for(int i=45; i<52; i+=1) {
+    for (int i = 45; i < 52; i += 1) {
         printf("%c", NAME[i]);
     }
     printf(" : ");
 }
 
 
-int main() 
+int main()
 {
     srand(time(NULL));
 
     struct PersonInfoStru   personOuterObj[4];
-	struct Select           outerObj[7];
-    
+    struct Select           outerObj[7];
+
     int selectChoice_OutputValue;
 
-    for(int i=0; i<4; i+=1)
+    for (int i = 0; i < 4; i += 1)
     {
-        for(int j=0; j<7; j+=1)
+        for (int j = 0; j < 7; j += 1)
         {
-            selectChoice_OutputValue = rand()%4;
+            selectChoice_OutputValue = rand() % 4;
             PersionInfo_Init(&personOuterObj[j]);
-            personOuterObj[j].Select_Person_Info = rand()%7;
+            personOuterObj[j].Select_Person_Info = rand() % 7;
             PersionInfo_Init(&personOuterObj[j]);
             personOuterObj[j].PERSON_SET(&personOuterObj[j], personOuterObj[j].Select_Person_Info);
             personOuterObj[j].PERSON_GET(&personOuterObj[j]);

@@ -65,16 +65,19 @@ void set(struct Select *this, int input_Method_Value)
     this -> input_Method_Value = input_Method_Value;
 }
 
-int  get(const struct Select *this)
+int  get(const struct Select* this)
 {
-    if((*this).input_Method_Value == RemainFriends) {
-        return printf("\t우리 그냥 친구로 남자....\n\n", this -> input_Method_Value);
-    } else if((*this).input_Method_Value == IDontMindFriends) {
-        return printf("\t우리 친구도 못될 거 같아....\n\n", this -> input_Method_Value);
-    } else if((*this).input_Method_Value == WhenThereIsNoOne) {
-        return printf("\t1이 없어지지 않아...\n\n", this -> input_Method_Value);
-    } else if((*this).input_Method_Value == ReadAndPass) {
-        return printf("\t읽고 그냥 넘어가는데 어쩌지...\n\n", this -> input_Method_Value);
+    if ((*this).input_Method_Value == RemainFriends) {
+        return puts("     우리 그냥 친구로 남자....");
+    }
+    else if ((*this).input_Method_Value == IDontMindFriends) {
+        return puts("     우리 친구도 못될 거 같아....");
+    }
+    else if ((*this).input_Method_Value == WhenThereIsNoOne) {
+        return puts("     1이 없어지지 않아...");
+    }
+    else if ((*this).input_Method_Value == ReadAndPass) {
+        return puts("     읽고 그냥 넘어가는데 어쩌지...");
     }
 }
 
