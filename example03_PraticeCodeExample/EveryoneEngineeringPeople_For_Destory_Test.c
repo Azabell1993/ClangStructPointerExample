@@ -4,12 +4,12 @@
 #include <stdlib.h>
 #include <time.h>
 /*
-    Ä£±¸·Î³²´Â´Ù remain friends
-    Ä£±¸µµ¾ÈµÈ´Ù I don't mind friends
-    1ÀÌ¾È¾ø¾îÁú¶§ When there is no one
-    ÀĞ°í³Ñ¾î°£´Ù read and pass
+    ì¹œêµ¬ë¡œë‚¨ëŠ”ë‹¤ remain friends
+    ì¹œêµ¬ë„ì•ˆëœë‹¤ I don't mind friends
+    1ì´ì•ˆì—†ì–´ì§ˆë•Œ When there is no one
+    ì½ê³ ë„˜ì–´ê°„ë‹¤ read and pass
 */
-const char NAME[] = "¿ÏÀå_°ßÀå_ÀÕÃ÷_ÄÄÇ»ÅÍÀß¸øÇØ¿ä_¹®µ¹°øµ¹_ÇàÀÎ1_22ÇĞ¹ø";
+const char NAME[] = "ì™„ì¥_ê²¬ì¥_ì‡ì¸ _ì»´í“¨í„°ì˜ëª»í•´ìš”_ë¬¸ëŒê³µëŒ_í–‰ì¸1_22í•™ë²ˆ";
 #define RemainFriends       0
 #define IDontMindFriends    1
 #define WhenThereIsNoOne    2
@@ -18,37 +18,37 @@ const char NAME[] = "¿ÏÀå_°ßÀå_ÀÕÃ÷_ÄÄÇ»ÅÍÀß¸øÇØ¿ä_¹®µ¹°øµ¹_ÇàÀÎ1_22ÇĞ¹ø";
 #define FUNCTIONPOINTER_PERSONINFORMATION_MAX_VALULE 7
 
 struct Select {
-    // ÇÊµå °ª ¼±¾ğ
+    // í•„ë“œ ê°’ ì„ ì–¸
     int input_Method_Value;
     
-    // ¸Ş¼­µå ¼±¾ğ
+    // ë©”ì„œë“œ ì„ ì–¸
     void (*SET)(struct Select *this, int input_Method_Value);
     int  (*GET)(const struct Select *this);
 };
 
-// Àü¹æ ¼±¾ğ
+// ì „ë°© ì„ ì–¸
 void set(struct Select *this, int input_Method_Value);
 int  get(const struct Select *this);
-// »ı¼ºÀÚ Àü¹æ ¼±¾ğ
+// ìƒì„±ì ì „ë°© ì„ ì–¸
 void init(struct Select *this);
-// ¼Ò¸êÀÚ Àü¹æ ¼±¾ğ
+// ì†Œë©¸ì ì „ë°© ì„ ì–¸
 void Select_Destory(struct Select *this);
 
 struct PersonInfoStru {
-    // ÇÊµå °ª ¼±¾ğ
+    // í•„ë“œ ê°’ ì„ ì–¸
     int Select_Person_Info;
 
-    // ¸Ş¼­µå ¼±¾ğ
+    // ë©”ì„œë“œ ì„ ì–¸
     void (*PERSON_SET)(struct PersonInfoStru *select_this, int Select_Person_Info);
     int  (*PERSON_GET)(const struct PersonInfoStru *select_this);
 };
 
-// Àü¹æ ¼±¾ğ
+// ì „ë°© ì„ ì–¸
 void Person_Set(struct PersonInfoStru *select_this, int Select_Person_Info);
 int Person_Get(const struct PersonInfoStru *select_this);
-// »ı¼ºÀÚ Àü¹æ ¼±¾ğ
+// ìƒì„±ì ì „ë°© ì„ ì–¸
 void PersionInfo_Init(struct PersonInfoStru *select_this);
-// ¼Ò¸êÀÚ Àü¹æ ¼±¾ğ
+// ì†Œë©¸ì ì „ë°© ì„ ì–¸
 void Person_Destory(struct PersonInfoStru *select_this);
 
 // void const name print
@@ -68,16 +68,16 @@ void set(struct Select *this, int input_Method_Value)
 int  get(const struct Select* this)
 {
     if ((*this).input_Method_Value == RemainFriends) {
-        return puts("     ¿ì¸® ±×³É Ä£±¸·Î ³²ÀÚ....");
+        return puts("     ìš°ë¦¬ ê·¸ëƒ¥ ì¹œêµ¬ë¡œ ë‚¨ì....");
     }
     else if ((*this).input_Method_Value == IDontMindFriends) {
-        return puts("     ¿ì¸® Ä£±¸µµ ¸øµÉ °Å °°¾Æ....");
+        return puts("     ìš°ë¦¬ ì¹œêµ¬ë„ ëª»ë  ê±° ê°™ì•„....");
     }
     else if ((*this).input_Method_Value == WhenThereIsNoOne) {
-        return puts("     1ÀÌ ¾ø¾îÁöÁö ¾Ê¾Æ...");
+        return puts("     1ì´ ì—†ì–´ì§€ì§€ ì•Šì•„...");
     }
     else if ((*this).input_Method_Value == ReadAndPass) {
-        return puts("     ÀĞ°í ±×³É ³Ñ¾î°¡´Âµ¥ ¾îÂ¼Áö...");
+        return puts("     ì½ê³  ê·¸ëƒ¥ ë„˜ì–´ê°€ëŠ”ë° ì–´ì©Œì§€...");
     }
 }
 
@@ -94,21 +94,21 @@ int Person_Get(const struct PersonInfoStru *select_this)
     (Person[select_this->Select_Person_Info]());
 }
 
-// »ı¼ºÀÚ
+// ìƒì„±ì
 void init(struct Select *this)
 {
 	this -> SET = set;
     this -> GET = get;
 }
 
-// »ı¼ºÀÚ
+// ìƒì„±ì
 void PersionInfo_Init(struct PersonInfoStru *select_this)
 {
 	select_this -> PERSON_SET = Person_Set;
     select_this -> PERSON_GET = Person_Get;
 }
 
-// ¼Ò¸êÀÚ ¼±¾ğ
+// ì†Œë©¸ì ì„ ì–¸
 void Person_Destory(struct PersonInfoStru *select_this)
 {
     free(select_this);
@@ -119,7 +119,7 @@ void Select_Destory(struct Select *this)
     free(this);
 }
 
-//¿ÏÀå_°ßÀå_ÀÕÃ÷_ÄÄÇ»ÅÍÀß¸øÇØ¿ä_¹®µ¹°øµ¹_ÇàÀÎ1_22ÇĞ¹ø
+//ì™„ì¥_ê²¬ì¥_ì‡ì¸ _ì»´í“¨í„°ì˜ëª»í•´ìš”_ë¬¸ëŒê³µëŒ_í–‰ì¸1_22í•™ë²ˆ
 void WanGang()
 {
     for(int i=0; i<4; i+=1) {

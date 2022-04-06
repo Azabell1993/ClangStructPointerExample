@@ -30,6 +30,8 @@ int /* 메서드 자료형 */
 SUM_RESULT /* 출력 메서드 함수명 */
 (const struct _Result_Sum *this) /* 출력 메서드 피라메타에는 구조체 포인터만 명시한다 .*/
 {
+    SUM_INIT(&this);
+    this.INPUT(&this, this.x, this.y, this.result);
     return
     (
         printf("%d + %d = %d\n",

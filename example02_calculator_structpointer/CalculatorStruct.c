@@ -2,60 +2,60 @@
 
 int main()
 {
-    // ì²«ë²ˆì§¸ ê°ì²´ ìƒì„±
+    // Ã¹¹øÂ° °´Ã¼ »ı¼º
     struct _CALC_DATA test;
-    // í•„ë“œ -> ê°ì²´ì˜ ë°ì´í„°ê°€ ì €ì¥ë˜ëŠ” ê³³
+    // ÇÊµå -> °´Ã¼ÀÇ µ¥ÀÌÅÍ°¡ ÀúÀåµÇ´Â °÷
     test.operand1 = 10;
     test.operand2 = 30;
     test.operator = '+'; 
     test.result=0; 
-    // ìƒì„±ì í˜¸ì¶œ -> ê°ì²´ ìƒì„± ì‹œ ì´ˆê¸°í™” ì—­í•  ë‹´ë‹¹
+    // »ı¼ºÀÚ È£Ãâ -> °´Ã¼ »ı¼º ½Ã ÃÊ±âÈ­ ¿ªÇÒ ´ã´ç
     Init(&test);
-    // ì¶œë ¥ / ë©”ì„œë“œ -> ê°ì²´ì˜ ë™ì‘ì— í•´ë‹¹ì‚¬ëŠ” ì‹¤í–‰ ë¸”ë¡
+    // Ãâ·Â / ¸Ş¼­µå -> °´Ã¼ÀÇ µ¿ÀÛ¿¡ ÇØ´ç»ç´Â ½ÇÇà ºí·Ï
     test.SETCUL(&test, test.operand1, test.operand2, test.operator, test.result);
     test.GETCUL(&test);
-    //ì†Œë©¸ì
+    //¼Ò¸êÀÚ
     Destory(&test);
 
-    // ë‘ë²ˆì§¸ ê°ì²´ ìƒì„±
+    // µÎ¹øÂ° °´Ã¼ »ı¼º
     struct _CALC_DATA test2;
     test2.operand1 = 110;
     test2.operand2 = 100;
     test2.operator = '-';
     test2.result = 0; 
-    // ìƒì„±ì í˜¸ì¶œ
+    // »ı¼ºÀÚ È£Ãâ
     Init(&test2);
-    // ì¶œë ¥
+    // Ãâ·Â
     test2.SETCUL(&test2, test2.operand1, test2.operand2, test2.operator, test2.result);
     test2.GETCUL(&test2);
-    //ì†Œë©¸ì
+    //¼Ò¸êÀÚ
     Destory(&test2);
 
-    // ì„¸ë²ˆì§¸ ê°ì²´ ìƒì„±
+    // ¼¼¹øÂ° °´Ã¼ »ı¼º
     struct _CALC_DATA test3;
     test3.operand1 = 30;
     test3.operand2 = 100;
     test3.operator = '*';
     test3.result = 0; 
-    // ìƒì„±ì í˜¸ì¶œ
+    // »ı¼ºÀÚ È£Ãâ
     Init(&test3);
-    // ì¶œë ¥
+    // Ãâ·Â
     test3.SETCUL(&test3, test3.operand1, test3.operand2, test3.operator, test3.result);
     test3.GETCUL(&test3);
-    //ì†Œë©¸ì
+    //¼Ò¸êÀÚ
     Destory(&test3);
     
-    // ë„¤ë²ˆì§¸ ê°ì²´ ìƒì„±
+    // ³×¹øÂ° °´Ã¼ »ı¼º
     struct _CALC_DATA test4;
     test4.operand1 = 20;
     test4.operand2 = 100;
     test4.operator = '/';
     test4.result=0; 
-    // ìƒì„±ì í˜¸ì¶œ
+    // »ı¼ºÀÚ È£Ãâ
     Init(&test4);
-    // ì¶œë ¥
+    // Ãâ·Â
     test4.SETCUL(&test4, test4.operand1, test4.operand2, test4.operator, test4.result);
     test4.GETCUL(&test4);
-    //ì†Œë©¸ì
+    //¼Ò¸êÀÚ
     Destory(&test4);
 }
