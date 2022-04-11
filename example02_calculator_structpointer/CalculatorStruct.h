@@ -4,7 +4,6 @@
 
 char  op_tb[4] = {'+', '-', '*', '/'};
 
-
 struct _CALC_DATA {
     // 필드 선언
     double operand1;

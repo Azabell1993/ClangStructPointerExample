@@ -21,6 +21,32 @@ void AddNumber(NODE **pp_head, NODE **pp_tail, int data)
     (*pp_tail) -> p_next = NULL;
 }
 
+int SUM(NODE *p_head, NODE *p_tail, NODE *p)
+{
+    int sum = 0;
+
+    p = p_head;
+    while(NULL != p)
+    {
+        if(p != p_head) printf(" + ");
+        printf(" %d ", p->number);
+        sum = sum + p -> number;
+        p = p -> p_next;
+    }
+    return (printf(" = %d\n", sum));
+}
+
+void Destory(NODE *p_head, NODE *p_tail, NODE *p)
+{
+    while(NULL != p_head)
+    {
+        p = p_head;
+        p_head = p_head -> p_next;
+        free(p);
+    }
+    p_tail = p_head;
+}
+
 int main()
 {
     NODE *p_head = NULL, *p_tail = NULL, *p;
@@ -35,21 +61,6 @@ int main()
         AddNumber(&p_head, &p_tail, temp);
     }
 
-    p = p_head;
-    while(NULL != p)
-    {
-        if(p != p_head) printf(" + ");
-        printf(" %d ", p->number);
-        sum = sum + p -> number;
-        p = p -> p_next;
-    }
-    printf(" = %d\n", sum);
-
-    while(NULL != p_head)
-    {
-        p = p_head;
-        p_head = p_head -> p_next;
-        free(p);
-    }
-    p_tail = p_head;
+    SUM(p_head, p_tail, p);
+    Destory(p_head, p_tail, p);
 }
