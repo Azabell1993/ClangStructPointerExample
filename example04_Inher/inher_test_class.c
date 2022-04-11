@@ -814,11 +814,6 @@ void main()
     // 빌드 테스트시 적용 확인 메세지 띄우기
     puts("이 메세지가 보이면 적용 성공임..");
 
-    (*memOuterObj).HAKBUN_ = 3081;
-    (*memOuterObj).AGE_ = 30;
-    (*memOuterObj).INIT_DATE_ = 20140201;
-    (*memOuterObj).OUT_DATE_ = 20190301;
-    
     (*memOuterObj).MEMBER_SET(memOuterObj, nameOuterObj.select_name_number_, schoolOuterObj.select_school_number_,
         (*memOuterObj).HAKBUN_, (*memOuterObj).AGE_, (*memOuterObj).INIT_DATE_, (*memOuterObj).OUT_DATE_);
     (*memOuterObj).MEMBER_GET(memOuterObj, &nameOuterObj, &schoolOuterObj);
