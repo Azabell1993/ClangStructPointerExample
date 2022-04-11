@@ -773,20 +773,70 @@ void Seven_S() { printf("명지대학교"); }
 void Tech_S() { printf("서울테크"); }
 void Soljin_S() { printf("SSS"); }
 
+/*
 void main()
 {  
+    
     MEMBER* memOuterObj = new_member(3081, (*memOuterObj).member_name, (*memOuterObj).school_name, 30, 20140201, 20190301);
-    puts("test");
+    
+    // 값이 유동적으로 변함 (변수임)
+    (*memOuterObj).HAKBUN_ = 42222;
+    
+    // 변경 적용 예
+    // (*memOuterObj).AGE_ = 30;
+    // (*memOuterObj).INIT_DATE_ = 20140201;
+    // (*memOuterObj).OUT_DATE_ = 20190301;
+
+    // 빌드 테스트시 적용확인 메세지
+    puts("이 메세지가 보이면 적용 성공.");
 
     MEMBER_NAME nameOuterObj;
     SCHOOL_NAME schoolOuterObj;
     nameOuterObj.select_name_number_ = 0;
     schoolOuterObj.select_school_number_ = 0;
 
-    (*memOuterObj).HAKBUN_ = 3081;
-    (*memOuterObj).AGE_ = 30;
-    (*memOuterObj).INIT_DATE_ = 20140201;
-    (*memOuterObj).OUT_DATE_ = 20190301;
+    (*memOuterObj).MEMBER_SET(memOuterObj, nameOuterObj.select_name_number_, schoolOuterObj.select_school_number_,
+        (*memOuterObj).HAKBUN_, (*memOuterObj).AGE_, (*memOuterObj).INIT_DATE_, (*memOuterObj).OUT_DATE_);
+    (*memOuterObj).MEMBER_GET(memOuterObj, &nameOuterObj, &schoolOuterObj);
+    (*memOuterObj).PRINT_DATA(memOuterObj, &nameOuterObj, &schoolOuterObj);
+}
+*/
+
+
+void main()
+{  
+
+    MEMBER_NAME nameOuterObj;
+    SCHOOL_NAME schoolOuterObj;
+    nameOuterObj.select_name_number_ = 0;
+    schoolOuterObj.select_school_number_ = 0;
+    NAME_INIT(&nameOuterObj);
+    SCHOOL_INIT(&schoolOuterObj);
+
+    MEMBER* memOuterObj = new_member(3081, nameOuterObj.select_name_number_,schoolOuterObj.select_school_number_, 30, 20140201, 20190301);
+    
+    /* 
+        Test
+        추후 수정 예정.
+        유사 클래스, 유사 상속 부분이 성공적으로 반영 되지 않음.
+    */
+    // nameOuterObj.SET_NAME(&nameOuterObj, nameOuterObj.select_name_number_);
+    // nameOuterObj.GET_NAME(&nameOuterObj);
+
+    // schoolOuterObj.SET_SCHOOL_NAME(&schoolOuterObj, schoolOuterObj.select_school_number_);
+    // schoolOuterObj.GET_SCHOOL_NAME(&schoolOuterObj);
+
+
+    // 값이 유동적으로 변함 (변수임)
+    (*memOuterObj).HAKBUN_ = 42222;
+    
+    // 변경 적용 예
+    // (*memOuterObj).AGE_ = 30;
+    // (*memOuterObj).INIT_DATE_ = 20140201;
+    // (*memOuterObj).OUT_DATE_ = 20190301;
+
+    // 빌드 테스트시 적용확인 메세지
+    puts("이 메세지가 보이면 적용 성공.");
 
     (*memOuterObj).MEMBER_SET(memOuterObj, nameOuterObj.select_name_number_, schoolOuterObj.select_school_number_,
         (*memOuterObj).HAKBUN_, (*memOuterObj).AGE_, (*memOuterObj).INIT_DATE_, (*memOuterObj).OUT_DATE_);
