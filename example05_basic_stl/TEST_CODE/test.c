@@ -17,7 +17,7 @@ void AddNumber(NODE **pp_head, NODE **pp_tail, int data)
         *pp_head = (NODE*)malloc(sizeof(NODE));
         *pp_tail = *pp_head;
     }
-    (*pp_tail)  -> number = data;
+    (*pp_tail)  -> number = data; 
     (*pp_tail) -> p_next = NULL;
 }
 
