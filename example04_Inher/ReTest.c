@@ -7,7 +7,7 @@
 
 #define FUNCTIONPOINTER_PERSONINFORMATION_MAX_VALULE 9
 #define     GET_NAME_MAX    9
-const char NAME[] = "í˜„ì•„_ì§€ìš°_ì£¼í˜„_ìŠ¹ê· _ìœ ë¦¼_ìŠ¬ê¸°_ì„¸ë¸_í…Œí¬_ì´í™";
+const char NAME[] = "Çö¾Æ_Áö¿ì_ÁÖÇö_½Â±Õ_À¯¸²_½½±â_¼¼ºì_Å×Å©_ÀÌÆå";
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -37,7 +37,7 @@ void Soljin_S();
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
-    ìœ ì‚¬ í´ë˜ìŠ¤ typedef ì „ë°© ì„ ì–¸
+    À¯»ç Å¬·¡½º typedef Àü¹æ ¼±¾ğ
 */
 typedef struct MEMBER MEMBER;
 typedef struct MAJOR MAJOR;
@@ -45,13 +45,12 @@ typedef struct PROGRAMMING PROGRAMMING;
 typedef struct FOOD FOOD;
 typedef struct MEMBER_NAME MEMBER_NAME;
 typedef struct SCHOOL_NAME SCHOOL_NAME;
-
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
-    ìƒì†ë‚´ ìœ ì‚¬í´ë˜ìŠ¤ ì „ë°© ì„ ì–¸
+    »ó¼Ó³» À¯»çÅ¬·¡½º Àü¹æ ¼±¾ğ
 */
 void    NAME_SET_(struct MEMBER_NAME* select_name, int select_name_number);
 int     NAME_GET_(const struct MEMBER_NAME* select_name);
@@ -59,18 +58,17 @@ void    SET_SCHOOL_NAME_(struct SCHOOL_NAME* select_school_name, int select_scho
 int 	GET_SCHOOL_NAME_(const struct SCHOOL_NAME* select_school_name);
 void    NAME_INIT(struct MEMBER* this);
 void    SCHOOL_INIT(struct SCHOOL_NAME* this);
-
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
-    ê³µí†µ ë©”ì„œë“œ ì „ë°© ì„ ì–¸
+    °øÅë ¸Ş¼­µå Àü¹æ ¼±¾ğ
 */
 void    PRINT_DATA_(const MEMBER* this, const MEMBER_NAME* select_name, const SCHOOL_NAME* select_school_name);
 
 /*
-    MEMBER ìœ ì‚¬ í´ë˜ìŠ¤ ë©”ì„œë“œ Setter, Getter ì „ë°© ì„ ì–¸
+    MEMBER À¯»ç Å¬·¡½º ¸Ş¼­µå Setter, Getter Àü¹æ ¼±¾ğ
 */
 void    MEMBER_SET_(
     MEMBER* this,
@@ -88,7 +86,7 @@ int     MEMBER_GET_(
 );
 
 /*
-    FOOD ìœ ì‚¬ í´ë˜ìŠ¤ ë©”ì„œë“œ Setter, Getter ì „ë°© ì„ ì–¸
+    FOOD À¯»ç Å¬·¡½º ¸Ş¼­µå Setter, Getter Àü¹æ ¼±¾ğ
 */
 void    FOOD_SET_(
     struct  FOOD* this,
@@ -106,40 +104,40 @@ void    FOOD_SET_(
 int     FOOD_GET_(const FOOD* this);
 
 /*
-    PROGRAMMING ìœ ì‚¬ í´ë˜ìŠ¤ ë©”ì„œë“œ Setter, Getter ì „ë°© ì„ ì–¸
+    PROGRAMMING À¯»ç Å¬·¡½º ¸Ş¼­µå Setter, Getter Àü¹æ ¼±¾ğ
 */
 void    PROGRAMMING_SET_(
-    struct  PROGRAMMING* this_,
-    const   int             DATE_,
-    const   int             CLANG_,
-    const   int             PTYHON_,
-    const   int             R_,
-    const   int             JAVA_,
-    const   int             SECURITY_,
-    const   int             NODEJ_,
-    const   int             CPP_,
-    const   int             ASSEMBLY_
+    struct  PROGRAMMING* this,
+    const   int             DATE,
+    const   int             CLANG,
+    const   int             PTYHON,
+    const   int             R,
+    const   int             JAVA,
+    const   int             SECURITY,
+    const   int             NODEJ,
+    const   int             CPP,
+    const   int             ASSEMBLY
 );
 int     PROGRAMMING_GET_(const PROGRAMMING* this);
 
 /*
-    MAJOR ìœ ì‚¬ í´ë˜ìŠ¤ ë©”ì„œë“œ Setter, Getter ì „ë°© ì„ ì–¸
+    MAJOR À¯»ç Å¬·¡½º ¸Ş¼­µå Setter, Getter Àü¹æ ¼±¾ğ
 */
 void    MAJOR_SET_(
     struct MAJOR* this,
-    const   int     KoreanLanguageAndLiterature,    //êµ­ì–´êµ­ë¬¸í•™ê³¼
-    const   int     Philosophy,                     //ì² í•™ê³¼
-    const   int     Archeology,                     //ê³ ê³ í•™ê³¼
-    const   int     LibraryAndInformationScience,   //ë¬¸í—Œì •ë³´í•™ê³¼
-    const   int     CommerceAndTrade,               //ë¬´ì—­í•™ê³¼
-    const   int     Administration,                 //í–‰ì •í•™ê³¼
-    const   int     PoliticalScienceAndDiplomacy,   //ì •ì¹˜ì™¸êµí•™ê³¼
-    const   int     MechanicalEngineering,          //ê¸°ê³„ê³µí•™
-    const   int     ElectronicEngineering,          //ì „ìê³µí•™
-    const   int     Architecure,                    //ê±´ì¶•í•™
-    const   int     Physics,                        //ë¬¼ë¦¬í•™
-    const   int     Chemistry,                      //í™”í•™
-    const   int     Biology                        //ìƒë¬¼í•™
+    const   int     KoreanLanguageAndLiterature,    //±¹¾î±¹¹®ÇĞ°ú
+    const   int     Philosophy,                     //Ã¶ÇĞ°ú
+    const   int     Archeology,                     //°í°íÇĞ°ú
+    const   int     LibraryAndInformationScience,   //¹®ÇåÁ¤º¸ÇĞ°ú
+    const   int     CommerceAndTrade,               //¹«¿ªÇĞ°ú
+    const   int     Administration,                 //ÇàÁ¤ÇĞ°ú
+    const   int     PoliticalScienceAndDiplomacy,   //Á¤Ä¡¿Ü±³ÇĞ°ú
+    const   int     MechanicalEngineering,          //±â°è°øÇĞ
+    const   int     ElectronicEngineering,          //ÀüÀÚ°øÇĞ
+    const   int     Architecure,                    //°ÇÃàÇĞ
+    const   int     Physics,                        //¹°¸®ÇĞ
+    const   int     Chemistry,                      //È­ÇĞ
+    const   int     Biology                        //»ı¹°ÇĞ
 );
 int     MAJOR_GET_(const MAJOR* this);
 
@@ -149,23 +147,23 @@ int     MAJOR_GET_(const MAJOR* this);
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /*
-    MEMBER ìœ ì‚¬ í´ë˜ìŠ¤ ìœ ì‚¬ ìƒì† ì „ë°© ì„ ì–¸
+    MEMBER À¯»ç Å¬·¡½º À¯»ç »ó¼Ó Àü¹æ ¼±¾ğ
 */
 MEMBER* new_member(
-    int HAKBUN,
-    MEMBER_NAME* member_name,
-    SCHOOL_NAME* select_school_number,
-    int AGE,
-    int INIT_DATE,
-    int OUT_DATE
+    int HAKBUN_,
+    MEMBER_NAME* member_name_,
+    SCHOOL_NAME* select_school_number_,
+    int AGE_,
+    int INIT_DATE_,
+    int OUT_DATE_
 );
 /*
-    ì†Œë©¸ì ì „ë°©ì„ ì–¸
+    ¼Ò¸êÀÚ Àü¹æ¼±¾ğ
 */
 void    DELETE_MEMBER(MEMBER* member_delete_ptr);
 
 /*
-    FOOD ìœ ì‚¬ í´ë˜ìŠ¤ ìœ ì‚¬ ìƒì† ì „ë°© ì„ ì–¸
+    FOOD À¯»ç Å¬·¡½º À¯»ç »ó¼Ó Àü¹æ ¼±¾ğ
 */
 FOOD* new_food(
     int     BANANAS_,
@@ -180,12 +178,12 @@ FOOD* new_food(
     int     CHICKEN_
 );
 /*
-    ì†Œë©¸ì ì „ë°©ì„ ì–¸
+    ¼Ò¸êÀÚ Àü¹æ¼±¾ğ
 */
 void    DELETE_FOOD(FOOD* food_delete_ptr);
 
 /*
-    PROGRAMMING ìœ ì‚¬ í´ë˜ìŠ¤ ìœ ì‚¬ ìƒì† ì „ë°© ì„ ì–¸
+    PROGRAMMING À¯»ç Å¬·¡½º À¯»ç »ó¼Ó Àü¹æ ¼±¾ğ
 */
 PROGRAMMING* new_programming(
     int     DATE_,
@@ -199,31 +197,30 @@ PROGRAMMING* new_programming(
     int     ASSEMBLY_
 );
 /*
-    ì†Œë©¸ì ì „ë°©ì„ ì–¸
+    ¼Ò¸êÀÚ Àü¹æ¼±¾ğ
 */
 void    DELETE_PROGRAMMING(PROGRAMMING* programming_delete_ptr);
 
 /*
-    MAJOR ìœ ì‚¬ í´ë˜ìŠ¤ ìœ ì‚¬ ìƒì† ì „ë°© ì„ ì–¸
+    MAJOR À¯»ç Å¬·¡½º À¯»ç »ó¼Ó Àü¹æ ¼±¾ğ
 */
 MAJOR* new_major(
-    MAJOR* this,
-    int     KoreanLanguageAndLiterature,    //êµ­ì–´êµ­ë¬¸í•™ê³¼
-    int     Philosophy,                     //ì² í•™ê³¼
-    int     Archeology,                     //ê³ ê³ í•™ê³¼
-    int     LibraryAndInformationScience,   //ë¬¸í—Œì •ë³´í•™ê³¼
-    int     CommerceAndTrade,               //ë¬´ì—­í•™ê³¼
-    int     Administration,                 //í–‰ì •í•™ê³¼
-    int     PoliticalScienceAndDiplomacy,   //ì •ì¹˜ì™¸êµí•™ê³¼
-    int     MechanicalEngineering,          //ê¸°ê³„ê³µí•™
-    int     ElectronicEngineering,          //ì „ìê³µí•™
-    int     Architecure,                    //ê±´ì¶•í•™
-    int     Physics,                        //ë¬¼ë¦¬í•™
-    int     Chemistry,                      //í™”í•™
-    int     Biology                         //ìƒë¬¼í•™
+    int     KoreanLanguageAndLiterature_,    //±¹¾î±¹¹®ÇĞ°ú
+    int     Philosophy_,                     //Ã¶ÇĞ°ú
+    int     Archeology_,                     //°í°íÇĞ°ú
+    int     LibraryAndInformationScience_,   //¹®ÇåÁ¤º¸ÇĞ°ú
+    int     CommerceAndTrade_,               //¹«¿ªÇĞ°ú
+    int     Administration_,                 //ÇàÁ¤ÇĞ°ú
+    int     PoliticalScienceAndDiplomacy_,   //Á¤Ä¡¿Ü±³ÇĞ°ú
+    int     MechanicalEngineering_,          //±â°è°øÇĞ
+    int     ElectronicEngineering_,          //ÀüÀÚ°øÇĞ
+    int     Architecure_,                    //°ÇÃàÇĞ
+    int     Physics_,                        //¹°¸®ÇĞ
+    int     Chemistry_,                      //È­ÇĞ
+    int     Biology_                         //»ı¹°ÇĞ
 );
 /*
-    ì†Œë©¸ì ì „ë°©ì„ ì–¸
+    ¼Ò¸êÀÚ Àü¹æ¼±¾ğ
 */
 void    DELETE_MAJOR(MAJOR* major_delete_ptr);
 
@@ -231,6 +228,10 @@ void    DELETE_MAJOR(MAJOR* major_delete_ptr);
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/*
+    MEMBER À¯»çÅ¬·¡½º Áö¿ª ÇÔ¼ö
+*/
 
 typedef struct MEMBER {
     struct MEMBER* this;
@@ -274,17 +275,6 @@ typedef struct MEMBER {
     int  (*MEMBER_GET)(const struct MEMBER* this, MEMBER_NAME* select_name, SCHOOL_NAME* select_school_name);
 } MEMBER;
 
-void    NAME_INIT(struct MEMBER* this)
-{
-    this->MEMBER_NAME.SET_NAME = NAME_SET_;
-    this->MEMBER_NAME.GET_NAME = NAME_GET_;
-}
-void    SCHOOL_INIT(struct SCHOOL_NAME* this)
-{
-    this->SET_SCHOOL_NAME = SET_SCHOOL_NAME_;
-    this->GET_SCHOOL_NAME = GET_SCHOOL_NAME_;
-}
-
 void    MEMBER_SET_(
     MEMBER* this,
     MEMBER_NAME* select_name,
@@ -314,49 +304,20 @@ int     MEMBER_GET_(const MEMBER* this, MEMBER_NAME* select_name, SCHOOL_NAME* s
         this->OUT_DATE_;
 }
 
+void    NAME_INIT(struct MEMBER* this)
+{
+    this->MEMBER_NAME.SET_NAME = NAME_SET_;
+    this->MEMBER_NAME.GET_NAME = NAME_GET_;
+}
+void    SCHOOL_INIT(struct SCHOOL_NAME* this)
+{
+    this->SET_SCHOOL_NAME = SET_SCHOOL_NAME_;
+    this->GET_SCHOOL_NAME = GET_SCHOOL_NAME_;
+}
+
 MEMBER* new_member(int HAKBUN, MEMBER_NAME* member_name, SCHOOL_NAME* school_name, int AGE, int INIT_DATE, int OUT_DATE)
 {
     MEMBER* temp = (MEMBER*)malloc(sizeof(MEMBER));
-    /*
-        void    MEMBER_SET_(
-        MEMBER * this,
-        MEMBER_NAME * select_name,
-        SCHOOL_NAME * select_school_name,
-        const   int     HAKBUN,
-        const   int     AGE,
-        const   int     INIT_DATE,
-        const   int     OUT_DATE
-        );
-
-        void    NAME_INIT(struct MEMBER* this)
-        {
-            this->MEMBER_NAME.SET_NAME = NAME_SET_;
-            this->MEMBER_NAME.GET_NAME = NAME_GET_;
-        }
-        void    SCHOOL_INIT(struct SCHOOL_NAME* this)
-        {
-            this->SET_SCHOOL_NAME = SET_SCHOOL_NAME_;
-            this->SET_SCHOOL_NAME = SET_SCHOOL_NAME_;
-        }
-
-        struct MEMBER_NAME {
-        struct MEMBER* this;
-        int     select_name_number_;
-        MEMBER_NAME* member_name;
-
-        void    (*SET_NAME)(struct MEMBER_NAME* select_name, int select_name_number_);
-        int     (*GET_NAME)(const struct MEMBER_NAME* select_name);
-        } MEMBER_NAME;
-
-        struct SCHOOL_NAME {
-            struct MEMBER* this;
-            int     select_school_number_;
-            SCHOOL_NAME* school_name;
-
-            void    (*SET_SCHOOL_NAME)(struct SCHOOL_NAME* select_school_name, int select_school_number_);
-            int     (*GET_SCHHOL_NAME)(const struct SCHOOL_NAME* select_school_name);
-        } SCHOOL_NAME;
-    */
 
     temp->HAKBUN_ = HAKBUN;
     temp->MEMBER_NAME.SET_NAME = NAME_SET_;
@@ -367,7 +328,7 @@ MEMBER* new_member(int HAKBUN, MEMBER_NAME* member_name, SCHOOL_NAME* school_nam
     temp->INIT_DATE_ = INIT_DATE;
     temp->OUT_DATE_ = OUT_DATE;
 
-    // í•¨ìˆ˜ í¬ì¸í„°
+    // ÇÔ¼ö Æ÷ÀÎÅÍ
     temp -> this = temp;
     temp->PRINT_DATA = PRINT_DATA_;
     temp->MEMBER_SET = MEMBER_SET_;
@@ -376,6 +337,16 @@ MEMBER* new_member(int HAKBUN, MEMBER_NAME* member_name, SCHOOL_NAME* school_nam
     return temp;
 }
 
+void    DELETE_MEMBER(MEMBER* member_delete_ptr)
+{
+    free(member_delete_ptr);
+}
+
+///////////////////////////////////////////////////////////////////////
+
+/*
+    FOOD À¯»çÅ¬·¡½º Áö¿ª ÇÔ¼ö
+*/
 
 typedef struct FOOD {
     MEMBER Member;
@@ -410,6 +381,52 @@ typedef struct FOOD {
 
 } FOOD;
 
+void FOOD_SET_(
+    FOOD* this,
+    const int BANANAS,
+    const int BARBECUE,
+    const int BARLEY,
+    const int BLUEBERRIES,
+    const int BREAD,
+    const int BROCCOLI,
+    const int BURGERS,
+    const int CAKE,
+    const int CHEESE,
+    const int CHICKEN
+)
+{
+    this->BANANAS_ = BANANAS;
+    this->BARBECUE_ = BARBECUE;
+    this->BARLEY_ = BARLEY;
+    this->BLUEBERRIES_ = BLUEBERRIES;
+    this->BREAD_ = BREAD;
+    this->BROCCOLI_ = BROCCOLI;
+    this->BURGERS_ = BURGERS;
+    this->CAKE_ = CAKE;
+    this->CHEESE_ = CHEESE;
+    this->CHICKEN_ = CHICKEN;
+}
+
+int FOOD_GET_(const FOOD* this)
+{
+    return
+        this->BANANAS_,
+        this->BARBECUE_,
+        this->BARLEY_,
+        this->BLUEBERRIES_,
+        this->BREAD_,
+        this->BROCCOLI_;
+        this->BURGERS_,
+        this->CAKE_,
+        this->CHEESE_,
+        this->CHICKEN_;
+}
+
+void    DELETE_FOOD(FOOD* food_delete_ptr)
+{
+    free(food_delete_ptr);
+}
+
 FOOD* new_food(
     int     BANANAS,
     int     BARBECUE,
@@ -435,13 +452,20 @@ FOOD* new_food(
     temp->CHEESE_ = CHEESE;
     temp->CHICKEN_ = CHICKEN;
 
-    // í•¨ìˆ˜ í¬ì¸í„°
+    // ÇÔ¼ö Æ÷ÀÎÅÍ
     temp -> this = temp;
     temp->FOOD_SET = FOOD_SET_;
     temp->FOOD_GET = FOOD_GET_;
 
     return temp;
 }
+
+///////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////
+
+/*
+    PROGRAMMING À¯»çÅ¬·¡½º Áö¿ª ÇÔ¼ö
+*/
 
 typedef struct PROGRAMMING {
     MEMBER Member;
@@ -472,6 +496,123 @@ typedef struct PROGRAMMING {
             );
     int     (*PROGRAMMING_GET)(const struct PROGRAMMING* this);
 } PROGRAMMING;
+
+PROGRAMMING* new_programming(
+    int DATE,
+    int CLANG,
+    int PTYHON,
+    int R,
+    int JAVA,
+    int SECURITY,
+    int NODEJ,
+    int CPP,
+    int ASSEMBLY
+)
+{
+    PROGRAMMING* temp = (PROGRAMMING*)malloc(sizeof(PROGRAMMING));
+
+    temp->DATE_ = DATE;
+    temp->CLANG_ = CLANG;
+    temp->PTYHON_ = PTYHON;
+    temp->R_ = R;
+    temp->JAVA_ = JAVA;
+    temp->SECURITY_ = SECURITY;
+    temp->NODEJ_ = NODEJ;
+    temp->CPP_ = CPP;
+    temp->ASSEMBLY_ = ASSEMBLY;
+
+    // ÇÔ¼ö Æ÷ÀÎÅÍ
+    temp->this = temp;
+    temp->PROGRAMMING_SET = PROGRAMMING_SET_;
+    temp->PROGRAMMING_GET = PROGRAMMING_GET_;
+    
+    return temp;
+}
+
+void PROGRAMMING_SET_(
+    PROGRAMMING* this,
+    const int DATE,
+    const int CLANG,
+    const int PTYHON,
+    const int R,
+    const int JAVA,
+    const int SECURITY,
+    const int NODEJ,
+    const int CPP,
+    const int ASSEMBLY
+)
+{
+    this->DATE_ = DATE;
+    this->CLANG_ = CLANG;
+    this->PTYHON_ = PTYHON;
+    this->R_ = R;
+    this->JAVA_ = JAVA;
+    this->SECURITY_ = SECURITY;
+    this->NODEJ_ = NODEJ;
+    this->CPP_ = CPP;
+    this->ASSEMBLY_ = ASSEMBLY;
+}
+
+int     PROGRAMMING_GET_(const PROGRAMMING* this)
+{
+    this->DATE_,
+    this->CLANG_,
+    this->PTYHON_,
+    this->R_,
+    this->JAVA_,
+    this->SECURITY_,
+    this->NODEJ_,
+    this->CPP_,
+    this->ASSEMBLY_;
+}
+
+void    DELETE_PROGRAMMING(PROGRAMMING* programming_delete_ptr)
+{
+    free(programming_delete_ptr);
+}
+///////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////
+
+/*
+    MAJOR À¯»çÅ¬·¡½º Áö¿ª ÇÔ¼ö
+*/
+
+typedef struct MAJOR {
+    MEMBER Member;
+    struct PROGRAMMING* this;
+
+    int     KoreanLanguageAndLiterature_;    //±¹¾î±¹¹®ÇĞ°ú
+    int     Philosophy_;                     //Ã¶ÇĞ°ú
+    int     Archeology_;                     //°í°íÇĞ°ú
+    int     LibraryAndInformationScience_;   //¹®ÇåÁ¤º¸ÇĞ°ú
+    int     CommerceAndTrade_;               //¹«¿ªÇĞ°ú
+    int     Administration_;                 //ÇàÁ¤ÇĞ°ú
+    int     PoliticalScienceAndDiplomacy_;   //Á¤Ä¡¿Ü±³ÇĞ°ú
+    int     MechanicalEngineering_;          //±â°è°øÇĞ
+    int     ElectronicEngineering_;          //ÀüÀÚ°øÇĞ
+    int     Architecure_;                    //°ÇÃàÇĞ
+    int     Physics_;                        //¹°¸®ÇĞ
+    int     Chemistry_;                      //È­ÇĞ
+    int     Biology_;                        //»ı¹°ÇĞ
+    void    (*MAJOR_SET)
+        (
+            struct MAJOR* this,
+            const   int     KoreanLanguageAndLiterature,    //±¹¾î±¹¹®ÇĞ°ú
+            const   int     Philosophy,                     //Ã¶ÇĞ°ú
+            const   int     Archeology,                     //°í°íÇĞ°ú
+            const   int     LibraryAndInformationScience,   //¹®ÇåÁ¤º¸ÇĞ°ú
+            const   int     CommerceAndTrade,               //¹«¿ªÇĞ°ú
+            const   int     Administration,                 //ÇàÁ¤ÇĞ°ú
+            const   int     PoliticalScienceAndDiplomacy,   //Á¤Ä¡¿Ü±³ÇĞ°ú
+            const   int     MechanicalEngineering,          //±â°è°øÇĞ
+            const   int     ElectronicEngineering,          //ÀüÀÚ°øÇĞ
+            const   int     Architecure,                    //°ÇÃàÇĞ
+            const   int     Physics,                        //¹°¸®ÇĞ
+            const   int     Chemistry,                      //È­ÇĞ
+            const   int     Biology                        //»ı¹°ÇĞ
+            );
+    int     (*MAJOR_GET)(const struct MAJOR* this);
+} MAJOR;
 
 void MAJOR_SET_(
     MAJOR* this,
@@ -523,58 +664,20 @@ int     MAJOR_GET_(const MAJOR* this)
         this->Biology_;
 }
 
-typedef struct MAJOR {
-    MEMBER Member;
-    struct PROGRAMMING* this;
-
-    int     KoreanLanguageAndLiterature_;    //êµ­ì–´êµ­ë¬¸í•™ê³¼
-    int     Philosophy_;                     //ì² í•™ê³¼
-    int     Archeology_;                     //ê³ ê³ í•™ê³¼
-    int     LibraryAndInformationScience_;   //ë¬¸í—Œì •ë³´í•™ê³¼
-    int     CommerceAndTrade_;               //ë¬´ì—­í•™ê³¼
-    int     Administration_;                 //í–‰ì •í•™ê³¼
-    int     PoliticalScienceAndDiplomacy_;   //ì •ì¹˜ì™¸êµí•™ê³¼
-    int     MechanicalEngineering_;          //ê¸°ê³„ê³µí•™
-    int     ElectronicEngineering_;          //ì „ìê³µí•™
-    int     Architecure_;                    //ê±´ì¶•í•™
-    int     Physics_;                        //ë¬¼ë¦¬í•™
-    int     Chemistry_;                      //í™”í•™
-    int     Biology_;                        //ìƒë¬¼í•™
-    void    (*MAJOR_SET)
-        (
-            struct MAJOR* this,
-            const   int     KoreanLanguageAndLiterature,    //êµ­ì–´êµ­ë¬¸í•™ê³¼
-            const   int     Philosophy,                     //ì² í•™ê³¼
-            const   int     Archeology,                     //ê³ ê³ í•™ê³¼
-            const   int     LibraryAndInformationScience,   //ë¬¸í—Œì •ë³´í•™ê³¼
-            const   int     CommerceAndTrade,               //ë¬´ì—­í•™ê³¼
-            const   int     Administration,                 //í–‰ì •í•™ê³¼
-            const   int     PoliticalScienceAndDiplomacy,   //ì •ì¹˜ì™¸êµí•™ê³¼
-            const   int     MechanicalEngineering,          //ê¸°ê³„ê³µí•™
-            const   int     ElectronicEngineering,          //ì „ìê³µí•™
-            const   int     Architecure,                    //ê±´ì¶•í•™
-            const   int     Physics,                        //ë¬¼ë¦¬í•™
-            const   int     Chemistry,                      //í™”í•™
-            const   int     Biology                        //ìƒë¬¼í•™
-            );
-    int     (*MAJOR_GET)(const struct MAJOR* this);
-} MAJOR;
-
 MAJOR* new_major(
-    MAJOR* this,
-    int     KoreanLanguageAndLiterature,    //êµ­ì–´êµ­ë¬¸í•™ê³¼
-    int     Philosophy,                     //ì² í•™ê³¼
-    int     Archeology,                     //ê³ ê³ í•™ê³¼
-    int     LibraryAndInformationScience,   //ë¬¸í—Œì •ë³´í•™ê³¼
-    int     CommerceAndTrade,               //ë¬´ì—­í•™ê³¼
-    int     Administration,                 //í–‰ì •í•™ê³¼
-    int     PoliticalScienceAndDiplomacy,   //ì •ì¹˜ì™¸êµí•™ê³¼
-    int     MechanicalEngineering,          //ê¸°ê³„ê³µí•™
-    int     ElectronicEngineering,          //ì „ìê³µí•™
-    int     Architecure,                    //ê±´ì¶•í•™
-    int     Physics,                        //ë¬¼ë¦¬í•™
-    int     Chemistry,                      //í™”í•™
-    int     Biology                          //ìƒë¬¼í•™
+    int     KoreanLanguageAndLiterature,    //±¹¾î±¹¹®ÇĞ°ú
+    int     Philosophy,                     //Ã¶ÇĞ°ú
+    int     Archeology,                     //°í°íÇĞ°ú
+    int     LibraryAndInformationScience,   //¹®ÇåÁ¤º¸ÇĞ°ú
+    int     CommerceAndTrade,               //¹«¿ªÇĞ°ú
+    int     Administration,                 //ÇàÁ¤ÇĞ°ú
+    int     PoliticalScienceAndDiplomacy,   //Á¤Ä¡¿Ü±³ÇĞ°ú
+    int     MechanicalEngineering,          //±â°è°øÇĞ
+    int     ElectronicEngineering,          //ÀüÀÚ°øÇĞ
+    int     Architecure,                    //°ÇÃàÇĞ
+    int     Physics,                        //¹°¸®ÇĞ
+    int     Chemistry,                      //È­ÇĞ
+    int     Biology                         //»ı¹°ÇĞ
 )
 {
     MAJOR* temp = (MAJOR*)malloc(sizeof(MAJOR));
@@ -593,7 +696,7 @@ MAJOR* new_major(
     temp->Chemistry_ = Chemistry;
     temp->Biology_ = Biology;
 
-    // í•¨ìˆ˜ í¬ì¸í„° 
+    // ÇÔ¼ö Æ÷ÀÎÅÍ 
     temp -> this = temp;
     temp->MAJOR_SET = MAJOR_SET_;
     temp->MAJOR_GET = MAJOR_GET_;
@@ -606,140 +709,19 @@ void    DELETE_MAJOR(MAJOR* major_delete_ptr)
     free(major_delete_ptr);
 }
 
-void    DELETE_MEMBER(MEMBER* member_delete_ptr)
-{
-    free(member_delete_ptr);
-}
+//--------------------------------------------------------------------------------------------------------------------
 
-void    DELETE_FOOD(FOOD* food_delete_ptr)
-{
-    free(food_delete_ptr);
-}
-
-void FOOD_SET_(
-    FOOD* this,
-    const int BANANAS,
-    const int BARBECUE,
-    const int BARLEY,
-    const int BLUEBERRIES,
-    const int BREAD,
-    const int BROCCOLI,
-    const int BURGERS,
-    const int CAKE,
-    const int CHEESE,
-    const int CHICKEN
-)
-{
-    this->BANANAS_ = BANANAS;
-    this->BARBECUE_ = BARBECUE;
-    this->BARLEY_ = BARLEY;
-    this->BLUEBERRIES_ = BLUEBERRIES;
-    this->BREAD_ = BREAD;
-    this->BROCCOLI_ = BROCCOLI;
-    this->BURGERS_ = BURGERS;
-    this->CAKE_ = CAKE;
-    this->CHEESE_ = CHEESE;
-    this->CHICKEN_ = CHICKEN;
-}
-
-int FOOD_GET_(const FOOD* this)
-{
-    return
-        this->BANANAS_,
-        this->BARBECUE_,
-        this->BARLEY_,
-        this->BLUEBERRIES_,
-        this->BREAD_,
-        this->BROCCOLI_;
-    this->BURGERS_,
-        this->CAKE_,
-        this->CHEESE_,
-        this->CHICKEN_;
-}
-
-
-PROGRAMMING* new_programming(
-    int DATE,
-    int CLANG,
-    int PTYHON,
-    int R,
-    int JAVA,
-    int SECURITY,
-    int NODEJ,
-    int CPP,
-    int ASSEMBLY
-)
-{
-    PROGRAMMING* temp = (PROGRAMMING*)malloc(sizeof(PROGRAMMING));
-
-    temp->DATE_ = DATE;
-    temp->CLANG_ = CLANG;
-    temp->PTYHON_ = PTYHON;
-    temp->R_ = R;
-    temp->JAVA_ = JAVA;
-    temp->SECURITY_ = SECURITY;
-    temp->NODEJ_ = NODEJ;
-    temp->CPP_ = CPP;
-    temp->ASSEMBLY_ = ASSEMBLY;
-}
-
-void    DELETE_PROGRAMMING(PROGRAMMING* programming_delete_ptr)
-{
-    free(programming_delete_ptr);
-}
-
-void PROGRAMMING_SET_(
-    PROGRAMMING* this,
-    const int DATE,
-    const int CLANG,
-    const int PTYHON,
-    const int R,
-    const int JAVA,
-    const int SECURITY,
-    const int NODEJ,
-    const int CPP,
-    const int ASSEMBLY
-)
-{
-    this->DATE_ = DATE;
-    this->CLANG_ = CLANG;
-    this->PTYHON_ = PTYHON;
-    this->R_ = R;
-    this->JAVA_ = JAVA;
-    this->SECURITY_ = SECURITY;
-    this->NODEJ_ = NODEJ;
-    this->CPP_ = CPP;
-    this->ASSEMBLY_ = ASSEMBLY;
-}
-
-/*
-    struct MEMBER_NAME {
-        struct MEMBER* this;
-        int     select_name_number_;
-        MEMBER_NAME* member_name;
-
-        void    (*SET_NAME)(struct MEMBER_NAME* select_name, int select_name_number_);
-        int     (*GET_NAME)(const struct MEMBER_NAME* select_name);
-    } MEMBER_NAME;
-
-    struct SCHOOL_NAME {
-        struct MEMBER* this;
-        int     select_school_number_;
-        SCHOOL_NAME* school_name;
-
-        void    (*SET_SCHOOL_NAME)(struct SCHOOL_NAME* select_school_name, int select_school_number_);
-        int     (*GET_SCHHOL_NAME)(const struct SCHOOL_NAME* select_school_name);
-    } SCHOOL_NAME;
-*/
+//--------------------------------------------------------------------------------------------------------------------
 void    PRINT_DATA_(const MEMBER* this, const MEMBER_NAME* select_name, const SCHOOL_NAME* select_school_name)
 {
-    printf("í•™ìƒ í•™ë²ˆ : %d, í•™ìƒ ì´ë¦„ : %s, í•™ìƒ í•™êµ : %s, ë‚˜ì´ : %d, ì…í•™ ë‚ ì§œ : %d, ì¡¸ì—…ì˜ˆì •ë‚ ì§œ : %d\n",
-        this->HAKBUN_, select_name->select_name_number_, select_school_name->select_school_number_, this->AGE_, this->INIT_DATE_, this->OUT_DATE_);
+    printf("ÇĞ»ı ÇĞ¹ø : %d, ÇĞ»ı ÀÌ¸§ : %s, ÇĞ»ı ÇĞ±³ : %s, ³ªÀÌ : %d, ÀÔÇĞ ³¯Â¥ : %d, Á¹¾÷¿¹Á¤³¯Â¥ : %d\n",
+        this->HAKBUN_, select_name->select_name_number_, select_school_name->select_school_number_, 
+        this->AGE_, this->INIT_DATE_, this->OUT_DATE_);
 }
 
 void 	SET_SCHOOL_NAME_(struct SCHOOL_NAME* select_school_name, int select_school_number)
 {
-    select_school_name->school_name = select_school_number;
+    select_school_name->select_school_number_ = select_school_number;
 }
 
 int 	GET_SCHOOL_NAME_(const struct SCHOOL_NAME* select_school_name)
@@ -747,15 +729,13 @@ int 	GET_SCHOOL_NAME_(const struct SCHOOL_NAME* select_school_name)
     void (*SCHOOL[FUNCTIONPOINTER_PERSONINFORMATION_MAX_VALULE])() = {
     &HyunA, &Jiwoo, &Juhyun, &SungGyun, &Urim, &SeulGi, &Seven, &Tech, &Soljin
     };
-    (SCHOOL[FUNCTIONPOINTER_PERSONINFORMATION_MAX_VALULE]()
+    (SCHOOL[select_school_name -> select_school_number_]()
         );
 }
 
 void     NAME_SET_(struct MEMBER_NAME* member_ptr, int select_name_number)
 {
-    // struct MEMBER_NAME* member_name;
-    // struct SCHOOL_NAME* school_name;
-    member_ptr->member_name = select_name_number;
+    member_ptr->select_name_number_ = select_name_number;
 }
 
 int     NAME_GET_(const struct MEMBER_NAME* select_name)
@@ -763,11 +743,15 @@ int     NAME_GET_(const struct MEMBER_NAME* select_name)
     void (*NAME[FUNCTIONPOINTER_PERSONINFORMATION_MAX_VALULE])() = {
         &HyunA_S, &Jiwoo_S, &Juhyun_S, &SungGyun_S, &Urim_S, &SeulGi_S, &Seven_S, &Tech_S, &Soljin_S
     };
-    (NAME[FUNCTIONPOINTER_PERSONINFORMATION_MAX_VALULE]()
+    (NAME[select_name -> select_name_number_]()
         );
 }
+//--------------------------------------------------------------------------------------------------------------------
 
-//const char NAME[] = "í˜„ì•„_ì§€ìš°_ì£¼í˜„_ìŠ¹ê· _ìœ ë¦¼_ìŠ¬ê¸°_ì„¸ë¸_í…Œí¬_ì†”ì§„";
+
+//--------------------------------------------------------------------------------------------------------------------
+
+//const char NAME[] = "Çö¾Æ_Áö¿ì_ÁÖÇö_½Â±Õ_À¯¸²_½½±â_¼¼ºì_Å×Å©_¼ÖÁø";
 void HyunA() { for (int i = 0; i < 4; i += 1) { printf("%c", NAME[i]); }   printf(" : "); }
 void Jiwoo() { for (int i = 5; i < 9; i += 1) { printf("%c", NAME[i]); }   printf(" : "); }
 void Juhyun() { for (int i = 10; i < 14; i += 1) { printf("%c", NAME[i]); }   printf(" : "); }
@@ -779,23 +763,33 @@ void Tech() { for (int i = 35; i < 39; i += 1) { printf("%c", NAME[i]); }   prin
 void Soljin() { for (int i = 40; i < 45; i += 1) { printf("%c", NAME[i]); }   printf(" : "); }
 
 // SCHOOL NAME
-void HyunA_S() { printf("í•œêµ­ì˜ˆìˆ ì¢…í•©í•™êµ"); }
-void Jiwoo_S() { printf("ì¹´ì´ìŠ¤íŠ¸"); }
-void Juhyun_S() { printf("ì„œìš¸ê³¼í•™ê³ ë“±í•™êµ"); }
-void SungGyun_S() { printf("ì„œìš¸ëŒ€í•™êµ"); }
-void Urim_S() { printf("ì„±ì‹ ì—¬ìëŒ€í•™êµ"); }
-void SeulGi_S() { printf("ë‚˜ì‚¬ë ›ëŒ€í•™êµ"); }
-void Seven_S() { printf("ëª…ì§€ëŒ€í•™êµ"); }
-void Tech_S() { printf("ì„œìš¸í…Œí¬"); }
+void HyunA_S() { printf("ÇÑ±¹¿¹¼úÁ¾ÇÕÇĞ±³"); }
+void Jiwoo_S() { printf("Ä«ÀÌ½ºÆ®"); }
+void Juhyun_S() { printf("¼­¿ï°úÇĞ°íµîÇĞ±³"); }
+void SungGyun_S() { printf("¼­¿ï´ëÇĞ±³"); }
+void Urim_S() { printf("¼º½Å¿©ÀÚ´ëÇĞ±³"); }
+void SeulGi_S() { printf("³ª»ç·¿´ëÇĞ±³"); }
+void Seven_S() { printf("¸íÁö´ëÇĞ±³"); }
+void Tech_S() { printf("¼­¿ïÅ×Å©"); }
 void Soljin_S() { printf("SSS"); }
 
 void main()
-{
-    MEMBER memOuterObj;
-    NAME_INIT(&memOuterObj);
+{  
+    MEMBER* memOuterObj = new_member(3081, (*memOuterObj).member_name, (*memOuterObj).school_name, 30, 20140201, 20190301);
+    puts("test");
 
-    memOuterObj.member_name = 0;
-    memOuterObj.school_name = 0;
-    MEMBER* mem = new_member(3081, memOuterObj.member_name, memOuterObj.school_name, 30, 20140201, 20190301);
-    mem->PRINT_DATA(mem,memOuterObj.member_name,memOuterObj.school_name);
+    MEMBER_NAME nameOuterObj;
+    SCHOOL_NAME schoolOuterObj;
+    nameOuterObj.select_name_number_ = 0;
+    schoolOuterObj.select_school_number_ = 0;
+
+    (*memOuterObj).HAKBUN_ = 3081;
+    (*memOuterObj).AGE_ = 30;
+    (*memOuterObj).INIT_DATE_ = 20140201;
+    (*memOuterObj).OUT_DATE_ = 20190301;
+
+    (*memOuterObj).MEMBER_SET(memOuterObj, nameOuterObj.select_name_number_, schoolOuterObj.select_school_number_,
+        (*memOuterObj).HAKBUN_, (*memOuterObj).AGE_, (*memOuterObj).INIT_DATE_, (*memOuterObj).OUT_DATE_);
+    (*memOuterObj).MEMBER_GET(memOuterObj, &nameOuterObj, &schoolOuterObj);
+    (*memOuterObj).PRINT_DATA(memOuterObj, &nameOuterObj, &schoolOuterObj);
 }
