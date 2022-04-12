@@ -779,41 +779,46 @@ void Seven_S() { printf("명지대학교"); }
 void Tech_S() { printf("서울테크"); }
 void Soljin_S() { printf("SSS"); }
 
-void main()
+int main()
 {  
 
     MEMBER_NAME nameOuterObj;
     SCHOOL_NAME schoolOuterObj;
     nameOuterObj.select_name_number_ = 0;
     schoolOuterObj.select_school_number_ = 0;
-    // NAME_INIT(&nameOuterObj);
-    // SCHOOL_INIT(&schoolOuterObj);
+    NAME_INIT(&nameOuterObj);
+    SCHOOL_INIT(&schoolOuterObj);
 
-    // nameOuterObj.SET_NAME(&nameOuterObj, nameOuterObj.select_name_number_);
-    // nameOuterObj.GET_NAME(&nameOuterObj);
-
+    //nameOuterObj.SET_NAME(&nameOuterObj, nameOuterObj.select_name_number_);
+    //nameOuterObj.GET_NAME(&nameOuterObj);
     // schoolOuterObj.SET_SCHOOL_NAME(&schoolOuterObj, schoolOuterObj.select_school_number_);
     // schoolOuterObj.GET_SCHOOL_NAME(&schoolOuterObj);
 
-    //MEMBER* memOuterObj = new_member(3081, nameOuterObj.select_name_number_, schoolOuterObj.select_school_number_, 30, 20140201, 20190301);
-    MEMBER* memOuterObj = new_member(3081, nameOuterObj.select_name_number_, schoolOuterObj.select_school_number_, 30, 20140201, 20190301);
-
+    MEMBER* memOuterObj = new_member(3081, &nameOuterObj, &schoolOuterObj, 30, 20140201, 20190301);
+    
     // 값이 유동적으로 변함(변수임)
     (*memOuterObj).HAKBUN_ = 42222;
     
     // 변경 적용 예
-    // (*memOuterObj).AGE_ = 30;
-    // (*memOuterObj).INIT_DATE_ = 20140201;
-    // (*memOuterObj).OUT_DATE_ = 20190301;
+    /*
+        (*memOuterObj).AGE_ = 30;
+        (*memOuterObj).INIT_DATE_ = 20140201;
+        (*memOuterObj).OUT_DATE_ = 20190301;
+    */
 
     // 빌드 테스트시 적용 확인 메세지 띄우기
     puts("이 메세지가 보이면 적용 성공임..");
 
     // 이렇게 객체를 만들어도됨
-    // (*memOuterObj).MEMBER_SET(memOuterObj, nameOuterObj.select_name_number_, schoolOuterObj.select_school_number_,
-    //     (*memOuterObj).HAKBUN_, (*memOuterObj).AGE_, (*memOuterObj).INIT_DATE_, (*memOuterObj).OUT_DATE_);
-    // (*memOuterObj).MEMBER_GET(memOuterObj, &nameOuterObj, &schoolOuterObj);
+    /* 
+        (*memOuterObj).MEMBER_SET(memOuterObj, nameOuterObj.select_name_number_, 
+        schoolOuterObj.select_school_number_,(*memOuterObj).HAKBUN_, (*memOuterObj).AGE_, 
+        (*memOuterObj).INIT_DATE_, (*memOuterObj).OUT_DATE_);
+    */
+    /*
+        (*memOuterObj).MEMBER_GET(memOuterObj, &nameOuterObj, &schoolOuterObj);
+    */
 
     // new_member 메서드에 다른 생성자 호출
-    (*memOuterObj).PRINT_DATA(memOuterObj, &nameOuterObj, &schoolOuterObj);
+    (*memOuterObj).PRINT_DATA(memOuterObj, &nameOuterObj.select_name_number_, &schoolOuterObj.select_school_number_);
 }
