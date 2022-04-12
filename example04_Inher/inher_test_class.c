@@ -789,7 +789,7 @@ void main()
     NAME_INIT(&nameOuterObj);
     SCHOOL_INIT(&schoolOuterObj);
 
-    MEMBER* memOuterObj = new_member(3081, nameOuterObj.select_name_number_,schoolOuterObj.select_school_number_, 30, 20140201, 20190301);
+    MEMBER* memOuterObj = new_member(3081, nameOuterObj.select_name_number_, schoolOuterObj.select_school_number_, 30, 20140201, 20190301);
     
     /* 
         Test
@@ -814,8 +814,11 @@ void main()
     // 빌드 테스트시 적용 확인 메세지 띄우기
     puts("이 메세지가 보이면 적용 성공임..");
 
-    (*memOuterObj).MEMBER_SET(memOuterObj, nameOuterObj.select_name_number_, schoolOuterObj.select_school_number_,
-        (*memOuterObj).HAKBUN_, (*memOuterObj).AGE_, (*memOuterObj).INIT_DATE_, (*memOuterObj).OUT_DATE_);
-    (*memOuterObj).MEMBER_GET(memOuterObj, &nameOuterObj, &schoolOuterObj);
+    // 이렇게 객체를 만들어도됨
+    // (*memOuterObj).MEMBER_SET(memOuterObj, nameOuterObj.select_name_number_, schoolOuterObj.select_school_number_,
+    //     (*memOuterObj).HAKBUN_, (*memOuterObj).AGE_, (*memOuterObj).INIT_DATE_, (*memOuterObj).OUT_DATE_);
+    // (*memOuterObj).MEMBER_GET(memOuterObj, &nameOuterObj, &schoolOuterObj);
+
+    // new_member 메서드에 다른 생성자 호출
     (*memOuterObj).PRINT_DATA(memOuterObj, &nameOuterObj, &schoolOuterObj);
 }
