@@ -786,22 +786,17 @@ void main()
     SCHOOL_NAME schoolOuterObj;
     nameOuterObj.select_name_number_ = 0;
     schoolOuterObj.select_school_number_ = 0;
-    NAME_INIT(&nameOuterObj);
-    SCHOOL_INIT(&schoolOuterObj);
+    // NAME_INIT(&nameOuterObj);
+    // SCHOOL_INIT(&schoolOuterObj);
 
-    MEMBER* memOuterObj = new_member(3081, nameOuterObj.select_name_number_, schoolOuterObj.select_school_number_, 30, 20140201, 20190301);
-    
-    /* 
-        Test
-        추후 수정 예정
-        유사 클래스, 유사 상속 부분이 성공적으로 반영되지 않음.
-    */
     // nameOuterObj.SET_NAME(&nameOuterObj, nameOuterObj.select_name_number_);
     // nameOuterObj.GET_NAME(&nameOuterObj);
 
     // schoolOuterObj.SET_SCHOOL_NAME(&schoolOuterObj, schoolOuterObj.select_school_number_);
     // schoolOuterObj.GET_SCHOOL_NAME(&schoolOuterObj);
 
+    //MEMBER* memOuterObj = new_member(3081, nameOuterObj.select_name_number_, schoolOuterObj.select_school_number_, 30, 20140201, 20190301);
+    MEMBER* memOuterObj = new_member(3081, nameOuterObj.select_name_number_, schoolOuterObj.select_school_number_, 30, 20140201, 20190301);
 
     // 값이 유동적으로 변함(변수임)
     (*memOuterObj).HAKBUN_ = 42222;
