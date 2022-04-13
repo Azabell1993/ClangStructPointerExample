@@ -1,4 +1,3 @@
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <memory.h>
@@ -77,8 +76,8 @@ void    MEMBER_SET_(
     MEMBER* this,
     MEMBER_NAME* select_name,
     SCHOOL_NAME* select_school_name,
-    const   int     HAKBUN,
-    const   int     AGE,
+    const   int     HAKBUN,     
+    const   int     AGE,    
     const   int     INIT_DATE,
     const   int     OUT_DATE
 );
@@ -150,6 +149,20 @@ int     MAJOR_GET_(const MAJOR* this);
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /*
+    MEMBER_NAME 유사 클래스 유사 상속 전방 선언
+*/
+MEMBER_NAME *new_name(
+    int select_name_number
+);
+
+/*
+    SCHOOL_NAME 유사 클래스 유사 상속 전방 선언
+*/
+SCHOOL_NAME *new_school(
+    int select_school_number
+);
+
+/*
     MEMBER 유사 클래스 유사 상속 전방 선언
 */
 MEMBER* new_member(
@@ -160,13 +173,14 @@ MEMBER* new_member(
     int INIT_DATE_,
     int OUT_DATE_
 );
+
 /*
     소멸자 전방선언
 */
 void    DELETE_MEMBER(MEMBER* member_delete_ptr);
 
 /*
-    FOOD 유사 클래스 유사 상속 전방 선언
+    FOOD 유사 클래스 전방 선언
 */
 FOOD* new_food(
     int     BANANAS_,
@@ -186,7 +200,7 @@ FOOD* new_food(
 void    DELETE_FOOD(FOOD* food_delete_ptr);
 
 /*
-    PROGRAMMING 유사 클래스 유사 상속 전방 선언
+    PROGRAMMING 유사 클래스 전방 선언
 */
 PROGRAMMING* new_programming(
     int     DATE_,
@@ -205,7 +219,7 @@ PROGRAMMING* new_programming(
 void    DELETE_PROGRAMMING(PROGRAMMING* programming_delete_ptr);
 
 /*
-    MAJOR 유사 클래스 유사 상속 전방 선언
+    MAJOR 유사 클래스 전방 선언
 */
 MAJOR* new_major(
     int     KoreanLanguageAndLiterature_,    //국어국문학과
@@ -246,8 +260,10 @@ typedef struct MEMBER {
         int     select_name_number_;
         MEMBER_NAME* member_name;
 
-        void    (*SET_NAME)(struct MEMBER_NAME* select_name, int select_name_number_);
+        void    (*SET_NAME)(struct MEMBER_NAME* select_name, int select_name_number);
         int     (*GET_NAME)(const struct MEMBER_NAME* select_name);
+
+        void    (*NAMEINIT)(MEMBER* name_init);
     } MEMBER_NAME;
 
     struct SCHOOL_NAME {
@@ -255,8 +271,10 @@ typedef struct MEMBER {
         int     select_school_number_;
         SCHOOL_NAME* school_name;
 
-        void    (*SET_SCHOOL_NAME)(struct SCHOOL_NAME* select_school_name, int select_school_number_);
+        void    (*SET_SCHOOL_NAME)(struct SCHOOL_NAME* select_school_name, int select_school_number);
         int     (*GET_SCHOOL_NAME)(const struct SCHOOL_NAME* select_school_name);
+
+        void    (*SCHOOLINIT)(MEMBER* school_init);
     } SCHOOL_NAME;
 
     int     HAKBUN_;
@@ -276,7 +294,65 @@ typedef struct MEMBER {
             const   int     OUT_DATE
             );
     int  (*MEMBER_GET)(const struct MEMBER* this, MEMBER_NAME* select_name, SCHOOL_NAME* select_school_name);
+    /*
+        void    NAME_INIT(struct MEMBER* this)
+        void    SCHOOL_INIT(struct SCHOOL_NAME* this)
+    */
 } MEMBER;
+
+/*
+    유사 상속 클래스 지역 선언
+*/
+MEMBER_NAME *new_name(
+    int     select_name_number
+)
+{
+    MEMBER_NAME* temp = (MEMBER_NAME*)malloc(sizeof(MEMBER_NAME));
+
+    temp -> select_name_number_ = select_name_number;
+
+    // 함수 포인터
+    temp -> select_name_number_ = temp;
+    temp -> NAMEINIT = NAME_INIT;
+    // temp -> SET_NAME = NAME_SET_;
+    // temp -> GET_NAME = NAME_GET_;
+
+    return temp;
+}
+
+/*
+    유사 상속 클래스 지역 선언
+*/
+SCHOOL_NAME *new_school(
+    int     select_school_number
+)
+{
+    SCHOOL_NAME* temp = (SCHOOL_NAME*)malloc(sizeof(SCHOOL_NAME));
+
+    temp -> select_school_number_ = select_school_number;
+
+    // 함수 포인터
+    temp -> select_school_number_ = temp;
+    temp -> SCHOOLINIT = SCHOOL_INIT;
+    // temp -> SET_SCHOOL_NAME = SET_SCHOOL_NAME_;
+    // temp -> GET_SCHOOL_NAME = GET_SCHOOL_NAME_;
+
+    return temp;
+}
+
+/*
+
+void    NAME_INIT(struct MEMBER* this)
+{
+    this->MEMBER_NAME.SET_NAME = NAME_SET_;
+    this->MEMBER_NAME.GET_NAME = NAME_GET_;
+}
+void    SCHOOL_INIT(struct SCHOOL_NAME* this)
+{
+    this->SET_SCHOOL_NAME = SET_SCHOOL_NAME_;
+    this->GET_SCHOOL_NAME = GET_SCHOOL_NAME_;
+}
+*/
 
 void    MEMBER_SET_(
     MEMBER* this,
@@ -324,10 +400,12 @@ MEMBER* new_member(int HAKBUN, MEMBER_NAME* member_name, SCHOOL_NAME* school_nam
     
 
     temp->HAKBUN_ = HAKBUN;
-    temp->MEMBER_NAME.SET_NAME = NAME_SET_;
-    temp->MEMBER_NAME.GET_NAME = NAME_GET_;
-    temp->SCHOOL_NAME.SET_SCHOOL_NAME = SET_SCHOOL_NAME_;
-    temp->SCHOOL_NAME.GET_SCHOOL_NAME = GET_SCHOOL_NAME_;
+    // temp->MEMBER_NAME.SET_NAME = NAME_SET_;
+    // temp->MEMBER_NAME.GET_NAME = NAME_GET_;
+    // temp->SCHOOL_NAME.SET_SCHOOL_NAME = SET_SCHOOL_NAME_;
+    // temp->SCHOOL_NAME.GET_SCHOOL_NAME = GET_SCHOOL_NAME_;
+    temp -> MEMBER_NAME.NAMEINIT = NAME_INIT;
+    temp -> SCHOOL_NAME.SCHOOLINIT = SCHOOL_INIT;
     temp->AGE_ = AGE;
     temp->INIT_DATE_ = INIT_DATE;
     temp->OUT_DATE_ = OUT_DATE;
@@ -335,8 +413,10 @@ MEMBER* new_member(int HAKBUN, MEMBER_NAME* member_name, SCHOOL_NAME* school_nam
     // 함수 포인터
     temp -> this = temp;
     temp->PRINT_DATA = PRINT_DATA_;
-    temp->MEMBER_SET = MEMBER_SET_;
-    temp->MEMBER_GET = MEMBER_GET_;
+    // temp->MEMBER_SET = MEMBER_SET_;
+    // temp->MEMBER_GET = MEMBER_GET_;
+    temp->MEMBER_NAME.GET_NAME = NAME_GET_; 
+    temp->SCHOOL_NAME.GET_SCHOOL_NAME = GET_SCHOOL_NAME_;
 
     return temp;
 }
@@ -781,20 +861,14 @@ void Soljin_S() { printf("SSS"); }
 
 int main()
 {  
-
     MEMBER_NAME nameOuterObj;
     SCHOOL_NAME schoolOuterObj;
     nameOuterObj.select_name_number_ = 0;
     schoolOuterObj.select_school_number_ = 0;
-    NAME_INIT(&nameOuterObj);
-    SCHOOL_INIT(&schoolOuterObj);
 
-    //nameOuterObj.SET_NAME(&nameOuterObj, nameOuterObj.select_name_number_);
-    //nameOuterObj.GET_NAME(&nameOuterObj);
-    // schoolOuterObj.SET_SCHOOL_NAME(&schoolOuterObj, schoolOuterObj.select_school_number_);
-    // schoolOuterObj.GET_SCHOOL_NAME(&schoolOuterObj);
-
-    MEMBER* memOuterObj = new_member(3081, &nameOuterObj, &schoolOuterObj, 30, 20140201, 20190301);
+    MEMBER_NAME* nameObj     =      new_name(nameOuterObj.select_name_number_);
+    SCHOOL_NAME* schoolObj   =      new_school(schoolOuterObj.select_school_number_);
+    MEMBER* memOuterObj      =      new_member(3081, nameObj, schoolObj, 30, 20140201, 20190301);
     
     // 값이 유동적으로 변함(변수임)
     (*memOuterObj).HAKBUN_ = 42222;
@@ -820,5 +894,7 @@ int main()
     */
 
     // new_member 메서드에 다른 생성자 호출
-    (*memOuterObj).PRINT_DATA(memOuterObj, &nameOuterObj.select_name_number_, &schoolOuterObj.select_school_number_);
+    (*memOuterObj).PRINT_DATA(memOuterObj, nameObj, schoolObj);   
+
+    return (0);
 }
