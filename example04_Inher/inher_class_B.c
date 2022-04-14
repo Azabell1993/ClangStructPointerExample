@@ -348,7 +348,6 @@ SCHOOL_NAME *new_school(
 }
 
 /*
-
 void    NAME_INIT(struct MEMBER* this)
 {
     this->MEMBER_NAME.SET_NAME = NAME_SET_;
@@ -878,29 +877,32 @@ int     NAME_GET_(const struct MEMBER_NAME* select_name)
 //--------------------------------------------------------------------------------------------------------------------
 
 //const char NAME[] = "현아_지우_주현_승균_유림_슬기_세븐_테크_솔진";
-void HyunA() { for (int i = 0; i < 4; i += 1) { printf("%c", NAME[i]); }   printf(" : "); }
-void Jiwoo() { for (int i = 5; i < 9; i += 1) { printf("%c", NAME[i]); }   printf(" : "); }
-void Juhyun() { for (int i = 10; i < 14; i += 1) { printf("%c", NAME[i]); }   printf(" : "); }
-void SungGyun() { for (int i = 15; i < 19; i += 1) { printf("%c", NAME[i]); }   printf(" : "); }
-void Urim() { for (int i = 20; i < 24; i += 1) { printf("%c", NAME[i]); }   printf(" : "); }
-void SeulGi() { for (int i = 25; i < 29; i += 1) { printf("%c", NAME[i]); }   printf(" : "); }
-void Seven() { for (int i = 30; i < 34; i += 1) { printf("%c", NAME[i]); }   printf(" : "); }
-void Tech() { for (int i = 35; i < 39; i += 1) { printf("%c", NAME[i]); }   printf(" : "); }
-void Soljin() { for (int i = 40; i < 45; i += 1) { printf("%c", NAME[i]); }   printf(" : "); }
+void HyunA() { for (int i = 0; i < 4; i += 1) { printf("%c", NAME[i]); } }
+void Jiwoo() { for (int i = 5; i < 9; i += 1) { printf("%c", NAME[i]); } }
+void Juhyun() { for (int i = 10; i < 14; i += 1) { printf("%c", NAME[i]); } }
+void SungGyun() { for (int i = 15; i < 19; i += 1) { printf("%c", NAME[i]); } }
+void Urim() { for (int i = 20; i < 24; i += 1) { printf("%c", NAME[i]); } }
+void SeulGi() { for (int i = 25; i < 29; i += 1) { printf("%c", NAME[i]); } }
+void Seven() { for (int i = 30; i < 34; i += 1) { printf("%c", NAME[i]); } }
+void Tech() { for (int i = 35; i < 39; i += 1) { printf("%c", NAME[i]); } }
+void Soljin() { for (int i = 40; i < 45; i += 1) { printf("%c", NAME[i]); } }
 
 // SCHOOL NAME
-void HyunA_S() { printf("한국예술종합학교"); }
-void Jiwoo_S() { printf("카이스트"); }
-void Juhyun_S() { printf("서울과학고등학교"); }
-void SungGyun_S() { printf("서울대학교"); }
-void Urim_S() { printf("성신여자대학교"); }
-void SeulGi_S() { printf("나사렛대학교"); }
-void Seven_S() { printf("명지대학교"); }
-void Tech_S() { printf("서울테크"); }
-void Soljin_S() { printf("SSS"); }
+void HyunA_S() { HyunA();  printf("\t한국예술종합학교\n"); }
+void Jiwoo_S() { Jiwoo(); printf("\t카이스트\n"); }
+void Juhyun_S() { Juhyun(); printf("\t서울과학고등학교\n"); }
+void SungGyun_S() { SungGyun(); printf("\t서울대학교\n"); }
+void Urim_S() { Urim(); printf("\t성신여자대학교\n"); }
+void SeulGi_S() { SeulGi(); printf("\t나사렛대학교\n"); }
+void Seven_S() { Seven(); printf("\t명지대학교\n"); }
+void Tech_S() { Tech(); printf("\t서울테크\n"); }
+void Soljin_S() { Soljin(); printf("\t서울대학교\n"); }
 
 int main()
 {  
+    // 빌드 테스트시 적용 확인 메세지 띄우기
+    puts("이 메세지가 보이면 적용 성공임..");
+
     MEMBER_NAME nameOuterObj;
     SCHOOL_NAME schoolOuterObj;
     nameOuterObj.select_name_number_ = 0;
@@ -908,14 +910,16 @@ int main()
 
     MEMBER_NAME* nameObj     =      new_name(nameOuterObj.select_name_number_);
     SCHOOL_NAME* schoolObj   =      new_school(schoolOuterObj.select_school_number_);
+    
+    // MEMBER 메서드에 따른 생성자 호출
     MEMBER* memOuterObj      =      new_member(3081, nameObj, schoolObj, 30, 20140201, 20190301);
-
-    /*
-        name, school 입력은 추후에
-    */
+    (*memOuterObj).PRINT_DATA(memOuterObj, nameObj, schoolObj);
+    NAME_INIT(nameObj);
+    NAME_SET_(nameObj, nameOuterObj.select_name_number_);
+    NAME_GET_(nameObj);
 
     // 값이 유동적으로 변함(변수임)
-    (*memOuterObj).HAKBUN_ = 42222;
+    (*memOuterObj).HAKBUN_ = 2187;
     
     // 변경 적용 예
     /*
@@ -923,9 +927,6 @@ int main()
         (*memOuterObj).INIT_DATE_ = 20140201;
         (*memOuterObj).OUT_DATE_ = 20190301;
     */
-
-    // 빌드 테스트시 적용 확인 메세지 띄우기
-    puts("이 메세지가 보이면 적용 성공임..");
 
     // 이렇게 객체를 만들어도됨
     /* 
@@ -937,15 +938,13 @@ int main()
         (*memOuterObj).MEMBER_GET(memOuterObj, &nameOuterObj, &schoolOuterObj);
     */
 
-    // new_member 메서드에 다른 생성자 호출
-    (*memOuterObj).PRINT_DATA(memOuterObj, nameObj, schoolObj);   
-
+    // PROGRAMMING 메서드에 따른 생성자 호출
     PROGRAMMING*    programOuterObj    =      new_programming(20200221,20,20,20,20,20,20,20,20);
     (*programOuterObj).PROGRAMMING_PRINT_DATA(programOuterObj);
-
+    // FOOD 메서드에 따른 생성자 호출
     FOOD*           foodOuterObj       =      new_food(30,30,30,30,30,30,30,30,30,30);
     (*foodOuterObj).FOOD_PRINT_DATA(foodOuterObj);
-
+    // MAJOR 메서드에 따른 생성자 호출
     MAJOR*          majorOuterObj      =      new_major(40,40,40,40,40,40,40,40,40,40,40,40,40);
     (*majorOuterObj).MAJOR_PRINT_DATA(majorOuterObj);
 
