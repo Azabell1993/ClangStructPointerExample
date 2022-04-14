@@ -1,10 +1,17 @@
+/*
+    Copyright (c) 2022.04.14  AZABELL Developer
+    아자벨 소스코드                     Azabel source code
+    C언어 유사 객체지향 구현 코드       C language-like object-oriented implementation code
+    개발자 연락처 : jeewoo19930315@gmail.com
+    Developer Connect E-mail : jeewoo19930315@gmail.com
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <memory.h>
 #include <malloc.h>
 //#include <unistd.h>
 #include <sys/types.h>
-
 #define FUNCTIONPOINTER_PERSONINFORMATION_MAX_VALULE 9
 #define     GET_NAME_MAX    9
 const char NAME[] = "현아_지우_주현_승균_유림_슬기_세븐_테크_이펙";
