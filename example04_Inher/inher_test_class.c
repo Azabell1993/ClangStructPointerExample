@@ -65,10 +65,16 @@ void    SCHOOL_INIT(struct SCHOOL_NAME* this);
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
-    공통 메서드 전방 선언
+    멤버 메서드 상속 공통 메서드 전방 선언
 */
-void    PRINT_DATA_(const MEMBER* this, const MEMBER_NAME* select_name, const SCHOOL_NAME* select_school_name);
+void    PRINT_DATA_(const MEMBER* this);
 
+/*
+    PROGRAMMING, FOOD, MAJOR 출력 메서드 전방 선언
+*/
+void    PROGRAMMING_PRINT_DATA_(const PROGRAMMING* this);
+void    FOOD_PRINT_DATA_(const FOOD* this);
+void    MAJOR_PRINT_DATA_(const MAJOR* this);
 /*
     MEMBER 유사 클래스 메서드 Setter, Getter 전방 선언
 */
@@ -102,6 +108,7 @@ void    FOOD_SET_(
     const   int     CAKE,
     const   int     CHEESE,
     const   int     CHICKEN
+
 );
 int     FOOD_GET_(const FOOD* this);
 
@@ -462,7 +469,7 @@ typedef struct FOOD {
             const   int     CHICKEN
             );
     int     (*FOOD_GET)(const struct FOOD* this);
-
+    void    (*FOOD_PRINT_DATA)(const FOOD* this);
 } FOOD;
 
 void FOOD_SET_(
@@ -500,7 +507,7 @@ int FOOD_GET_(const FOOD* this)
         this->BLUEBERRIES_,
         this->BREAD_,
         this->BROCCOLI_;
-    this->BURGERS_,
+        this->BURGERS_,
         this->CAKE_,
         this->CHEESE_,
         this->CHICKEN_;
@@ -527,6 +534,7 @@ FOOD* new_food(
     FOOD* temp = (FOOD*)malloc(sizeof(FOOD));
 
     temp->BANANAS_ = BANANAS;
+    temp->BARBECUE_= BARBECUE;
     temp->BARLEY_ = BARLEY;
     temp->BLUEBERRIES_ = BLUEBERRIES;
     temp->BREAD_ = BREAD;
@@ -538,6 +546,7 @@ FOOD* new_food(
 
     // 함수 포인터
     temp -> this = temp;
+    temp->FOOD_PRINT_DATA = FOOD_PRINT_DATA_;
     temp->FOOD_SET = FOOD_SET_;
     temp->FOOD_GET = FOOD_GET_;
 
@@ -579,6 +588,7 @@ typedef struct PROGRAMMING {
             const   int             ASSEMBLY
             );
     int     (*PROGRAMMING_GET)(const struct PROGRAMMING* this);
+    void    (*PROGRAMMING_PRINT_DATA)(const PROGRAMMING* this);
 } PROGRAMMING;
 
 PROGRAMMING* new_programming(
@@ -607,6 +617,7 @@ PROGRAMMING* new_programming(
 
     // 함수 포인터
     temp->this = temp;
+    temp->PROGRAMMING_PRINT_DATA = PROGRAMMING_PRINT_DATA_;
     temp->PROGRAMMING_SET = PROGRAMMING_SET_;
     temp->PROGRAMMING_GET = PROGRAMMING_GET_;
 
@@ -696,6 +707,7 @@ typedef struct MAJOR {
             const   int     Biology                        //생물학
             );
     int     (*MAJOR_GET)(const struct MAJOR* this);
+    void    (*MAJOR_PRINT_DATA)(const MAJOR* this);
 } MAJOR;
 
 void MAJOR_SET_(
@@ -782,6 +794,7 @@ MAJOR* new_major(
 
     // 함수 포인터 
     temp -> this = temp;
+    temp->MAJOR_PRINT_DATA = MAJOR_PRINT_DATA_;
     temp->MAJOR_SET = MAJOR_SET_;
     temp->MAJOR_GET = MAJOR_GET_;
 
@@ -796,11 +809,38 @@ void    DELETE_MAJOR(MAJOR* major_delete_ptr)
 //--------------------------------------------------------------------------------------------------------------------
 
 //--------------------------------------------------------------------------------------------------------------------
-void    PRINT_DATA_(const MEMBER* this, const MEMBER_NAME* select_name, const SCHOOL_NAME* select_school_name)
+void    PRINT_DATA_(const MEMBER* this)
 {
-    printf("학생 학번 : %d, 학생 이름 : %s, 학생 학교 : %s, 나이 : %d, 입학 날짜 : %d, 졸업예정날짜 : %d\n",
-        this->HAKBUN_, select_name->select_name_number_, select_school_name->select_school_number_,
+    printf("학생 학번 : %d, 나이 : %d, 입학 날짜 : %d, 졸업예정날짜 : %d\n",
+        this->HAKBUN_,
         this->AGE_, this->INIT_DATE_, this->OUT_DATE_);
+}
+
+void    PROGRAMMING_PRINT_DATA_(const PROGRAMMING* this)
+{
+    int result = this->CLANG_+ this->PTYHON_+this->R_+this->JAVA_ +this->SECURITY_ +this -> NODEJ_+this -> CPP_+this->ASSEMBLY_;
+    printf( "입학년도 : %d, C언어 점수 : %d, Python 점수 : %d, R 점수 :%d, JAVA 점수 :%d, 보안점수 : %d, node 점수 : %d, c++점수 : %d, 어셈블리 점수 %d, 과목 평균 : %.2f\n\n",
+        this->DATE_, this->CLANG_, this->PTYHON_, this->R_, this->JAVA_ , this->SECURITY_ , this -> NODEJ_, this -> CPP_, this->ASSEMBLY_, (float)result/8);
+}
+
+void    FOOD_PRINT_DATA_(const FOOD* this)
+{
+    int result = this->BANANAS_+this->BARBECUE_+this->BARLEY_+this->BLUEBERRIES_+this->BREAD_+this->BROCCOLI_+this->BURGERS_+this->CAKE_+this->CHEESE_+this->CHICKEN_;
+    printf("BANANAS : %d, BARBECUE : %d, BARLEY : %d, BLUEBERRIES : %d, BREAD : %d, BROCCOLI : %d, BURGERS : %d, CAKE : %d, CHEESE : %d, CHICKEN : %d, SUM : %d\n\n",
+        this->BANANAS_, this->BARBECUE_, this->BARLEY_, this->BLUEBERRIES_, this->BREAD_, this->BROCCOLI_, this->BURGERS_, this->CAKE_, this->CHEESE_,  this->CHICKEN_, result);
+}
+
+void    MAJOR_PRINT_DATA_(const MAJOR* this)
+{
+    int result = this->KoreanLanguageAndLiterature_+   this->Philosophy_+   this->Archeology_+    this->LibraryAndInformationScience_+   this-> CommerceAndTrade_+     
+         this->Administration_+   this->PoliticalScienceAndDiplomacy_+   this->MechanicalEngineering_+  
+         this->ElectronicEngineering_+   this->Architecure_+   this->Physics_+   this->Chemistry_+   this->Biology_;
+
+    printf("KoreanLanguageAndLiterature : %d, Philosophy : %d, Archeology : %d, LibraryAndInformationScience : %d, CommerceAndTrade : %d, Administration : %d, PoliticalScienceAndDiplomacy : %d, MechanicalEngineering : %d,  ElectronicEngineering : %d, Architecure : %d ,Physics : %d, Chemistry : %d , Biology : %d, result =  %d \n\n",
+         this->KoreanLanguageAndLiterature_, this->Philosophy_, this->Archeology_,  this->LibraryAndInformationScience_, this-> CommerceAndTrade_,   
+         this->Administration_, this->PoliticalScienceAndDiplomacy_, this->MechanicalEngineering_,
+         this->ElectronicEngineering_, this->Architecure_, this->Physics_, this->Chemistry_, this->Biology_, result);
+         
 }
 
 void 	SET_SCHOOL_NAME_(struct SCHOOL_NAME* select_school_name, int select_school_number)
@@ -869,7 +909,11 @@ int main()
     MEMBER_NAME* nameObj     =      new_name(nameOuterObj.select_name_number_);
     SCHOOL_NAME* schoolObj   =      new_school(schoolOuterObj.select_school_number_);
     MEMBER* memOuterObj      =      new_member(3081, nameObj, schoolObj, 30, 20140201, 20190301);
-    
+
+    /*
+        name, school 입력은 추후에
+    */
+
     // 값이 유동적으로 변함(변수임)
     (*memOuterObj).HAKBUN_ = 42222;
     
@@ -896,5 +940,14 @@ int main()
     // new_member 메서드에 다른 생성자 호출
     (*memOuterObj).PRINT_DATA(memOuterObj, nameObj, schoolObj);   
 
-    return (0);
+    PROGRAMMING*    programOuterObj    =      new_programming(20200221,20,20,20,20,20,20,20,20);
+    (*programOuterObj).PROGRAMMING_PRINT_DATA(programOuterObj);
+
+    FOOD*           foodOuterObj       =      new_food(30,30,30,30,30,30,30,30,30,30);
+    (*foodOuterObj).FOOD_PRINT_DATA(foodOuterObj);
+
+    MAJOR*          majorOuterObj      =      new_major(40,40,40,40,40,40,40,40,40,40,40,40,40);
+    (*majorOuterObj).MAJOR_PRINT_DATA(majorOuterObj);
+
+    exit(0);
 }
