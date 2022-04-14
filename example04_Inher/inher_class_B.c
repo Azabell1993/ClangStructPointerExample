@@ -1,6 +1,6 @@
 /*
     Copyright (c) 2022.04.14  AZABELL Developer
-    아자벨 소스코드                     Azabel source code
+    아자벨 소스코드                     Azabell source code
     C언어 유사 객체지향 구현 코드       C language-like object-oriented implementation code
     개발자 연락처 : jeewoo19930315@gmail.com
     Developer Connect E-mail : jeewoo19930315@gmail.com
