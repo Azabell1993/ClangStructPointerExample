@@ -347,19 +347,6 @@ SCHOOL_NAME *new_school(
     return temp;
 }
 
-/*
-void    NAME_INIT(struct MEMBER* this)
-{
-    this->MEMBER_NAME.SET_NAME = NAME_SET_;
-    this->MEMBER_NAME.GET_NAME = NAME_GET_;
-}
-void    SCHOOL_INIT(struct SCHOOL_NAME* this)
-{
-    this->SET_SCHOOL_NAME = SET_SCHOOL_NAME_;
-    this->GET_SCHOOL_NAME = GET_SCHOOL_NAME_;
-}
-*/
-
 void    MEMBER_SET_(
     MEMBER* this,
     MEMBER_NAME* select_name,
@@ -905,34 +892,44 @@ int main()
 {  
     // 빌드 테스트시 적용 확인 메세지 띄우기
     puts("이 메세지가 보이면 적용 성공임..");
+
+    // 부모 유사 클래스 MEMBER에 상속된 클래스 지역 선언
     MEMBER_NAME nameOuterObj;
     SCHOOL_NAME schoolOuterObj;
+
+    // 유사 자식 클래스 함수 포인터 인수 반환 값 선언
     nameOuterObj.select_name_number_ = 2;
 
+    // 부모 유사 클래스 MEMBER에 상속된 자식 클래스 new 생성자 호출
     MEMBER_NAME* nameObj     =      new_name(nameOuterObj.select_name_number_);
     SCHOOL_NAME* schoolObj   =      new_school(schoolOuterObj.select_school_number_);
     
-    // MEMBER 메서드에 따른 생성자 호출
+    // MEMBER 부모 클래스 생성자 호출 , 자식 클래스 nameObj, schoolObj를 반드시 선언해야 부모 클래스 메서드가 호출이 됨.
     MEMBER* memOuterObj      =      new_member(3081, nameObj, schoolObj, 30, 20140201, 20190301);
+
+    // 자식 클래스의 생성자 호출, 이름과 학교 이름이 동시에 출력이 되도록 생성자를 전방에서 선언해둠.
     NAME_INIT(nameObj);
     NAME_SET_(nameObj, nameOuterObj.select_name_number_);
     NAME_GET_(nameObj);
 
-    // 값이 유동적으로 변함(변수임)
+    // 값이 유동적으로 변함(변수임) -- 원하는 변수 값을 넣어주면 된다. 또는, 반대로 scanf함수로 입력받게 하고 구조체를 하나 더 만든다던지 하면
+    // 효과적으로 객체들을 자료구조로 다룰 수 있음.
     (*memOuterObj).HAKBUN_ = 2187;
     
     /*
-        MEMBER 메서드 출력
+        MEMBER 출력 메서드 출력, 위에서 전역으로 선언해둔 자식 클래스를 끌어서 가져와야한다.
     */
     (*memOuterObj).PRINT_DATA(memOuterObj, nameObj, schoolObj);
 
-    // 변경 적용 예
+    // 변경 적용 예 -- new생성자에 삽입을 해서 출력을 할 수 있지만, 아래의 변수 선언처럼 언제든지 변경 또한 가능하도록 설계.
     /*
         (*memOuterObj).AGE_ = 30;
         (*memOuterObj).INIT_DATE_ = 20140201;
         (*memOuterObj).OUT_DATE_ = 20190301;
     */
 
+
+    /* 이하 동문 */
     // PROGRAMMING 메서드에 따른 생성자 호출
     PROGRAMMING*    programOuterObj    =      new_programming(20200221,20,20,20,20,20,20,20,20);
     (*programOuterObj).PROGRAMMING_PRINT_DATA(programOuterObj);
