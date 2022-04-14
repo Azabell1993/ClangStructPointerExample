@@ -914,7 +914,6 @@ int main()
     
     // MEMBER 메서드에 따른 생성자 호출
     MEMBER* memOuterObj      =      new_member(3081, nameObj, schoolObj, 30, 20140201, 20190301);
-    (*memOuterObj).PRINT_DATA(memOuterObj, nameObj, schoolObj);
     NAME_INIT(nameObj);
     NAME_SET_(nameObj, nameOuterObj.select_name_number_);
     NAME_GET_(nameObj);
@@ -922,18 +921,16 @@ int main()
     // 값이 유동적으로 변함(변수임)
     (*memOuterObj).HAKBUN_ = 2187;
     
+    /*
+        MEMBER 메서드 출력
+    */
+    (*memOuterObj).PRINT_DATA(memOuterObj, nameObj, schoolObj);
+
     // 변경 적용 예
     /*
         (*memOuterObj).AGE_ = 30;
         (*memOuterObj).INIT_DATE_ = 20140201;
         (*memOuterObj).OUT_DATE_ = 20190301;
-    */
-    // 이렇게 객체를 만들어도됨
-    /* 
-        (*memOuterObj).MEMBER_SET(memOuterObj, nameOuterObj.select_name_number_, 
-        schoolOuterObj.select_school_number_,(*memOuterObj).HAKBUN_, (*memOuterObj).AGE_, 
-        (*memOuterObj).INIT_DATE_, (*memOuterObj).OUT_DATE_);
-        (*memOuterObj).MEMBER_GET(memOuterObj, &nameOuterObj, &schoolOuterObj);
     */
 
     // PROGRAMMING 메서드에 따른 생성자 호출
