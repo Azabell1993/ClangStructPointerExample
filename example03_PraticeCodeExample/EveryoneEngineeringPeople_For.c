@@ -4,12 +4,12 @@
 #include <stdlib.h>
 #include <time.h>
 /*
-    ì¹œêµ¬ë¡œë‚¨ëŠ”ë‹¤ remain friends
-    ì¹œêµ¬ë„ì•ˆëœë‹¤ I don't mind friends
-    1ì´ì•ˆì—†ì–´ì§ˆë•Œ When there is no one
-    ì½ê³ ë„˜ì–´ê°„ë‹¤ read and pass
+    Ä£±¸·Î³²´Â´Ù remain friends
+    Ä£±¸µµ¾ÈµÈ´Ù I don't mind friends
+    1ÀÌ¾È¾ø¾îÁú¶§ When there is no one
+    ÀĞ°í³Ñ¾î°£´Ù read and pass
 */
-const char NAME[] = "ì™„ì¥_ê²¬ì¥_ì‡ì¸ _ì»´í“¨í„°ì˜ëª»í•´ìš”_ë¬¸ëŒê³µëŒ_í–‰ì¸1_22í•™ë²ˆ";
+const char NAME[] = "¿ÏÀå_°ßÀå_ÀÕÃ÷_ÄÄÇ»ÅÍÀß¸øÇØ¿ä_¹®µ¹°øµ¹_ÇàÀÎ1_22ÇĞ¹ø";
 #define RemainFriends       0
 #define IDontMindFriends    1
 #define WhenThereIsNoOne    2
@@ -18,29 +18,29 @@ const char NAME[] = "ì™„ì¥_ê²¬ì¥_ì‡ì¸ _ì»´í“¨í„°ì˜ëª»í•´ìš”_ë¬¸ëŒê³µëŒ_í–‰
 #define FUNCTIONPOINTER_PERSONINFORMATION_MAX_VALULE 7
 
 struct Select {
-    // í•„ë“œ ê°’ ì„ ì–¸
+    // ÇÊµå °ª ¼±¾ğ
     int input_Method_Value;
 
-    // ë©”ì„œë“œ ì„ ì–¸
+    // ¸Ş¼­µå ¼±¾ğ
     void (*SET)(struct Select* this, int input_Method_Value);
     int  (*GET)(const struct Select* this);
 };
 
-// ì „ë°© ì„ ì–¸
+// Àü¹æ ¼±¾ğ
 void set(struct Select* this, int input_Method_Value);
 int  get(const struct Select* this);
 void init(struct Select* this);
 
 struct PersonInfoStru {
-    // í•„ë“œ ê°’ ì„ ì–¸
+    // ÇÊµå °ª ¼±¾ğ
     int Select_Person_Info;
 
-    // ë©”ì„œë“œ ì„ ì–¸
+    // ¸Ş¼­µå ¼±¾ğ
     void (*PERSON_SET)(struct PersonInfoStru* select_this, int Select_Person_Info);
     int  (*PERSON_GET)(const struct PersonInfoStru* select_this);
 };
 
-// ì „ë°© ì„ ì–¸
+// Àü¹æ ¼±¾ğ
 void Person_Set(struct PersonInfoStru* select_this, int Select_Person_Info);
 int Person_Get(const struct PersonInfoStru* select_this);
 void PersionInfo_Init(struct PersonInfoStru* select_this);
@@ -62,16 +62,16 @@ void set(struct Select* this, int input_Method_Value)
 int  get(const struct Select* this)
 {
     if ((*this).input_Method_Value == RemainFriends) {
-        return puts("     ìš°ë¦¬ ê·¸ëƒ¥ ì¹œêµ¬ë¡œ ë‚¨ì....");
+        return puts("     ¿ì¸® ±×³É Ä£±¸·Î ³²ÀÚ....");
     }
     else if ((*this).input_Method_Value == IDontMindFriends) {
-        return puts("     ìš°ë¦¬ ì¹œêµ¬ë„ ëª»ë  ê±° ê°™ì•„....");
+        return puts("     ¿ì¸® Ä£±¸µµ ¸øµÉ °Å °°¾Æ....");
     }
     else if ((*this).input_Method_Value == WhenThereIsNoOne) {
-        return puts("     1ì´ ì—†ì–´ì§€ì§€ ì•Šì•„...");
+        return puts("     1ÀÌ ¾ø¾îÁöÁö ¾Ê¾Æ...");
     }
     else if ((*this).input_Method_Value == ReadAndPass) {
-        return puts("     ì½ê³  ê·¸ëƒ¥ ë„˜ì–´ê°€ëŠ”ë° ì–´ì©Œì§€...");
+        return puts("     ÀĞ°í ±×³É ³Ñ¾î°¡´Âµ¥ ¾îÂ¼Áö...");
     }
 }
 
@@ -88,78 +88,35 @@ int Person_Get(const struct PersonInfoStru* select_this)
     (Person[select_this->Select_Person_Info]());
 }
 
-// ìƒì„±ì
+// »ı¼ºÀÚ
 void init(struct Select* this)
 {
     this->SET = set;
     this->GET = get;
 }
 
-// ìƒì„±ì
+// »ı¼ºÀÚ
 void PersionInfo_Init(struct PersonInfoStru* select_this)
 {
     select_this->PERSON_SET = Person_Set;
     select_this->PERSON_GET = Person_Get;
 }
 
-//ì™„ì¥_ê²¬ì¥_ì‡ì¸ _ì»´í“¨í„°ì˜ëª»í•´ìš”_ë¬¸ëŒê³µëŒ_í–‰ì¸1_22í•™ë²ˆ
-void WanGang()
-{
-    for (int i = 0; i < 4; i += 1) {
-        printf("%c", NAME[i]);
-    }
-    printf(" : ");
-}
-void GunJang()
-{
-    for (int i = 5; i < 9; i += 1) {
-        printf("%c", NAME[i]);
-    }
-    printf(" : ");
-}
-void Its()
-{
-    for (int i = 10; i < 14; i += 1) {
-        printf("%c", NAME[i]);
-    }
-    printf(" : ");
-}
-void IcandoComputer()
-{
-    for (int i = 15; i < 29; i += 1) {
-        printf("%c", NAME[i]);
-    }
-    printf(" : ");
-}
-void MundolGongDol()
-{
-    for (int i = 30; i < 38; i += 1) {
-        printf("%c", NAME[i]);
-    }
-    printf(" : ");
-}
-void HangInOne()
-{
-    for (int i = 39; i < 44; i += 1) {
-        printf("%c", NAME[i]);
-    }
-    printf(" : ");
-}
-void TwoTwoHackBun()
-{
-    for (int i = 45; i < 52; i += 1) {
-        printf("%c", NAME[i]);
-    }
-    printf(" : ");
-}
-
+//¿ÏÀå_°ßÀå_ÀÕÃ÷_ÄÄÇ»ÅÍÀß¸øÇØ¿ä_¹®µ¹°øµ¹_ÇàÀÎ1_22ÇĞ¹ø
+void WanGang() { for (int i = 0; i < 4; i += 1) { printf("%c", NAME[i]); } printf(" : "); }
+void GunJang() { for (int i = 5; i < 9; i += 1) { printf("%c", NAME[i]); } printf(" : "); }
+void Its() { for (int i = 10; i < 14; i += 1) { printf("%c", NAME[i]); }  printf(" : "); }
+void IcandoComputer() { for (int i = 15; i < 29; i += 1) { printf("%c", NAME[i]); } printf(" : "); }
+void MundolGongDol() { for (int i = 30; i < 38; i += 1) { printf("%c", NAME[i]); } printf(" : "); }
+void HangInOne() { for (int i = 39; i < 44; i += 1) { printf("%c", NAME[i]); } printf(" : "); }
+void TwoTwoHackBun() { for (int i = 45; i < 52; i += 1) { printf("%c", NAME[i]); } printf(" : "); }
 
 int main()
 {
     srand(time(NULL));
 
-    struct PersonInfoStru   personOuterObj[4];
-    struct Select           outerObj[7];
+    struct PersonInfoStru   personOuterObj[7];
+    struct Select           outerObj[4];
 
     int selectChoice_OutputValue;
 
@@ -170,7 +127,6 @@ int main()
             selectChoice_OutputValue = rand() % 4;
             PersionInfo_Init(&personOuterObj[j]);
             personOuterObj[j].Select_Person_Info = rand() % 7;
-            PersionInfo_Init(&personOuterObj[j]);
             personOuterObj[j].PERSON_SET(&personOuterObj[j], personOuterObj[j].Select_Person_Info);
             personOuterObj[j].PERSON_GET(&personOuterObj[j]);
             outerObj[i].input_Method_Value = selectChoice_OutputValue;

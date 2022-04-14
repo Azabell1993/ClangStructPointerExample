@@ -89,8 +89,8 @@ void    MEMBER_SET_(
     MEMBER* this,
     MEMBER_NAME* select_name,
     SCHOOL_NAME* select_school_name,
-    const   int     HAKBUN,     
-    const   int     AGE,    
+    const   int     HAKBUN,
+    const   int     AGE,
     const   int     INIT_DATE,
     const   int     OUT_DATE
 );
@@ -165,14 +165,14 @@ int     MAJOR_GET_(const MAJOR* this);
 /*
     MEMBER_NAME 유사 클래스 유사 new 생성자 선언
 */
-MEMBER_NAME *new_name(
+MEMBER_NAME* new_name(
     int select_name_number
 );
 
 /*
     SCHOOL_NAME 유사 클래스 유사 new 생성자 선언
 */
-SCHOOL_NAME *new_school(
+SCHOOL_NAME* new_school(
     int select_school_number
 );
 
@@ -317,17 +317,17 @@ typedef struct MEMBER {
 /*
     유사 상속 클래스 new 생성자 지역 선언
 */
-MEMBER_NAME *new_name(
+MEMBER_NAME* new_name(
     int     select_name_number
 )
 {
     MEMBER_NAME* temp = (MEMBER_NAME*)malloc(sizeof(MEMBER_NAME));
-
-    temp -> select_name_number_ = select_name_number;
+    
+    temp->select_name_number_ = select_name_number;
 
     // 함수 포인터
-    temp -> select_name_number_ = temp;
-    temp -> NAMEINIT = NAME_INIT;
+    temp->select_name_number_ = temp;
+    temp->NAMEINIT = NAME_INIT;
     // temp -> SET_NAME = NAME_SET_;
     // temp -> GET_NAME = NAME_GET_;
 
@@ -337,17 +337,17 @@ MEMBER_NAME *new_name(
 /*
     유사 상속 클래스 new 생성자 지역 선언
 */
-SCHOOL_NAME *new_school(
+SCHOOL_NAME* new_school(
     int     select_school_number
 )
 {
     SCHOOL_NAME* temp = (SCHOOL_NAME*)malloc(sizeof(SCHOOL_NAME));
 
-    temp -> select_school_number_ = select_school_number;
+    temp->select_school_number_ = select_school_number;
 
     // 함수 포인터
-    temp -> select_school_number_ = temp;
-    temp -> SCHOOLINIT = SCHOOL_INIT;
+    temp->select_school_number_ = temp;
+    temp->SCHOOLINIT = SCHOOL_INIT;
     // temp -> SET_SCHOOL_NAME = SET_SCHOOL_NAME_;
     // temp -> GET_SCHOOL_NAME = GET_SCHOOL_NAME_;
 
@@ -397,15 +397,15 @@ void    SCHOOL_INIT(struct SCHOOL_NAME* this)
 MEMBER* new_member(int HAKBUN, MEMBER_NAME* member_name, SCHOOL_NAME* school_name, int AGE, int INIT_DATE, int OUT_DATE)
 {
     MEMBER* temp = (MEMBER*)malloc(sizeof(MEMBER));
-    
+
 
     temp->HAKBUN_ = HAKBUN;
     // temp->MEMBER_NAME.SET_NAME = NAME_SET_;
     // temp->MEMBER_NAME.GET_NAME = NAME_GET_;
     // temp->SCHOOL_NAME.SET_SCHOOL_NAME = SET_SCHOOL_NAME_;
     // temp->SCHOOL_NAME.GET_SCHOOL_NAME = GET_SCHOOL_NAME_;
-    temp -> MEMBER_NAME.NAMEINIT = NAME_INIT;
-    temp -> SCHOOL_NAME.SCHOOLINIT = SCHOOL_INIT;
+    temp->MEMBER_NAME.NAMEINIT = NAME_INIT;
+    temp->SCHOOL_NAME.SCHOOLINIT = SCHOOL_INIT;
     temp->AGE_ = AGE;
     temp->INIT_DATE_ = INIT_DATE;
     temp->OUT_DATE_ = OUT_DATE;
@@ -415,7 +415,7 @@ MEMBER* new_member(int HAKBUN, MEMBER_NAME* member_name, SCHOOL_NAME* school_nam
     temp->PRINT_DATA = PRINT_DATA_;
     // temp->MEMBER_SET = MEMBER_SET_;
     // temp->MEMBER_GET = MEMBER_GET_;
-    temp->MEMBER_NAME.GET_NAME = NAME_GET_; 
+    temp->MEMBER_NAME.GET_NAME = NAME_GET_;
     temp->SCHOOL_NAME.GET_SCHOOL_NAME = GET_SCHOOL_NAME_;
 
     return temp;
@@ -500,7 +500,7 @@ int FOOD_GET_(const FOOD* this)
         this->BLUEBERRIES_,
         this->BREAD_,
         this->BROCCOLI_;
-        this->BURGERS_,
+    this->BURGERS_,
         this->CAKE_,
         this->CHEESE_,
         this->CHICKEN_;
@@ -527,7 +527,7 @@ FOOD* new_food(
     FOOD* temp = (FOOD*)malloc(sizeof(FOOD));
 
     temp->BANANAS_ = BANANAS;
-    temp->BARBECUE_= BARBECUE;
+    temp->BARBECUE_ = BARBECUE;
     temp->BARLEY_ = BARLEY;
     temp->BLUEBERRIES_ = BLUEBERRIES;
     temp->BREAD_ = BREAD;
@@ -811,29 +811,29 @@ void    PRINT_DATA_(const MEMBER* this)
 
 void    PROGRAMMING_PRINT_DATA_(const PROGRAMMING* this)
 {
-    int result = this->CLANG_+ this->PTYHON_+this->R_+this->JAVA_ +this->SECURITY_ +this -> NODEJ_+this -> CPP_+this->ASSEMBLY_;
-    printf( "입학년도 : %d, C언어 점수 : %d, Python 점수 : %d, R 점수 :%d, JAVA 점수 :%d, 보안점수 : %d, node 점수 : %d, c++점수 : %d, 어셈블리 점수 %d, 과목 평균 : %.2f\n\n",
-        this->DATE_, this->CLANG_, this->PTYHON_, this->R_, this->JAVA_ , this->SECURITY_ , this -> NODEJ_, this -> CPP_, this->ASSEMBLY_, (float)result/8);
+    int result = this->CLANG_ + this->PTYHON_ + this->R_ + this->JAVA_ + this->SECURITY_ + this->NODEJ_ + this->CPP_ + this->ASSEMBLY_;
+    printf("입학년도 : %d, C언어 점수 : %d, Python 점수 : %d, R 점수 :%d, JAVA 점수 :%d, 보안점수 : %d, node 점수 : %d, c++점수 : %d, 어셈블리 점수 %d, 과목 평균 : %.2f\n\n",
+        this->DATE_, this->CLANG_, this->PTYHON_, this->R_, this->JAVA_, this->SECURITY_, this->NODEJ_, this->CPP_, this->ASSEMBLY_, (float)result / 8);
 }
 
 void    FOOD_PRINT_DATA_(const FOOD* this)
 {
-    int result = this->BANANAS_+this->BARBECUE_+this->BARLEY_+this->BLUEBERRIES_+this->BREAD_+this->BROCCOLI_+this->BURGERS_+this->CAKE_+this->CHEESE_+this->CHICKEN_;
+    int result = this->BANANAS_ + this->BARBECUE_ + this->BARLEY_ + this->BLUEBERRIES_ + this->BREAD_ + this->BROCCOLI_ + this->BURGERS_ + this->CAKE_ + this->CHEESE_ + this->CHICKEN_;
     printf("BANANAS : %d, BARBECUE : %d, BARLEY : %d, BLUEBERRIES : %d, BREAD : %d, BROCCOLI : %d, BURGERS : %d, CAKE : %d, CHEESE : %d, CHICKEN : %d, SUM : %d\n\n",
-        this->BANANAS_, this->BARBECUE_, this->BARLEY_, this->BLUEBERRIES_, this->BREAD_, this->BROCCOLI_, this->BURGERS_, this->CAKE_, this->CHEESE_,  this->CHICKEN_, result);
+        this->BANANAS_, this->BARBECUE_, this->BARLEY_, this->BLUEBERRIES_, this->BREAD_, this->BROCCOLI_, this->BURGERS_, this->CAKE_, this->CHEESE_, this->CHICKEN_, result);
 }
 
 void    MAJOR_PRINT_DATA_(const MAJOR* this)
 {
-    int result = this->KoreanLanguageAndLiterature_+   this->Philosophy_+   this->Archeology_+    this->LibraryAndInformationScience_+   this-> CommerceAndTrade_+     
-         this->Administration_+   this->PoliticalScienceAndDiplomacy_+   this->MechanicalEngineering_+  
-         this->ElectronicEngineering_+   this->Architecure_+   this->Physics_+   this->Chemistry_+   this->Biology_;
+    int result = this->KoreanLanguageAndLiterature_ + this->Philosophy_ + this->Archeology_ + this->LibraryAndInformationScience_ + this->CommerceAndTrade_ +
+        this->Administration_ + this->PoliticalScienceAndDiplomacy_ + this->MechanicalEngineering_ +
+        this->ElectronicEngineering_ + this->Architecure_ + this->Physics_ + this->Chemistry_ + this->Biology_;
 
     printf("KoreanLanguageAndLiterature : %d, Philosophy : %d, Archeology : %d, LibraryAndInformationScience : %d, CommerceAndTrade : %d, Administration : %d, PoliticalScienceAndDiplomacy : %d, MechanicalEngineering : %d,  ElectronicEngineering : %d, Architecure : %d ,Physics : %d, Chemistry : %d , Biology : %d, result =  %d \n\n",
-         this->KoreanLanguageAndLiterature_, this->Philosophy_, this->Archeology_,  this->LibraryAndInformationScience_, this-> CommerceAndTrade_,   
-         this->Administration_, this->PoliticalScienceAndDiplomacy_, this->MechanicalEngineering_,
-         this->ElectronicEngineering_, this->Architecure_, this->Physics_, this->Chemistry_, this->Biology_, result);
-         
+        this->KoreanLanguageAndLiterature_, this->Philosophy_, this->Archeology_, this->LibraryAndInformationScience_, this->CommerceAndTrade_,
+        this->Administration_, this->PoliticalScienceAndDiplomacy_, this->MechanicalEngineering_,
+        this->ElectronicEngineering_, this->Architecure_, this->Physics_, this->Chemistry_, this->Biology_, result);
+
 }
 
 void 	SET_SCHOOL_NAME_(struct SCHOOL_NAME* select_school_name, int select_school_number)
@@ -896,7 +896,7 @@ void Tech_S() { Tech(); printf("\t서울테크\n"); }
 void Soljin_S() { Soljin(); printf("\t서울대학교\n"); }
 
 int main()
-{  
+{
     // 빌드 테스트시 적용 확인 메세지 띄우기
     puts("이 메세지가 보이면 적용 성공임..");
 
@@ -908,11 +908,11 @@ int main()
     nameOuterObj.select_name_number_ = 2;
 
     // 부모 유사 클래스 MEMBER에 상속된 자식 클래스 new 생성자 호출
-    MEMBER_NAME* nameObj     =      new_name(nameOuterObj.select_name_number_);
-    SCHOOL_NAME* schoolObj   =      new_school(schoolOuterObj.select_school_number_);
-    
+    MEMBER_NAME* nameObj = new_name(&nameOuterObj.select_name_number_);
+    SCHOOL_NAME* schoolObj = new_school(&schoolOuterObj.select_school_number_);
+
     // MEMBER 부모 클래스 생성자 호출 , 자식 클래스 nameObj, schoolObj를 반드시 선언해야 부모 클래스 메서드가 호출이 됨.
-    MEMBER* memOuterObj      =      new_member(3081, nameObj, schoolObj, 30, 20140201, 20190301);
+    MEMBER* memOuterObj = new_member(3081, nameObj, schoolObj, 30, 20140201, 20190301);
 
     // 자식 클래스의 생성자 호출, 이름과 학교 이름이 동시에 출력이 되도록 생성자를 전방에서 선언해둠.
     NAME_INIT(nameObj);
@@ -922,7 +922,7 @@ int main()
     // 값이 유동적으로 변함(변수임) -- 원하는 변수 값을 넣어주면 된다. 또는, 반대로 scanf함수로 입력받게 하고 구조체를 하나 더 만든다던지 하면
     // 효과적으로 객체들을 자료구조로 다룰 수 있음.
     (*memOuterObj).HAKBUN_ = 2187;
-    
+
     /*
         MEMBER 출력 메서드 출력, 위에서 전역으로 선언해둔 자식 클래스를 끌어서 가져와야한다.
     */
@@ -938,13 +938,13 @@ int main()
 
     /* 이하 동문 */
     // PROGRAMMING 메서드에 따른 생성자 호출
-    PROGRAMMING*    programOuterObj    =      new_programming(20200221,20,20,20,20,20,20,20,20);
+    PROGRAMMING* programOuterObj = new_programming(20200221, 20, 20, 20, 20, 20, 20, 20, 20);
     (*programOuterObj).PROGRAMMING_PRINT_DATA(programOuterObj);
     // FOOD 메서드에 따른 생성자 호출
-    FOOD*           foodOuterObj       =      new_food(30,30,30,30,30,30,30,30,30,30);
+    FOOD* foodOuterObj = new_food(30, 30, 30, 30, 30, 30, 30, 30, 30, 30);
     (*foodOuterObj).FOOD_PRINT_DATA(foodOuterObj);
     // MAJOR 메서드에 따른 생성자 호출
-    MAJOR*          majorOuterObj      =      new_major(40,40,40,40,40,40,40,40,40,40,40,40,40);
+    MAJOR* majorOuterObj = new_major(40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40);
     (*majorOuterObj).MAJOR_PRINT_DATA(majorOuterObj);
 
     exit(0);
