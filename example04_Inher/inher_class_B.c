@@ -156,21 +156,21 @@ int     MAJOR_GET_(const MAJOR* this);
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /*
-    MEMBER_NAME 유사 클래스 유사 상속 전방 선언
+    MEMBER_NAME 유사 클래스 유사 new 생성자 선언
 */
 MEMBER_NAME *new_name(
     int select_name_number
 );
 
 /*
-    SCHOOL_NAME 유사 클래스 유사 상속 전방 선언
+    SCHOOL_NAME 유사 클래스 유사 new 생성자 선언
 */
 SCHOOL_NAME *new_school(
     int select_school_number
 );
 
 /*
-    MEMBER 유사 클래스 유사 상속 전방 선언
+    MEMBER 유사 클래스 유사 new 생성자 선언
 */
 MEMBER* new_member(
     int HAKBUN_,
@@ -187,7 +187,7 @@ MEMBER* new_member(
 void    DELETE_MEMBER(MEMBER* member_delete_ptr);
 
 /*
-    FOOD 유사 클래스 전방 선언
+    FOOD 유사 new 생성자 전방 선언
 */
 FOOD* new_food(
     int     BANANAS_,
@@ -207,7 +207,7 @@ FOOD* new_food(
 void    DELETE_FOOD(FOOD* food_delete_ptr);
 
 /*
-    PROGRAMMING 유사 클래스 전방 선언
+    PROGRAMMING 유사 new 생성자 전방 선언
 */
 PROGRAMMING* new_programming(
     int     DATE_,
@@ -226,7 +226,7 @@ PROGRAMMING* new_programming(
 void    DELETE_PROGRAMMING(PROGRAMMING* programming_delete_ptr);
 
 /*
-    MAJOR 유사 클래스 전방 선언
+    MAJOR 유사 new 생성자 전방 선언
 */
 MAJOR* new_major(
     int     KoreanLanguageAndLiterature_,    //국어국문학과
@@ -308,7 +308,7 @@ typedef struct MEMBER {
 } MEMBER;
 
 /*
-    유사 상속 클래스 지역 선언
+    유사 상속 클래스 new 생성자 지역 선언
 */
 MEMBER_NAME *new_name(
     int     select_name_number
@@ -328,7 +328,7 @@ MEMBER_NAME *new_name(
 }
 
 /*
-    유사 상속 클래스 지역 선언
+    유사 상속 클래스 new 생성자 지역 선언
 */
 SCHOOL_NAME *new_school(
     int     select_school_number
