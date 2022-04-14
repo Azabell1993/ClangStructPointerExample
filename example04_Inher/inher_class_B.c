@@ -888,6 +888,9 @@ void Tech() { for (int i = 35; i < 39; i += 1) { printf("%c", NAME[i]); } }
 void Soljin() { for (int i = 40; i < 45; i += 1) { printf("%c", NAME[i]); } }
 
 // SCHOOL NAME
+/*
+    이름과 학교는 동일하게 나오도록 지정함
+*/
 void HyunA_S() { HyunA();  printf("\t한국예술종합학교\n"); }
 void Jiwoo_S() { Jiwoo(); printf("\t카이스트\n"); }
 void Juhyun_S() { Juhyun(); printf("\t서울과학고등학교\n"); }
@@ -902,11 +905,9 @@ int main()
 {  
     // 빌드 테스트시 적용 확인 메세지 띄우기
     puts("이 메세지가 보이면 적용 성공임..");
-
     MEMBER_NAME nameOuterObj;
     SCHOOL_NAME schoolOuterObj;
-    nameOuterObj.select_name_number_ = 0;
-    schoolOuterObj.select_school_number_ = 0;
+    nameOuterObj.select_name_number_ = 2;
 
     MEMBER_NAME* nameObj     =      new_name(nameOuterObj.select_name_number_);
     SCHOOL_NAME* schoolObj   =      new_school(schoolOuterObj.select_school_number_);
@@ -927,14 +928,11 @@ int main()
         (*memOuterObj).INIT_DATE_ = 20140201;
         (*memOuterObj).OUT_DATE_ = 20190301;
     */
-
     // 이렇게 객체를 만들어도됨
     /* 
         (*memOuterObj).MEMBER_SET(memOuterObj, nameOuterObj.select_name_number_, 
         schoolOuterObj.select_school_number_,(*memOuterObj).HAKBUN_, (*memOuterObj).AGE_, 
         (*memOuterObj).INIT_DATE_, (*memOuterObj).OUT_DATE_);
-    */
-    /*
         (*memOuterObj).MEMBER_GET(memOuterObj, &nameOuterObj, &schoolOuterObj);
     */
 
