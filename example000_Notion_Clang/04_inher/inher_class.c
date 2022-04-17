@@ -27,10 +27,13 @@ void set_money_(struct Parent *this, int age, int money);
 int get_money_(const struct Parent *this);
 
 typedef struct Child_A {
+	// 상속자 유사 부모 클래스 -> 상속
     Parent parent;
 
+	// 자식 클래스 포인터
     struct Child_A *this;
 
+	// 자식 클래스 필드 값
     int     age_a;
     int     money_a;
     
@@ -49,10 +52,13 @@ void set_money_a(struct Child_A *this, int age_a, int money_a);
 int get_money_a(const struct Child_A *this);
 
 typedef struct Child_B {
+	// 상속자
     Parent parent;
 
+	// 자식 클래스 포인터
     struct Child_B *this;
 
+	// 자식 클래스 필드 값
     int     age_b;
     int     money_b;
 

@@ -5,13 +5,21 @@
     개발자 연락처 : jeewoo19930315@gmail.com
     Developer Connect E-mail : jeewoo19930315@gmail.com
 */
+#define DB_HOST "localhost"
+#define DB_USER "root"
+#define DB_PASS "azabell33800265!2xedcDD@@"
+#define DB_NAME "azabelldb"
+#define CHOP(x) x[strlen(x) - 1] = ' '
 
+#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <stdlib.h>
 #include <memory.h>
 #include <malloc.h>
 //#include <unistd.h>
 #include <sys/types.h>
+#include <mysql.h>
+#define CHOP(x) x[strlen(x) - 1] = ' '
 #define FUNCTIONPOINTER_PERSONINFORMATION_MAX_VALULE 9
 #define     GET_NAME_MAX    9
 const char NAME[] = "현아_지우_주현_승균_유림_슬기_세븐_테크_이펙";
@@ -322,7 +330,7 @@ MEMBER_NAME* new_name(
 )
 {
     MEMBER_NAME* temp = (MEMBER_NAME*)malloc(sizeof(MEMBER_NAME));
-    
+
     temp->select_name_number_ = select_name_number;
 
     // 함수 포인터

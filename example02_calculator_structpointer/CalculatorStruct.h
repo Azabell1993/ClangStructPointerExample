@@ -5,13 +5,13 @@
 char  op_tb[4] = {'+', '-', '*', '/'};
 
 struct _CALC_DATA {
-    // í•„ë“œ ì„ ì–¸
+    // ÇÊµå ¼±¾ð
     double operand1;
     double operand2;
     char operator;
     double result;
     
-    // ë©”ì„œë“œ ì„ ì–¸
+    // ¸Þ¼­µå ¼±¾ð
     double    (*SETCUL)(struct _CALC_DATA *this, double operand1, double operand2, char operator, double result);
     double    (*GETCUL)(const struct _CALC_DATA *this);
 };
