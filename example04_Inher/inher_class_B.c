@@ -5,12 +5,6 @@
     개발자 연락처 : jeewoo19930315@gmail.com
     Developer Connect E-mail : jeewoo19930315@gmail.com
 */
-#define DB_HOST "localhost"
-#define DB_USER "root"
-#define DB_PASS "azabell33800265!2xedcDD@@"
-#define DB_NAME "azabelldb"
-#define CHOP(x) x[strlen(x) - 1] = ' '
-
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <stdlib.h>
