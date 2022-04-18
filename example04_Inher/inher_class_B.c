@@ -12,7 +12,7 @@
 #include <malloc.h>
 //#include <unistd.h>
 #include <sys/types.h>
-#include <mysql.h>
+//#include <mysql.h>
 #define CHOP(x) x[strlen(x) - 1] = ' '
 #define FUNCTIONPOINTER_PERSONINFORMATION_MAX_VALULE 9
 #define     GET_NAME_MAX    9
@@ -907,7 +907,9 @@ int main()
     SCHOOL_NAME schoolOuterObj;
 
     // 유사 자식 클래스 함수 포인터 인수 반환 값 선언
-    nameOuterObj.select_name_number_ = 2;
+    //nameOuterObj.select_name_number_ = 2;
+    printf("반환할 함수포인터의 인수값을 입력하시오 : ");
+    scanf("%d", &nameOuterObj.select_name_number_);
 
     // 부모 유사 클래스 MEMBER에 상속된 자식 클래스 new 생성자 호출
     MEMBER_NAME* nameObj = new_name(&nameOuterObj.select_name_number_);
