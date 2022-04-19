@@ -20,36 +20,30 @@ const char NAME[] = "완장_견장_잇츠_컴퓨터잘못해요_문돌공돌_행인1_22학번";
 struct Select {
     // 필드 값 선언
     int input_Method_Value;
-    
+
     // 메서드 선언
-    void (*SET)(struct Select *this, int input_Method_Value);
-    int  (*GET)(const struct Select *this);
+    void (*SET)(struct Select* this, int input_Method_Value);
+    int  (*GET)(const struct Select* this);
 };
 
 // 전방 선언
-void set(struct Select *this, int input_Method_Value);
-int  get(const struct Select *this);
-// 생성자 전방 선언
-void init(struct Select *this);
-// 소멸자 전방 선언
-void Select_Destory(struct Select *this);
+void set(struct Select* this, int input_Method_Value);
+int  get(const struct Select* this);
+void init(struct Select* this);
 
 struct PersonInfoStru {
     // 필드 값 선언
     int Select_Person_Info;
 
     // 메서드 선언
-    void (*PERSON_SET)(struct PersonInfoStru *select_this, int Select_Person_Info);
-    int  (*PERSON_GET)(const struct PersonInfoStru *select_this);
+    void (*PERSON_SET)(struct PersonInfoStru* select_this, int Select_Person_Info);
+    int  (*PERSON_GET)(const struct PersonInfoStru* select_this);
 };
 
 // 전방 선언
-void Person_Set(struct PersonInfoStru *select_this, int Select_Person_Info);
-int Person_Get(const struct PersonInfoStru *select_this);
-// 생성자 전방 선언
-void PersionInfo_Init(struct PersonInfoStru *select_this);
-// 소멸자 전방 선언
-void Person_Destory(struct PersonInfoStru *select_this);
+void Person_Set(struct PersonInfoStru* select_this, int Select_Person_Info);
+int Person_Get(const struct PersonInfoStru* select_this);
+void PersionInfo_Init(struct PersonInfoStru* select_this);
 
 // void const name print
 void WanGang();
@@ -60,9 +54,9 @@ void MundolGongDol();
 void HangInOne();
 void TwoTwoHackBun();
 
-void set(struct Select *this, int input_Method_Value)
+void set(struct Select* this, int input_Method_Value)
 {
-    this -> input_Method_Value = input_Method_Value;
+    this->input_Method_Value = input_Method_Value;
 }
 
 int  get(const struct Select* this)
@@ -81,55 +75,43 @@ int  get(const struct Select* this)
     }
 }
 
-void Person_Set(struct PersonInfoStru *select_this, int Select_Person_Info)
+void Person_Set(struct PersonInfoStru* select_this, int Select_Person_Info)
 {
-    select_this -> Select_Person_Info = Select_Person_Info;
+    select_this->Select_Person_Info = Select_Person_Info;
 }
 
-int Person_Get(const struct PersonInfoStru *select_this)
+int Person_Get(const struct PersonInfoStru* select_this)
 {
-    
-    void (*Person[FUNCTIONPOINTER_PERSONINFORMATION_MAX_VALULE])() = {&WanGang, &GunJang, &Its, &IcandoComputer, &MundolGongDol, &HangInOne, &TwoTwoHackBun};
+
+    void (*Person[FUNCTIONPOINTER_PERSONINFORMATION_MAX_VALULE])() = { &WanGang, &GunJang, &Its, &IcandoComputer, &MundolGongDol, &HangInOne, &TwoTwoHackBun };
 
     (Person[select_this->Select_Person_Info]());
 }
 
 // 생성자
-void init(struct Select *this)
+void init(struct Select* this)
 {
-	this -> SET = set;
-    this -> GET = get;
+    this->SET = set;
+    this->GET = get;
 }
 
 // 생성자
-void PersionInfo_Init(struct PersonInfoStru *select_this)
+void PersionInfo_Init(struct PersonInfoStru* select_this)
 {
-	select_this -> PERSON_SET = Person_Set;
-    select_this -> PERSON_GET = Person_Get;
-}
-
-// 소멸자 선언
-void Person_Destory(struct PersonInfoStru *select_this)
-{
-    free(select_this);
-}
-
-void Select_Destory(struct Select *this)
-{
-    free(this);
+    select_this->PERSON_SET = Person_Set;
+    select_this->PERSON_GET = Person_Get;
 }
 
 //완장_견장_잇츠_컴퓨터잘못해요_문돌공돌_행인1_22학번
-void WanGang()  {   for (int i=0; i<4; i+=1)  { printf("%c", NAME[i]); } printf(" : "); }
-void GunJang()  {   for (int i=5; i<9; i+=1)  { printf("%c", NAME[i]); } printf(" : "); }
-void Its()      {   for (int i=10; i<14; i+=1) { printf("%c", NAME[i]); }  printf(" : "); }
-void IcandoComputer()   { for (int i = 15; i < 29; i += 1) { printf("%c", NAME[i]); } printf(" : "); }
-void MundolGongDol()    { for (int i = 30; i < 38; i += 1) { printf("%c", NAME[i]); } printf(" : "); }
-void HangInOne()        { for (int i = 39; i < 44; i += 1) { printf("%c", NAME[i]); } printf(" : "); }
-void TwoTwoHackBun()    { for (int i = 45; i < 52; i += 1) { printf("%c", NAME[i]); } printf(" : "); }
+void WanGang() { for (int i = 0; i < 4; i += 1) { printf("%c", NAME[i]); } printf(" : "); }
+void GunJang() { for (int i = 5; i < 9; i += 1) { printf("%c", NAME[i]); } printf(" : "); }
+void Its() { for (int i = 10; i < 14; i += 1) { printf("%c", NAME[i]); }  printf(" : "); }
+void IcandoComputer() { for (int i = 15; i < 29; i += 1) { printf("%c", NAME[i]); } printf(" : "); }
+void MundolGongDol() { for (int i = 30; i < 38; i += 1) { printf("%c", NAME[i]); } printf(" : "); }
+void HangInOne() { for (int i = 39; i < 44; i += 1) { printf("%c", NAME[i]); } printf(" : "); }
+void TwoTwoHackBun() { for (int i = 45; i < 52; i += 1) { printf("%c", NAME[i]); } printf(" : "); }
 
-
-int main() 
+int main()
 {
     srand(time(NULL));
 
@@ -154,6 +136,4 @@ int main()
         }
         printf("---\n");
     }
-    Person_Destory(personOuterObj);
-    Select_Destory(outerObj);
 }

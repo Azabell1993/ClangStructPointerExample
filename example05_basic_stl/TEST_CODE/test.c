@@ -36,7 +36,7 @@ int SUM(NODE *p_head, NODE *p_tail, NODE *p)
     return (printf(" = %d\n", sum));
 }
 
-void Destory(NODE *p_head, NODE *p_tail, NODE *p)
+void Destory(NODE *p_head, NODE *p_tail, NODE *p) 
 {
     while(NULL != p_head)
     {
