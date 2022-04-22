@@ -9,17 +9,17 @@ typedef struct {
 }ArrayListType;
 typedef ArrayListType * ArrayList_ptr;
 
-// ë¦¬ìŠ¤íŠ¸ ì´ˆê¸°í™”
+// ¸®½ºÆ® ÃÊ±âÈ­
 void init(ArrayList_ptr list) {
     list->size = 0;
 }
 
-// ë¦¬ìŠ¤íŠ¸ ìƒì„±
+// ¸®½ºÆ® »ý¼º
 ArrayList_ptr create() {
     return (ArrayList_ptr)calloc(1, sizeof(ArrayListType));
 }
 
-// ë¹ˆ ë¦¬ìŠ¤íŠ¸ í™•ì¸
+// ºó ¸®½ºÆ® È®ÀÎ
 int is_empty(ArrayList_ptr list) {
     if (list->size == 0)
         return 1;
@@ -27,7 +27,7 @@ int is_empty(ArrayList_ptr list) {
         return 0;
 }
 
-// í’€ ë¦¬ìŠ¤íŠ¸ í™•ì¸
+// Ç® ¸®½ºÆ® È®ÀÎ
 int is_full(ArrayList_ptr list) {
     if (list->size == max)
         return 1;
@@ -35,7 +35,7 @@ int is_full(ArrayList_ptr list) {
         return 0;
 }
 
-// ì•„ì´í…œ ì‚½ìž…
+// ¾ÆÀÌÅÛ »ðÀÔ
 void insert_last(ArrayList_ptr list, element item) {
     if (!is_full(list)) {
         int pos = list->size;
@@ -43,19 +43,19 @@ void insert_last(ArrayList_ptr list, element item) {
         list->size++;
     }
     else
-        printf("ë¦¬ìŠ¤íŠ¸ê°€ ê½‰ ì°¨ìžˆìŠµë‹ˆë‹¤\n");
+        printf("¸®½ºÆ®°¡ ²Ë Â÷ÀÖ½À´Ï´Ù\n");
 }
 
-// ì•„ì´í…œ ì‚­ì œ
+// ¾ÆÀÌÅÛ »èÁ¦
 void delete_last(ArrayList_ptr list) {
     if (!is_empty(list)) {
         list->size--;
     }
     else
-        printf("ë¦¬ìŠ¤íŠ¸ê°€ ë¹„ì–´ ìžˆìŠµë‹ˆë‹¤\n");
+        printf("¸®½ºÆ®°¡ ºñ¾î ÀÖ½À´Ï´Ù\n");
 }
 
-// ì¸ë±ìŠ¤ë¡œ ì•„ì´í…œ ì‚­ì œ 
+// ÀÎµ¦½º·Î ¾ÆÀÌÅÛ »èÁ¦ 
 void delete_idx(ArrayList_ptr list, int pos) {
     if (!is_empty(list)) {
         element tmp = list->array[pos];
@@ -64,17 +64,17 @@ void delete_idx(ArrayList_ptr list, int pos) {
         list->size--;
     }
     else
-        printf("ë¦¬ìŠ¤íŠ¸ê°€ ë¹„ì–´ ìžˆìŠµë‹ˆë‹¤\n");
+        printf("¸®½ºÆ®°¡ ºñ¾î ÀÖ½À´Ï´Ù\n");
 }
 
-// ë¦¬ìŠ¤íŠ¸ ì¶œë ¥ 
+// ¸®½ºÆ® Ãâ·Â 
 void print_list(ArrayList_ptr list) {
     if (!is_empty(list)) {
         for (int i = 0; i < list->size; i++)
             printf("[%d] ", list->array[i]);
     }
     else
-        printf("ë¦¬ìŠ¤íŠ¸ê°€ ë¹„ì–´ ìžˆìŠµë‹ˆë‹¤\n");
+        printf("¸®½ºÆ®°¡ ºñ¾î ÀÖ½À´Ï´Ù\n");
 }
 
 int main() {
@@ -90,5 +90,5 @@ int main() {
     delete_idx(list, 0); // [2 3]
     insert_last(list, 4); // [2 3 4]
     delete_idx(list, 1); // [2 4]
-    print_list(list); // ë¦¬ìŠ¤íŠ¸ ìš”ì†Œ ì¶œë ¥ 
+    print_list(list); // ¸®½ºÆ® ¿ä¼Ò Ãâ·Â 
 }

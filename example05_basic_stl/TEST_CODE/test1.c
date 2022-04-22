@@ -6,10 +6,10 @@
 typedef struct Person PERSON;
 typedef struct Child CHILD;
 
-/* ë¶€ëª¨ í´ëž˜ìŠ¤ ì „ë°© ì„ ì–¸ */
+/* ºÎ¸ð Å¬·¡½º Àü¹æ ¼±¾ð */
 PERSON* new_create();
 
-/* ìœ ì‚¬ í´ëž˜ìŠ¤ ìƒì† ì „ë°© ì„ ì–¸ */
+/* À¯»ç Å¬·¡½º »ó¼Ó Àü¹æ ¼±¾ð */
 int new_destory(), new_hello(), new_rust(), new_programming();
 char* new_name();
 
@@ -65,7 +65,7 @@ int new_destory(CHILD* ptr)
 int new_hello(CHILD* ptr)
 {
     if ((ptr->math + ptr->eng + ptr->kor) < 250) {
-        printf("3ê³¼ëª© ì ìˆ˜ í•©ì´ 250ì  ë°‘ì´ì•¼. Cì–¸ì–´ ê¸°ë³¸ì„ ë‹¤ì‹œ ë‹¤ì§€ì‹œì˜¤.");
+        printf("3°ú¸ñ Á¡¼ö ÇÕÀÌ 250Á¡ ¹ØÀÌ¾ß. C¾ð¾î ±âº»À» ´Ù½Ã ´ÙÁö½Ã¿À.");
     }
     else {
         new_rust(ptr);
@@ -75,7 +75,7 @@ int new_hello(CHILD* ptr)
 int new_rust(CHILD* ptr)
 {
     if ((ptr->math + ptr->eng + ptr->kor) > 250) {
-        printf("Rust ì–¸ì–´ë¡œ ë„˜ì–´ê°€ì…”ë„ ì¢‹ìŠµë‹ˆë‹¤.");
+        printf("Rust ¾ð¾î·Î ³Ñ¾î°¡¼Åµµ ÁÁ½À´Ï´Ù.");
     }
     else {
         new_hello(ptr);
@@ -85,7 +85,7 @@ int new_rust(CHILD* ptr)
 int new_programming(CHILD* ptr)
 {
     if ((ptr->math + ptr->eng + ptr->kor) > 290) {
-        printf("í”„ë¡œê·¸ëž˜ë°ì˜ ì‹ .");
+        printf("ÇÁ·Î±×·¡¹ÖÀÇ ½Å.");
     }
     else {
         new_rust(ptr);
@@ -99,9 +99,9 @@ char* new_name(CHILD* ptr)
 
 int main()
 {
-    PERSON* this = PersonPtr.create(100, 100, 98, "ë°•ì§€ìš°");
+    PERSON* this = PersonPtr.create(100, 100, 98, "¹ÚÁö¿ì");
 
-    puts("ì´ ë©”ì„¸ì§€ê°€ ëœ¨ë©´ ì„±ê³µìž…ë‹ˆë‹¤.");
+    puts("ÀÌ ¸Þ¼¼Áö°¡ ¶ß¸é ¼º°øÀÔ´Ï´Ù.");
     printf("%s\n", this->hello(this));
     
     this->destory(this);
