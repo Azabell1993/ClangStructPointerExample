@@ -23,14 +23,14 @@ int main()
         */
         call dword ptr scanf
         add esp, 0Ch
-        mov eax, x
-        mov ebx, y
+        mov eax, [x]
+        mov ebx, [y]
         add eax, ebx
         push eax
-        push y
-        push x
-        push offset strResult
-        call dword ptr printf
+        push [y]
+        push [x]
+        push offset [strResult]
+        call dword ptr [printf]
         //add esp, 10h
     }
     exit(0);
