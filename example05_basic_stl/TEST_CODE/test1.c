@@ -32,7 +32,7 @@ typedef struct Child {
 /* static cosnt struct ArrayList ArrayList_ptr */
 static const struct Person PersonPtr = {
     /* .push = new_push */
-    /* .pop = new_pop */
+    /* .pop = new_pop st*/
     .create = new_create,
     .destory = new_destory,
     .hello = new_hello,

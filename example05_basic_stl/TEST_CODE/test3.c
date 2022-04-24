@@ -15,9 +15,8 @@ static int		az_pow(int nb, int pow);
 char			*az_itoa(int value, int base);
 int		        az_atoi(const char *s);
 char	        *az_itoa(int value, int base);
-static int		az_pow(int nb, int pow);
-int    sort(int arr[], int count);
-void    returnSort(int arr[], int size);
+int             sort(int arr[], int count);
+void            returnSort(int arr[], int size);
 
 // 리스트 초기화
 void init(ArrayList_ptr list) {
