@@ -1,3 +1,0 @@
-﻿  main.c
-D:\ClangStructPointer\example07_inline_asm\azabell_public\VisualStudio\AddrCalculator\AddrCalculator\main.c(36,9): warning C4013: 'exit'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
-  AddrCalculator.vcxproj -> D:\ClangStructPointer\example07_inline_asm\azabell_public\VisualStudio\AddrCalculator\Debug\AddrCalculator.exe
