@@ -26,7 +26,6 @@ int Add(CAL* cal)
         mov x, eax
     }
     return x;
-    
 }
 
 void TestPrint(S* s)
