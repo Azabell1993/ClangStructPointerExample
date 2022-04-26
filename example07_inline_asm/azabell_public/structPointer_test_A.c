@@ -53,3 +53,12 @@
 //     cal.y = 10;
 //     printf("SUM : %d\n", Add(&cal));
 // }
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct Member {
+
+
+}
