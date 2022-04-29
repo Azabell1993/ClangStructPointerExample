@@ -107,7 +107,7 @@ int    mul(int x, int y)
         push offset[strScanf]
 
         push offset[subMessage]
-        call dword ptr[printf]
+        call dword ptra[printf]
         add esp, 0ch
         mov eax, [x]
         mov ebx, [y]
@@ -141,13 +141,5 @@ int main()
     scanf("%d %d", &x, &y);
     mul(x, y);
 
-    __asm {
-        mov     eax, [printf]
-        mov     ebx, [printf]
-        sub     eax, ebx
-        mov[printf], 0
-
-        mov  esp, ebp
-        sub  esp, 0
-    }
+    return (0);
 }

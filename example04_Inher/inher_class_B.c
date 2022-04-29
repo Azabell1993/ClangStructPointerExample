@@ -359,7 +359,7 @@ SCHOOL_NAME* new_school(
 void    MEMBER_SET_(
     MEMBER* this,
     MEMBER_NAME* select_name,
-    SCHOOL_NAME* select_school_name,A
+    SCHOOL_NAME* select_school_name,
     const   int     HAKBUN,
     const   int     AGE,
     const   int     INIT_DATE,
