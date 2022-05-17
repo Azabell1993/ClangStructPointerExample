@@ -1,0 +1,3 @@
+/Users/azabell/CLionProjects/FirstProgram/cmake-build-debug/CMakeFiles/FirstProgram.dir
+/Users/azabell/CLionProjects/FirstProgram/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/azabell/CLionProjects/FirstProgram/cmake-build-debug/CMakeFiles/rebuild_cache.dir

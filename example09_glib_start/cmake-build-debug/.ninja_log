@@ -1,0 +1,9 @@
+# ninja log v5
+5	564	1652808428964462645	CMakeFiles/FirstProgram.dir/print_message.c.o	97ae1457fb03cb20
+6	563	1652808428964475889	CMakeFiles/FirstProgram.dir/c_main.c.o	be5b9c5bde2e0242
+5	562	1652808428964476000	CMakeFiles/FirstProgram.dir/print_helloworld_goodbyeworld.c.o	feb0d29c22d0c316
+7	396	1652807741675570530	FirstProgram	a6f78f786f20bba
+2	264	1652808468016902465	build.ninja	58a5b9c45d006b1e
+11	1744	1652803396050331964	CMakeFiles/FirstProgram.dir/main.c.o	b0bdbdfe5e2e9a4
+0	163	1652808468016902465	build.ninja	58a5b9c45d006b1e
+4	100	1652808468138401668	FirstProgram	b93d20257356ff8d
