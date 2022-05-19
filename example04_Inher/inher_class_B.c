@@ -605,7 +605,7 @@ PROGRAMMING* new_programming(
     temp->CPP_ = CPP;
     temp->ASSEMBLY_ = ASSEMBLY;
 
-    // �Լ� ������
+    // 함수 
     temp->this = temp;
     temp->PROGRAMMING_PRINT_DATA = PROGRAMMING_PRINT_DATA_;
     temp->PROGRAMMING_SET = PROGRAMMING_SET_;
