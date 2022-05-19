@@ -646,7 +646,10 @@ int     PROGRAMMING_GET_(const PROGRAMMING* this)
     this->PTYHON_,
     this->R_,
     this->JAVA_,
-    this->SECURI
+	this->SECURITY_ ;
+    this->NODEJ_;
+    this->CPP_;
+    this->ASSEMBLY_;
 }
 
 ///////////////////////////////////////////////////////////////////////

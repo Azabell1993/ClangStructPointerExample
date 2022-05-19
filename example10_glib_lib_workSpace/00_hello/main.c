@@ -642,11 +642,14 @@ void PROGRAMMING_SET_(
 int     PROGRAMMING_GET_(const PROGRAMMING* this)
 {
     this->DATE_,
-            this->CLANG_,
-            this->PTYHON_,
-            this->R_,
-            this->JAVA_,
-            this->SECURI
+    this->CLANG_,
+    this->PTYHON_,
+    this->R_,
+    this->JAVA_,
+    this->SECURITY_ ;
+    this->NODEJ_;
+    this->CPP_;
+    this->ASSEMBLY_;
 }
 
 ///////////////////////////////////////////////////////////////////////
