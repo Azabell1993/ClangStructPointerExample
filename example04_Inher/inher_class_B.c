@@ -6,11 +6,15 @@
     Developer Connect E-mail : jeewoo19930315@gmail.com
 */
 
+#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <stdlib.h>
 #include <memory.h>
+#include <malloc.h>
 //#include <unistd.h>
 #include <sys/types.h>
+//#include <mysql.h>
+#define CHOP(x) x[strlen(x) - 1] = ' '
 #define FUNCTIONPOINTER_PERSONINFORMATION_MAX_VALULE 9
 #define     GET_NAME_MAX    9
 const char NAME[] = "현아_지우_주현_승균_유림_슬기_세븐_테크_이펙";
@@ -117,6 +121,7 @@ void    FOOD_SET_(
 
 );
 int     FOOD_GET_(const FOOD* this);
+
 /*
     PROGRAMMING 유사 클래스 메서드 Setter, Getter 전방 선언
 */
@@ -159,13 +164,6 @@ int     MAJOR_GET_(const MAJOR* this);
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-/*
-    MEMBER_NAME 유사 클래스 유사 new 생성자 선언
-*/
-MEMBER_NAME* new_name(
-    int select_name_number
-);
 
 /*
     SCHOOL_NAME 유사 클래스 유사 new 생성자 선언
@@ -225,6 +223,7 @@ PROGRAMMING* new_programming(
     int     CPP_,
     int     ASSEMBLY_
 );
+
 /*
     소멸자 전방선언
 */
@@ -248,6 +247,7 @@ MAJOR* new_major(
     int     Chemistry_,                      //화학
     int     Biology_                         //생물학
 );
+
 /*
     소멸자 전방선언
 */
@@ -261,7 +261,6 @@ void    DELETE_MAJOR(MAJOR* major_delete_ptr);
 /*
     MEMBER 유사클래스 지역 함수
 */
-
 typedef struct MEMBER {
     struct MEMBER* this;
     struct MEMBER_NAME* member_name;
@@ -320,7 +319,7 @@ MEMBER_NAME* new_name(
 )
 {
     MEMBER_NAME* temp = (MEMBER_NAME*)malloc(sizeof(MEMBER_NAME));
-    
+
     temp->select_name_number_ = select_name_number;
 
     // 함수 포인터
@@ -430,6 +429,7 @@ void    DELETE_MEMBER(MEMBER* member_delete_ptr)
     FOOD 유사클래스 지역 함수
 */
 
+
 typedef struct FOOD {
     MEMBER Member;
     struct FOOD* this;
@@ -498,7 +498,7 @@ int FOOD_GET_(const FOOD* this)
         this->BLUEBERRIES_,
         this->BREAD_,
         this->BROCCOLI_,
-    	this->BURGERS_,
+        this->BURGERS_,
         this->CAKE_,
         this->CHEESE_,
         this->CHICKEN_;
@@ -550,7 +550,6 @@ FOOD* new_food(
 /*
     PROGRAMMING 유사클래스 지역 함수
 */
-
 typedef struct PROGRAMMING {
     MEMBER Member;
     struct PROGRAMMING* this;
@@ -606,7 +605,7 @@ PROGRAMMING* new_programming(
     temp->CPP_ = CPP;
     temp->ASSEMBLY_ = ASSEMBLY;
 
-    // 함수 포인터
+    // �Լ� ������
     temp->this = temp;
     temp->PROGRAMMING_PRINT_DATA = PROGRAMMING_PRINT_DATA_;
     temp->PROGRAMMING_SET = PROGRAMMING_SET_;
@@ -641,25 +640,28 @@ void PROGRAMMING_SET_(
 
 int     PROGRAMMING_GET_(const PROGRAMMING* this)
 {
-	return 
-    this->DATE_,
-    this->CLANG_,
-    this->PTYHON_,
-    this->R_,
-    this->JAVA_,
-	this->SECURITY_,
-    this->NODEJ_,
-    this->CPP_,
-    this->ASSEMBLY_;
+    return 
+        this->DATE_,
+        this->CLANG_,
+        this->PTYHON_,
+        this->R_,
+        this->JAVA_,
+        this->SECURITY_,
+        this->NODEJ_,
+        this->CPP_,
+        this->ASSEMBLY_;
 }
 
+void    DELETE_PROGRAMMING(PROGRAMMING* programming_delete_ptr)
+{
+    free(programming_delete_ptr);
+}
 ///////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////
 
 /*
     MAJOR 유사클래스 지역 함수
 */
-
 typedef struct MAJOR {
     MEMBER Member;
     struct PROGRAMMING* this;
@@ -782,8 +784,8 @@ MAJOR* new_major(
 
     // 함수 포인터
     temp -> this = temp;
-    temp->MAJOR_PRINT_DATA = MAJOR_PRINT_;
-	temp->MAJOR_SET = MAJOR_SET_;
+    temp->MAJOR_PRINT_DATA = MAJOR_PRINT_DATA_;
+    temp->MAJOR_SET = MAJOR_SET_;
     temp->MAJOR_GET = MAJOR_GET_;
 
     return temp;
@@ -941,4 +943,3 @@ int main()
 
     exit(0);
 }
-
