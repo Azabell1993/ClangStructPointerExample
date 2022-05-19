@@ -6,11 +6,14 @@
     Developer Connect E-mail : jeewoo19930315@gmail.com
 */
 
+#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <stdlib.h>
 #include <memory.h>
 //#include <unistd.h>
 #include <sys/types.h>
+//#include <mysql.h>
+#define CHOP(x) x[strlen(x) - 1] = ' '
 #define FUNCTIONPOINTER_PERSONINFORMATION_MAX_VALULE 9
 #define     GET_NAME_MAX    9
 const char NAME[] = "현아_지우_주현_승균_유림_슬기_세븐_테크_이펙";
@@ -85,52 +88,53 @@ void    MAJOR_PRINT_DATA_(const MAJOR* this);
     MEMBER 유사 클래스 메서드 Setter, Getter 전방 선언
 */
 void    MEMBER_SET_(
-        MEMBER* this,
-        MEMBER_NAME* select_name,
-        SCHOOL_NAME* select_school_name,
-        const   int     HAKBUN,
-        const   int     AGE,
-        const   int     INIT_DATE,
-        const   int     OUT_DATE
+    MEMBER* this,
+    MEMBER_NAME* select_name,
+    SCHOOL_NAME* select_school_name,
+    const   int     HAKBUN,
+    const   int     AGE,
+    const   int     INIT_DATE,
+    const   int     OUT_DATE
 );
 int     MEMBER_GET_(
-        const MEMBER* this,
-        MEMBER_NAME* select_name,
-        SCHOOL_NAME* select_school_name
+    const MEMBER* this,
+    MEMBER_NAME* select_name,
+    SCHOOL_NAME* select_school_name
 );
 
 /*
     FOOD 유사 클래스 메서드 Setter, Getter 전방 선언
 */
 void    FOOD_SET_(
-        struct  FOOD* this,
-        const   int     BANANAS,
-        const   int     BARBECUE,
-        const   int     BARLEY,
-        const   int     BLUEBERRIES,
-        const   int     BREAD,
-        const   int     BROCCOLI,
-        const   int     BURGERS,
-        const   int     CAKE,
-        const   int     CHEESE,
-        const   int     CHICKEN
+    struct  FOOD* this,
+    const   int     BANANAS,
+    const   int     BARBECUE,
+    const   int     BARLEY,
+    const   int     BLUEBERRIES,
+    const   int     BREAD,
+    const   int     BROCCOLI,
+    const   int     BURGERS,
+    const   int     CAKE,
+    const   int     CHEESE,
+    const   int     CHICKEN
 
 );
 int     FOOD_GET_(const FOOD* this);
+
 /*
     PROGRAMMING 유사 클래스 메서드 Setter, Getter 전방 선언
 */
 void    PROGRAMMING_SET_(
-        struct  PROGRAMMING* this,
-        const   int             DATE,
-        const   int             CLANG,
-        const   int             PTYHON,
-        const   int             R,
-        const   int             JAVA,
-        const   int             SECURITY,
-        const   int             NODEJ,
-        const   int             CPP,
-        const   int             ASSEMBLY
+    struct  PROGRAMMING* this,
+    const   int             DATE,
+    const   int             CLANG,
+    const   int             PTYHON,
+    const   int             R,
+    const   int             JAVA,
+    const   int             SECURITY,
+    const   int             NODEJ,
+    const   int             CPP,
+    const   int             ASSEMBLY
 );
 int     PROGRAMMING_GET_(const PROGRAMMING* this);
 
@@ -138,20 +142,20 @@ int     PROGRAMMING_GET_(const PROGRAMMING* this);
     MAJOR 유사 클래스 메서드 Setter, Getter 전방 선언
 */
 void    MAJOR_SET_(
-        struct MAJOR* this,
-        const   int     KoreanLanguageAndLiterature,    //국어국문학과
-        const   int     Philosophy,                     //철학과
-        const   int     Archeology,                     //고고학과
-        const   int     LibraryAndInformationScience,   //문헌정보학과
-        const   int     CommerceAndTrade,               //무역학과
-        const   int     Administration,                 //행정학과
-        const   int     PoliticalScienceAndDiplomacy,   //정치외교학과
-        const   int     MechanicalEngineering,          //기계공학
-        const   int     ElectronicEngineering,          //전자공학
-        const   int     Architecure,                    //건축학
-        const   int     Physics,                        //물리학
-        const   int     Chemistry,                      //화학
-        const   int     Biology                        //생물학
+    struct MAJOR* this,
+    const   int     KoreanLanguageAndLiterature,    //국어국문학과
+    const   int     Philosophy,                     //철학과
+    const   int     Archeology,                     //고고학과
+    const   int     LibraryAndInformationScience,   //문헌정보학과
+    const   int     CommerceAndTrade,               //무역학과
+    const   int     Administration,                 //행정학과
+    const   int     PoliticalScienceAndDiplomacy,   //정치외교학과
+    const   int     MechanicalEngineering,          //기계공학
+    const   int     ElectronicEngineering,          //전자공학
+    const   int     Architecure,                    //건축학
+    const   int     Physics,                        //물리학
+    const   int     Chemistry,                      //화학
+    const   int     Biology                        //생물학
 );
 int     MAJOR_GET_(const MAJOR* this);
 
@@ -161,29 +165,22 @@ int     MAJOR_GET_(const MAJOR* this);
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /*
-    MEMBER_NAME 유사 클래스 유사 new 생성자 선언
-*/
-MEMBER_NAME* new_name(
-        int select_name_number
-);
-
-/*
     SCHOOL_NAME 유사 클래스 유사 new 생성자 선언
 */
 SCHOOL_NAME* new_school(
-        int select_school_number
+    int select_school_number
 );
 
 /*
     MEMBER 유사 클래스 유사 new 생성자 선언
 */
 MEMBER* new_member(
-        int HAKBUN_,
-        MEMBER_NAME* member_name_,
-        SCHOOL_NAME* select_school_number_,
-        int AGE_,
-        int INIT_DATE_,
-        int OUT_DATE_
+    int HAKBUN_,
+    MEMBER_NAME* member_name_,
+    SCHOOL_NAME* select_school_number_,
+    int AGE_,
+    int INIT_DATE_,
+    int OUT_DATE_
 );
 
 /*
@@ -195,16 +192,16 @@ void    DELETE_MEMBER(MEMBER* member_delete_ptr);
     FOOD 유사 new 생성자 전방 선언
 */
 FOOD* new_food(
-        int     BANANAS_,
-        int     BARBECUE_,
-        int     BARLEY_,
-        int     BLUEBERRIES_,
-        int     BREAD_,
-        int     BROCCOLI_,
-        int     BURGERS_,
-        int     CAKE_,
-        int     CHEESE_,
-        int     CHICKEN_
+    int     BANANAS_,
+    int     BARBECUE_,
+    int     BARLEY_,
+    int     BLUEBERRIES_,
+    int     BREAD_,
+    int     BROCCOLI_,
+    int     BURGERS_,
+    int     CAKE_,
+    int     CHEESE_,
+    int     CHICKEN_
 );
 /*
     소멸자 전방선언
@@ -215,16 +212,17 @@ void    DELETE_FOOD(FOOD* food_delete_ptr);
     PROGRAMMING 유사 new 생성자 전방 선언
 */
 PROGRAMMING* new_programming(
-        int     DATE_,
-        int     CLANG_,
-        int     PTYHON_,
-        int     R_,
-        int     JAVA_,
-        int     SECURITY_,
-        int     NODEJ_,
-        int     CPP_,
-        int     ASSEMBLY_
+    int     DATE_,
+    int     CLANG_,
+    int     PTYHON_,
+    int     R_,
+    int     JAVA_,
+    int     SECURITY_,
+    int     NODEJ_,
+    int     CPP_,
+    int     ASSEMBLY_
 );
+
 /*
     소멸자 전방선언
 */
@@ -234,20 +232,21 @@ void    DELETE_PROGRAMMING(PROGRAMMING* programming_delete_ptr);
     MAJOR 유사 new 생성자 전방 선언
 */
 MAJOR* new_major(
-        int     KoreanLanguageAndLiterature_,    //국어국문학과
-        int     Philosophy_,                     //철학과
-        int     Archeology_,                     //고고학과
-        int     LibraryAndInformationScience_,   //문헌정보학과
-        int     CommerceAndTrade_,               //무역학과
-        int     Administration_,                 //행정학과
-        int     PoliticalScienceAndDiplomacy_,   //정치외교학과
-        int     MechanicalEngineering_,          //기계공학
-        int     ElectronicEngineering_,          //전자공학
-        int     Architecure_,                    //건축학
-        int     Physics_,                        //물리학
-        int     Chemistry_,                      //화학
-        int     Biology_                         //생물학
+    int     KoreanLanguageAndLiterature_,    //국어국문학과
+    int     Philosophy_,                     //철학과
+    int     Archeology_,                     //고고학과
+    int     LibraryAndInformationScience_,   //문헌정보학과
+    int     CommerceAndTrade_,               //무역학과
+    int     Administration_,                 //행정학과
+    int     PoliticalScienceAndDiplomacy_,   //정치외교학과
+    int     MechanicalEngineering_,          //기계공학
+    int     ElectronicEngineering_,          //전자공학
+    int     Architecure_,                    //건축학
+    int     Physics_,                        //물리학
+    int     Chemistry_,                      //화학
+    int     Biology_                         //생물학
 );
+
 /*
     소멸자 전방선언
 */
@@ -261,7 +260,6 @@ void    DELETE_MAJOR(MAJOR* major_delete_ptr);
 /*
     MEMBER 유사클래스 지역 함수
 */
-
 typedef struct MEMBER {
     struct MEMBER* this;
     struct MEMBER_NAME* member_name;
@@ -296,14 +294,14 @@ typedef struct MEMBER {
 
     void    (*PRINT_DATA)(const MEMBER* this, const MEMBER_NAME* select_name, const SCHOOL_NAME* select_school_name);
     void    (*MEMBER_SET)
-            (
-                    struct MEMBER* this,
-                    struct MEMBER_NAME* select_name,
-                    struct SCHOOL_NAME* select_school_name,
-                    const   int     HAKBUN,
-                    const   int     AGE,
-                    const   int     INIT_DATE,
-                    const   int     OUT_DATE
+        (
+            struct MEMBER* this,
+            struct MEMBER_NAME* select_name,
+            struct SCHOOL_NAME* select_school_name,
+            const   int     HAKBUN,
+            const   int     AGE,
+            const   int     INIT_DATE,
+            const   int     OUT_DATE
             );
     int  (*MEMBER_GET)(const struct MEMBER* this, MEMBER_NAME* select_name, SCHOOL_NAME* select_school_name);
     /*
@@ -316,7 +314,7 @@ typedef struct MEMBER {
     유사 상속 클래스 new 생성자 지역 선언
 */
 MEMBER_NAME* new_name(
-        int     select_name_number
+    int     select_name_number
 )
 {
     MEMBER_NAME* temp = (MEMBER_NAME*)malloc(sizeof(MEMBER_NAME));
@@ -336,7 +334,7 @@ MEMBER_NAME* new_name(
     유사 상속 클래스 new 생성자 지역 선언
 */
 SCHOOL_NAME* new_school(
-        int     select_school_number
+    int     select_school_number
 )
 {
     SCHOOL_NAME* temp = (SCHOOL_NAME*)malloc(sizeof(SCHOOL_NAME));
@@ -353,13 +351,13 @@ SCHOOL_NAME* new_school(
 }
 
 void    MEMBER_SET_(
-        MEMBER* this,
-        MEMBER_NAME* select_name,
-        SCHOOL_NAME* select_school_name,
-        const   int     HAKBUN,
-        const   int     AGE,
-        const   int     INIT_DATE,
-        const   int     OUT_DATE
+    MEMBER* this,
+    MEMBER_NAME* select_name,
+    SCHOOL_NAME* select_school_name,
+    const   int     HAKBUN,
+    const   int     AGE,
+    const   int     INIT_DATE,
+    const   int     OUT_DATE
 )
 {
     select_name->select_name_number_;
@@ -373,12 +371,12 @@ void    MEMBER_SET_(
 int     MEMBER_GET_(const MEMBER* this, MEMBER_NAME* select_name, SCHOOL_NAME* select_school_name)
 {
     return
-            select_name->select_name_number_,
-                    select_school_name->select_school_number_,
-                    this->HAKBUN_,
-                    this->AGE_,
-                    this->INIT_DATE_,
-                    this->OUT_DATE_;
+        select_name->select_name_number_,
+        select_school_name->select_school_number_,
+        this->HAKBUN_,
+        this->AGE_,
+        this->INIT_DATE_,
+        this->OUT_DATE_;
 }
 
 void    NAME_INIT(struct MEMBER* this)
@@ -430,6 +428,7 @@ void    DELETE_MEMBER(MEMBER* member_delete_ptr)
     FOOD 유사클래스 지역 함수
 */
 
+
 typedef struct FOOD {
     MEMBER Member;
     struct FOOD* this;
@@ -446,35 +445,35 @@ typedef struct FOOD {
     int     CHICKEN_;
 
     void    (*FOOD_SET)
-            (
-                    struct  FOOD* this,
-                    const   int     BANANAS,
-                    const   int     BARBECUE,
-                    const   int     BARLEY,
-                    const   int     BLUEBERRIES,
-                    const   int     BREAD,
-                    const   int     BROCCOLI,
-                    const   int     BURGERS,
-                    const   int     CAKE,
-                    const   int     CHEESE,
-                    const   int     CHICKEN
+        (
+            struct  FOOD* this,
+            const   int     BANANAS,
+            const   int     BARBECUE,
+            const   int     BARLEY,
+            const   int     BLUEBERRIES,
+            const   int     BREAD,
+            const   int     BROCCOLI,
+            const   int     BURGERS,
+            const   int     CAKE,
+            const   int     CHEESE,
+            const   int     CHICKEN
             );
     int     (*FOOD_GET)(const struct FOOD* this);
     void    (*FOOD_PRINT_DATA)(const FOOD* this);
 } FOOD;
 
 void FOOD_SET_(
-        FOOD* this,
-        const int BANANAS,
-        const int BARBECUE,
-        const int BARLEY,
-        const int BLUEBERRIES,
-        const int BREAD,
-        const int BROCCOLI,
-        const int BURGERS,
-        const int CAKE,
-        const int CHEESE,
-        const int CHICKEN
+    FOOD* this,
+    const int BANANAS,
+    const int BARBECUE,
+    const int BARLEY,
+    const int BLUEBERRIES,
+    const int BREAD,
+    const int BROCCOLI,
+    const int BURGERS,
+    const int CAKE,
+    const int CHEESE,
+    const int CHICKEN
 )
 {
     this->BANANAS_ = BANANAS;
@@ -492,16 +491,16 @@ void FOOD_SET_(
 int FOOD_GET_(const FOOD* this)
 {
     return
-            this->BANANAS_,
-                    this->BARBECUE_,
-                    this->BARLEY_,
-                    this->BLUEBERRIES_,
-                    this->BREAD_,
-                    this->BROCCOLI_,
-                    this->BURGERS_,
-                    this->CAKE_,
-                    this->CHEESE_,
-                    this->CHICKEN_;
+        this->BANANAS_,
+        this->BARBECUE_,
+        this->BARLEY_,
+        this->BLUEBERRIES_,
+        this->BREAD_,
+        this->BROCCOLI_,
+        this->BURGERS_,
+        this->CAKE_,
+        this->CHEESE_,
+        this->CHICKEN_;
 }
 
 void    DELETE_FOOD(FOOD* food_delete_ptr)
@@ -510,16 +509,16 @@ void    DELETE_FOOD(FOOD* food_delete_ptr)
 }
 
 FOOD* new_food(
-        int     BANANAS,
-        int     BARBECUE,
-        int     BARLEY,
-        int     BLUEBERRIES,
-        int     BREAD,
-        int     BROCCOLI,
-        int     BURGERS,
-        int     CAKE,
-        int     CHEESE,
-        int     CHICKEN
+    int     BANANAS,
+    int     BARBECUE,
+    int     BARLEY,
+    int     BLUEBERRIES,
+    int     BREAD,
+    int     BROCCOLI,
+    int     BURGERS,
+    int     CAKE,
+    int     CHEESE,
+    int     CHICKEN
 )
 {
     FOOD* temp = (FOOD*)malloc(sizeof(FOOD));
@@ -550,7 +549,6 @@ FOOD* new_food(
 /*
     PROGRAMMING 유사클래스 지역 함수
 */
-
 typedef struct PROGRAMMING {
     MEMBER Member;
     struct PROGRAMMING* this;
@@ -566,32 +564,32 @@ typedef struct PROGRAMMING {
     int     ASSEMBLY_;
 
     void    (*PROGRAMMING_SET)
-            (
-                    struct  PROGRAMMING* this,
-                    const   int             DATE,
-                    const   int             CLANG,
-                    const   int             PTYHON,
-                    const   int             R,
-                    const   int              JAVA,
-                    const   int             SECURITY,
-                    const   int             NODEJ,
-                    const   int             CPP,
-                    const   int             ASSEMBLY
+        (
+            struct  PROGRAMMING* this,
+            const   int             DATE,
+            const   int             CLANG,
+            const   int             PTYHON,
+            const   int             R,
+            const   int              JAVA,
+            const   int             SECURITY,
+            const   int             NODEJ,
+            const   int             CPP,
+            const   int             ASSEMBLY
             );
     int     (*PROGRAMMING_GET)(const struct PROGRAMMING* this);
     void    (*PROGRAMMING_PRINT_DATA)(const PROGRAMMING* this);
 } PROGRAMMING;
 
 PROGRAMMING* new_programming(
-        int DATE,
-        int CLANG,
-        int PTYHON,
-        int R,
-        int JAVA,
-        int SECURITY,
-        int NODEJ,
-        int CPP,
-        int ASSEMBLY
+    int DATE,
+    int CLANG,
+    int PTYHON,
+    int R,
+    int JAVA,
+    int SECURITY,
+    int NODEJ,
+    int CPP,
+    int ASSEMBLY
 )
 {
     PROGRAMMING* temp = (PROGRAMMING*)malloc(sizeof(PROGRAMMING));
@@ -606,7 +604,7 @@ PROGRAMMING* new_programming(
     temp->CPP_ = CPP;
     temp->ASSEMBLY_ = ASSEMBLY;
 
-    // 함수 포인터
+    // 함수
     temp->this = temp;
     temp->PROGRAMMING_PRINT_DATA = PROGRAMMING_PRINT_DATA_;
     temp->PROGRAMMING_SET = PROGRAMMING_SET_;
@@ -616,16 +614,16 @@ PROGRAMMING* new_programming(
 }
 
 void PROGRAMMING_SET_(
-        PROGRAMMING* this,
-        const int DATE,
-        const int CLANG,
-        const int PTYHON,
-        const int R,
-        const int JAVA,
-        const int SECURITY,
-        const int NODEJ,
-        const int CPP,
-        const int ASSEMBLY
+    PROGRAMMING* this,
+    const int DATE,
+    const int CLANG,
+    const int PTYHON,
+    const int R,
+    const int JAVA,
+    const int SECURITY,
+    const int NODEJ,
+    const int CPP,
+    const int ASSEMBLY
 )
 {
     this->DATE_ = DATE;
@@ -642,24 +640,27 @@ void PROGRAMMING_SET_(
 int     PROGRAMMING_GET_(const PROGRAMMING* this)
 {
     return
-            this->DATE_,
-                    this->CLANG_,
-                    this->PTYHON_,
-                    this->R_,
-                    this->JAVA_,
-                    this->SECURITY_,
-                    this->NODEJ_,
-                    this->CPP_,
-                    this->ASSEMBLY_;
+        this->DATE_,
+        this->CLANG_,
+        this->PTYHON_,
+        this->R_,
+        this->JAVA_,
+        this->SECURITY_,
+        this->NODEJ_,
+        this->CPP_,
+        this->ASSEMBLY_;
 }
 
+void    DELETE_PROGRAMMING(PROGRAMMING* programming_delete_ptr)
+{
+    free(programming_delete_ptr);
+}
 ///////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////
 
 /*
     MAJOR 유사클래스 지역 함수
 */
-
 typedef struct MAJOR {
     MEMBER Member;
     struct PROGRAMMING* this;
@@ -678,41 +679,41 @@ typedef struct MAJOR {
     int     Chemistry_;                      //화학
     int     Biology_;                        //생물학
     void    (*MAJOR_SET)
-            (
-                    struct MAJOR* this,
-                    const   int     KoreanLanguageAndLiterature,    //국어국문학과
-                    const   int     Philosophy,                     //철학과
-                    const   int     Archeology,                     //고고학과
-                    const   int     LibraryAndInformationScience,   //문헌정보학과
-                    const   int     CommerceAndTrade,               //무역학과
-                    const   int     Administration,                 //행정학과
-                    const   int     PoliticalScienceAndDiplomacy,   //정치외교학과
-                    const   int     MechanicalEngineering,          //기계공학
-                    const   int     ElectronicEngineering,          //전자공학
-                    const   int     Architecure,                    //건축학
-                    const   int     Physics,                        //물리학
-                    const   int     Chemistry,                      //화학
-                    const   int     Biology                        //생물학
+        (
+            struct MAJOR* this,
+            const   int     KoreanLanguageAndLiterature,    //국어국문학과
+            const   int     Philosophy,                     //철학과
+            const   int     Archeology,                     //고고학과
+            const   int     LibraryAndInformationScience,   //문헌정보학과
+            const   int     CommerceAndTrade,               //무역학과
+            const   int     Administration,                 //행정학과
+            const   int     PoliticalScienceAndDiplomacy,   //정치외교학과
+            const   int     MechanicalEngineering,          //기계공학
+            const   int     ElectronicEngineering,          //전자공학
+            const   int     Architecure,                    //건축학
+            const   int     Physics,                        //물리학
+            const   int     Chemistry,                      //화학
+            const   int     Biology                        //생물학
             );
     int     (*MAJOR_GET)(const struct MAJOR* this);
     void    (*MAJOR_PRINT_DATA)(const MAJOR* this);
 } MAJOR;
 
 void MAJOR_SET_(
-        MAJOR* this,
-        const int KoreanLanguageAndLiterature,
-        const int Philosophy,
-        const int Archeology,
-        const int LibraryAndInformationScience,
-        const int CommerceAndTrade,
-        const int Administration,
-        const int PoliticalScienceAndDiplomacy,
-        const int MechanicalEngineering,
-        const int ElectronicEngineering,
-        const int Architecure,
-        const int Physics,
-        const int Chemistry,
-        const int Biology
+    MAJOR* this,
+    const int KoreanLanguageAndLiterature,
+    const int Philosophy,
+    const int Archeology,
+    const int LibraryAndInformationScience,
+    const int CommerceAndTrade,
+    const int Administration,
+    const int PoliticalScienceAndDiplomacy,
+    const int MechanicalEngineering,
+    const int ElectronicEngineering,
+    const int Architecure,
+    const int Physics,
+    const int Chemistry,
+    const int Biology
 )
 {
     this->KoreanLanguageAndLiterature_ = KoreanLanguageAndLiterature;
@@ -733,35 +734,35 @@ void MAJOR_SET_(
 int     MAJOR_GET_(const MAJOR* this)
 {
     return
-            this->KoreanLanguageAndLiterature_,
-                    this->Philosophy_,
-                    this->Archeology_,
-                    this->LibraryAndInformationScience_,
-                    this->CommerceAndTrade_,
-                    this->Administration_,
-                    this->PoliticalScienceAndDiplomacy_,
-                    this->MechanicalEngineering_,
-                    this->ElectronicEngineering_,
-                    this->Architecure_,
-                    this->Physics_,
-                    this->Chemistry_,
-                    this->Biology_;
+        this->KoreanLanguageAndLiterature_,
+        this->Philosophy_,
+        this->Archeology_,
+        this->LibraryAndInformationScience_,
+        this->CommerceAndTrade_,
+        this->Administration_,
+        this->PoliticalScienceAndDiplomacy_,
+        this->MechanicalEngineering_,
+        this->ElectronicEngineering_,
+        this->Architecure_,
+        this->Physics_,
+        this->Chemistry_,
+        this->Biology_;
 }
 
 MAJOR* new_major(
-        int     KoreanLanguageAndLiterature,    //국어국문학과
-        int     Philosophy,                     //철학과
-        int     Archeology,                     //고고학과
-        int     LibraryAndInformationScience,   //문헌정보학과
-        int     CommerceAndTrade,               //무역학과
-        int     Administration,                 //행정학과
-        int     PoliticalScienceAndDiplomacy,   //정치외교학과
-        int     MechanicalEngineering,          //기계공학
-        int     ElectronicEngineering,          //전자공학
-        int     Architecure,                    //건축학
-        int     Physics,                        //물리학
-        int     Chemistry,                      //화학
-        int     Biology                         //생물학
+    int     KoreanLanguageAndLiterature,    //국어국문학과
+    int     Philosophy,                     //철학과
+    int     Archeology,                     //고고학과
+    int     LibraryAndInformationScience,   //문헌정보학과
+    int     CommerceAndTrade,               //무역학과
+    int     Administration,                 //행정학과
+    int     PoliticalScienceAndDiplomacy,   //정치외교학과
+    int     MechanicalEngineering,          //기계공학
+    int     ElectronicEngineering,          //전자공학
+    int     Architecure,                    //건축학
+    int     Physics,                        //물리학
+    int     Chemistry,                      //화학
+    int     Biology                         //생물학
 )
 {
     MAJOR* temp = (MAJOR*)malloc(sizeof(MAJOR));
@@ -782,7 +783,7 @@ MAJOR* new_major(
 
     // 함수 포인터
     temp -> this = temp;
-    temp->MAJOR_PRINT_DATA = MAJOR_PRINT_;
+    temp->MAJOR_PRINT_DATA = MAJOR_PRINT_DATA_;
     temp->MAJOR_SET = MAJOR_SET_;
     temp->MAJOR_GET = MAJOR_GET_;
 
@@ -799,34 +800,34 @@ void    DELETE_MAJOR(MAJOR* major_delete_ptr)
 void    PRINT_DATA_(const MEMBER* this)
 {
     printf("학생 학번 : %d, 나이 : %d, 입학 날짜 : %d, 졸업예정날짜 : %d\n",
-           this->HAKBUN_,
-           this->AGE_, this->INIT_DATE_, this->OUT_DATE_);
+        this->HAKBUN_,
+        this->AGE_, this->INIT_DATE_, this->OUT_DATE_);
 }
 
 void    PROGRAMMING_PRINT_DATA_(const PROGRAMMING* this)
 {
     int result = this->CLANG_ + this->PTYHON_ + this->R_ + this->JAVA_ + this->SECURITY_ + this->NODEJ_ + this->CPP_ + this->ASSEMBLY_;
     printf("입학년도 : %d, C언어 점수 : %d, Python 점수 : %d, R 점수 :%d, JAVA 점수 :%d, 보안점수 : %d, node 점수 : %d, c++점수 : %d, 어셈블리 점수 %d, 과목 평균 : %.2f\n\n",
-           this->DATE_, this->CLANG_, this->PTYHON_, this->R_, this->JAVA_, this->SECURITY_, this->NODEJ_, this->CPP_, this->ASSEMBLY_, (float)result / 8);
+        this->DATE_, this->CLANG_, this->PTYHON_, this->R_, this->JAVA_, this->SECURITY_, this->NODEJ_, this->CPP_, this->ASSEMBLY_, (float)result / 8);
 }
 
 void    FOOD_PRINT_DATA_(const FOOD* this)
 {
     int result = this->BANANAS_ + this->BARBECUE_ + this->BARLEY_ + this->BLUEBERRIES_ + this->BREAD_ + this->BROCCOLI_ + this->BURGERS_ + this->CAKE_ + this->CHEESE_ + this->CHICKEN_;
     printf("BANANAS : %d, BARBECUE : %d, BARLEY : %d, BLUEBERRIES : %d, BREAD : %d, BROCCOLI : %d, BURGERS : %d, CAKE : %d, CHEESE : %d, CHICKEN : %d, SUM : %d\n\n",
-           this->BANANAS_, this->BARBECUE_, this->BARLEY_, this->BLUEBERRIES_, this->BREAD_, this->BROCCOLI_, this->BURGERS_, this->CAKE_, this->CHEESE_, this->CHICKEN_, result);
+        this->BANANAS_, this->BARBECUE_, this->BARLEY_, this->BLUEBERRIES_, this->BREAD_, this->BROCCOLI_, this->BURGERS_, this->CAKE_, this->CHEESE_, this->CHICKEN_, result);
 }
 
 void    MAJOR_PRINT_DATA_(const MAJOR* this)
 {
     int result = this->KoreanLanguageAndLiterature_ + this->Philosophy_ + this->Archeology_ + this->LibraryAndInformationScience_ + this->CommerceAndTrade_ +
-                 this->Administration_ + this->PoliticalScienceAndDiplomacy_ + this->MechanicalEngineering_ +
-                 this->ElectronicEngineering_ + this->Architecure_ + this->Physics_ + this->Chemistry_ + this->Biology_;
+        this->Administration_ + this->PoliticalScienceAndDiplomacy_ + this->MechanicalEngineering_ +
+        this->ElectronicEngineering_ + this->Architecure_ + this->Physics_ + this->Chemistry_ + this->Biology_;
 
     printf("KoreanLanguageAndLiterature : %d, Philosophy : %d, Archeology : %d, LibraryAndInformationScience : %d, CommerceAndTrade : %d, Administration : %d, PoliticalScienceAndDiplomacy : %d, MechanicalEngineering : %d,  ElectronicEngineering : %d, Architecure : %d ,Physics : %d, Chemistry : %d , Biology : %d, result =  %d \n\n",
-           this->KoreanLanguageAndLiterature_, this->Philosophy_, this->Archeology_, this->LibraryAndInformationScience_, this->CommerceAndTrade_,
-           this->Administration_, this->PoliticalScienceAndDiplomacy_, this->MechanicalEngineering_,
-           this->ElectronicEngineering_, this->Architecure_, this->Physics_, this->Chemistry_, this->Biology_, result);
+        this->KoreanLanguageAndLiterature_, this->Philosophy_, this->Archeology_, this->LibraryAndInformationScience_, this->CommerceAndTrade_,
+        this->Administration_, this->PoliticalScienceAndDiplomacy_, this->MechanicalEngineering_,
+        this->ElectronicEngineering_, this->Architecure_, this->Physics_, this->Chemistry_, this->Biology_, result);
 
 }
 
@@ -838,10 +839,10 @@ void 	SET_SCHOOL_NAME_(struct SCHOOL_NAME* select_school_name, int select_school
 int 	GET_SCHOOL_NAME_(const struct SCHOOL_NAME* select_school_name)
 {
     void (*SCHOOL[FUNCTIONPOINTER_PERSONINFORMATION_MAX_VALULE])() = {
-            &HyunA, &Jiwoo, &Juhyun, &SungGyun, &Urim, &SeulGi, &Seven, &Tech, &Soljin
+    &HyunA, &Jiwoo, &Juhyun, &SungGyun, &Urim, &SeulGi, &Seven, &Tech, &Soljin
     };
     (SCHOOL[select_school_name->select_school_number_]()
-    );
+        );
 }
 
 
@@ -853,10 +854,10 @@ void     NAME_SET_(struct MEMBER_NAME* member_ptr, int select_name_number)
 int     NAME_GET_(const struct MEMBER_NAME* select_name)
 {
     void (*NAME[FUNCTIONPOINTER_PERSONINFORMATION_MAX_VALULE])() = {
-            &HyunA_S, &Jiwoo_S, &Juhyun_S, &SungGyun_S, &Urim_S, &SeulGi_S, &Seven_S, &Tech_S, &Soljin_S
+        &HyunA_S, &Jiwoo_S, &Juhyun_S, &SungGyun_S, &Urim_S, &SeulGi_S, &Seven_S, &Tech_S, &Soljin_S
     };
     (NAME[select_name->select_name_number_]()
-    );
+        );
 }
 
 //--------------------------------------------------------------------------------------------------------------------
