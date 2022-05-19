@@ -497,8 +497,8 @@ int FOOD_GET_(const FOOD* this)
         this->BARLEY_,
         this->BLUEBERRIES_,
         this->BREAD_,
-        this->BROCCOLI_;
-    this->BURGERS_,
+        this->BROCCOLI_,
+    	this->BURGERS_,
         this->CAKE_,
         this->CHEESE_,
         this->CHICKEN_;
@@ -641,14 +641,15 @@ void PROGRAMMING_SET_(
 
 int     PROGRAMMING_GET_(const PROGRAMMING* this)
 {
+	return 
     this->DATE_,
     this->CLANG_,
     this->PTYHON_,
     this->R_,
     this->JAVA_,
-	this->SECURITY_ ;
-    this->NODEJ_;
-    this->CPP_;
+	this->SECURITY_,
+    this->NODEJ_,
+    this->CPP_,
     this->ASSEMBLY_;
 }
 
@@ -781,8 +782,8 @@ MAJOR* new_major(
 
     // 함수 포인터
     temp -> this = temp;
-    temp->MAJOR_PRINT_DATA = MAJOR_PRINT_
-temp->MAJOR_SET = MAJOR_SET_;
+    temp->MAJOR_PRINT_DATA = MAJOR_PRINT_;
+	temp->MAJOR_SET = MAJOR_SET_;
     temp->MAJOR_GET = MAJOR_GET_;
 
     return temp;
