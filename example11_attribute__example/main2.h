@@ -25,7 +25,7 @@ extern "C" {
     #endif
     #ifdef __cheaderfile
 #endif
-
+        
 static __attribute__ ((visibility("hidden"))) void (*registered_callback)();
 
 static __attribute__((visibility("default"))) int LoopTest(int num1) {
