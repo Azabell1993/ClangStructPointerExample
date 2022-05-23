@@ -1,4 +1,4 @@
-#pragma ONCE
+#pragma once
 #ifndef _PROGRAM_H
 #define _PROGRAM_H
 #include <stdio.h>
