@@ -1,0 +1,4 @@
+/Users/azabell/Desktop/ClangStructPointerExample/example10_glib_lib_workSpace/define/cmake-build-debug/CMakeFiles/hello.dir
+/Users/azabell/Desktop/ClangStructPointerExample/example10_glib_lib_workSpace/define/cmake-build-debug/CMakeFiles/define.dir
+/Users/azabell/Desktop/ClangStructPointerExample/example10_glib_lib_workSpace/define/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/azabell/Desktop/ClangStructPointerExample/example10_glib_lib_workSpace/define/cmake-build-debug/CMakeFiles/rebuild_cache.dir
