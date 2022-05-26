@@ -489,6 +489,8 @@ static HE* new_Hello(int age) {
 #endif
 
 #endif
+```
+
 
 > 기본 원형 두번째 예제(STL 라이브러리 기본 코어설계)  
 
