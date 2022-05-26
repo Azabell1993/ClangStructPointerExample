@@ -17,10 +17,6 @@ extern "C" {
 #endif
 #ifdef _GNUC_
 #define NORETERN _attribute_ ((_noreturn_))
-        struct helloworld;
-    typedef struct helloworld helloworld;
-    struct helloworld##_sayhellonode;
-    typedef struct helloworld##_node helloworld##_sayhellonode;
     static __attribute__((visibility("default"))) int helloworld##_hello(helloworld *self, int age);
     helloworld new_##helloworld(void);
 #endif
@@ -29,9 +25,6 @@ extern "C" {
                                                                                                                 \
     struct helloworld;                                                                                          \
     typedef struct helloworld helloworld;                                                                       \
-                                                                                                                \
-    struct helloworld##_sayhellonode;                                                                           \
-    typedef struct helloworld##_node helloworld##_sayhellonode;                                                 \
                                                                                                                 \
     struct helloworld                                                                                           \
     {                                                                                                           \

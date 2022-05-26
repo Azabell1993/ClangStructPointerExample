@@ -1,5 +1,4 @@
-#pragma clang diagnostic push
-#pragma ide diagnostic ignored "readability-non-const-parameter"
+#pragma once
 #ifndef PROGRAM_H
 #define PROGRAM_H
 
@@ -58,4 +57,3 @@ extern "C" {
         return temp;                                                                                        \
     }
 #endif
-#pragma clang diagnostic pop
