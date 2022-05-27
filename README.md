@@ -393,12 +393,11 @@ extern "C" {
     static inline __attribute__ ((visibility("hidden")))    void setCallback(void (*callback)());
     static inline __attribute__ ((visibility("hidden")))    void callCallback();
     static inline __attribute__ ((visibility("hidden")))    void printHelloWorld();
+    static inline __attribute__ ((visibility("default"))) void He_Printf_(const HE *this);
     void    HELLO_SET_(HE* this, const int age);
     int     HELLO_GET_(const struct Hello* this);
+    static HE* new_Hello(int age_);
 #endif
-
-
-static HE* new_Hello(int age_);
 
 struct Hello {
     int age_;
@@ -516,6 +515,7 @@ extern "C" {
 #define NORETERN _attribute_ ((_noreturn_))
     static __attribute__((visibility("default"))) void helloworld##_set_hello(helloworld *self, int age);
     static __attribute__((visibility("default"))) int helloworld##_get_hello(helloworld *self);
+    helloworld new_##helloworld(void);
 #endif
 
 #define say_hello(helloworld, type)                                                                         \
@@ -531,7 +531,6 @@ extern "C" {
         int (*gethello)(const helloworld *);                                                                \
     };                                                                                                      \
                                                                                                             \
-    helloworld new_##helloworld(void);                                                                      \
                                                                                                             \
     static __attribute__((visibility("default"))) void helloworld##_set_hello(helloworld *self, type age)   \
     {                                                                                                       \
