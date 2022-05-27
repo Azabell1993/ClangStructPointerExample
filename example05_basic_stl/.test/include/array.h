@@ -61,99 +61,80 @@ extern "C" {
     /*비멤버 함수*/
     arraylist new_##arraylist(void);
 
+    static inline __attribute__((visibility("default")))    void    arraylist##_init(type* e);
+    static inline __attribute__((visibility("default")))    void    arraylist##_print(int e);
 #endif
 
 #define ArrayList(arraylist, type, length)  \
                                                                                                                             \
-    /*배열 유사클래스 전방선언*/                                                                                 \
     struct arraylist;                                                                                                        \
     typedef struct arraylist arraylist;                                                                                       \
                                                                                                                             \
-    /*전용 반복자 유사클래스 전방선언*/                                                                       \
     struct arraylist##_iterator;                                                                                             \
     typedef struct arraylist##_iterator arraylist##_iterator;                                                                 \
                                                                                                                             \
-    /*반복자 유사클래스.*/                                                                                          \
     struct arraylist##_iterator                                                                                              \
     {                                                                                                                       \
-        type *ptr;                                                                                                          \
-                                                                                                                            \
-        /*반복을 하거나 역반복을 수행*/                                                                         \
+        type *ptr;                          \
+                                            \
         void (*next)(arraylist##_iterator *);                                                                                \
         void (*prev)(arraylist##_iterator *);                                                                                \
-                                                                                                                            \
-        /*반복자에 담긴 값이나 그 포인터를 가져옴.*/                                                       \
         type (*get)(const arraylist##_iterator *);                                                                           \
         type *(*get_ptr)(arraylist##_iterator *);                                                                            \
-                                                                                                                            \
-        /*두 반복자를 비교. 같으면 true*/                                                                         \
         bool (*equals)(const arraylist##_iterator *, const arraylist##_iterator *);                                           \
-    };                                                                                                                      \
-    /*유사 메서드 선언*/                                                                                             \
+    };                                      \
+                                            \
     static __attribute__((visibility("default"))) void arraylist##_iterator_next(arraylist##_iterator *);                                                                   \
     static __attribute__((visibility("default"))) void arraylist##_iterator_prev(arraylist##_iterator *);                                                                   \
     static __attribute__((visibility("default"))) type arraylist##_iterator_get(const arraylist##_iterator *);                                                              \
     static __attribute__((visibility("default"))) type *arraylist##_iterator_get_ptr(arraylist##_iterator *);                                                               \
-    static __attribute__((visibility("default"))) bool arraylist##_iterator_equals(const arraylist##_iterator *, const arraylist##_iterator *);                              \
-    /*비멤버 new 함수 선언*/                                                                                         \
+    static __attribute__((visibility("default"))) bool arraylist##_iterator_equals(const arraylist##_iterator *, const arraylist##_iterator *);\
     arraylist##_iterator new_##arraylist##_iterator(type *);                                                                  \
                                                                                                                             \
-    /*실체화되는 배열 유사클래스*/                                                                              \
     struct arraylist                                                                                                         \
     {                                                                                                                       \
         type data[length];                                                                                                  \
                                                                                                                             \
-        /*길이를 가져옴*/                                                                                             \
         size_t (*size)(const arraylist *);                                                                                   \
                                                                                                                             \
-        /*요소 액세스*/                                                                                                \
         type (*get)(const arraylist *, size_t);                                                                              \
         type *(*get_ptr)(arraylist *, size_t);                                                                               \
         const type *(*get_cptr)(const arraylist *, size_t);                                                                  \
                                                                                                                             \
         arraylist (*clone)(const arraylist *);                                                                                \
                                                                                                                             \
-        /*반복자를 반환*/                                                                                             \
         arraylist##_iterator (*begin)(arraylist *);                                                                           \
         arraylist##_iterator (*end)(arraylist *);                                                                             \
                                                                                                                             \
-        /*선형탐색 후 찾은 위치의 반복자를 반환*/                                                           \
         arraylist##_iterator (*find)(const arraylist *, const type);                                                          \
         arraylist##_iterator (*find_by)(const arraylist *, int (*)(const type *));                                            \
                                                                                                                             \
-        /*선형탐색 후 해당하는 인덱스를 반환*/                                                               \
         size_t (*indexof)(const arraylist *, const type);                                                                    \
         size_t (*indexof_by)(const arraylist *, int (*)(const type *));                                                      \
                                                                                                                             \
-        /*선형탐색으로 포함 여부를 확인*/                                                                      \
         bool (*contains)(const arraylist *, const type);                                                                     \
         bool (*contains_by)(const arraylist *, int (*)(const type *));                                                       \
                                                                                                                             \
-        /*이진탐색 후 찾은 위치의 반복자를 반환*/                                                           \
         arraylist##_iterator (*bfind)(const arraylist *, const type);                                                         \
         arraylist##_iterator (*bfind_by)(const arraylist *, const type *, int (*)(const type *, const type *));               \
                                                                                                                             \
-        /*이진탐색 후 해당하는 인덱스를 반환*/                                                               \
         size_t (*bindexof)(const arraylist *, const type);                                                                   \
         size_t (*bindexof_by)(const arraylist *, const type *, int (*)(const type *, const type *));                         \
                                                                                                                             \
-        /*이진탐색으로 포함 여부를 확인*/                                                                      \
         bool (*bcontains)(const arraylist *, const type);                                                                    \
         bool (*bcontains_by)(const arraylist *, const type *, int (*)(const type *, const type *));                          \
                                                                                                                             \
-        /*해당 값이나 값의 포인터로, 배열을 채움*/                                                          \
         void (*fill)(arraylist *, const type);                                                                               \
         void (*fill_ptr)(arraylist *, const type *);                                                                         \
                                                                                                                             \
-        /*정렬용*/                                                                                                       \
         void (*sort)(arraylist *);                                                                                           \
         void (*sort_by)(arraylist *, int (*)(const type *, const type *));                                                   \
                                                                                                                             \
-        /*콜백함수를 받아서 범위기반 루프를 돎*/                                                            \
         void (*for_each)(const arraylist *, void (*)(const type));                                                           \
         void (*for_each_ptr)(arraylist *, void (*)(type *));                                                                 \
         void (*for_each_cptr)(const arraylist *, void (*)(const type *));                                                    \
-    };                                                                                                                      \
+    };                                      \
+                                            \
     /*유사 메서드 선언*/                                                                                             \
     static __attribute__((visibility("default"))) size_t arraylist##_size(const arraylist *);                                                                               \
     static __attribute__((visibility("default"))) type arraylist##_get(const arraylist *, size_t);                                                                          \
@@ -180,7 +161,9 @@ extern "C" {
     static __attribute__((visibility("default"))) void arraylist##_sort_by(arraylist *, int (*)(const type *, const type *));                                               \
     static __attribute__((visibility("default"))) void arraylist##_for_each(const arraylist *, void (*)(const type));                                                       \
     static __attribute__((visibility("default"))) void arraylist##_for_each_ptr(arraylist *, void (*)(type *));                                                             \
-    static __attribute__((visibility("default"))) void arraylist##_for_each_cptr(const arraylist *, void (*)(const type *));                                                \
+    static __attribute__((visibility("default"))) void arraylist##_for_each_cptr(const arraylist *, void (*)(const type *));\
+    static inline __attribute__((visibility("default")))    void    init(int* e);                                 \
+    static inline __attribute__((visibility("default")))    void    print(int e);\
                                             \
     /*비멤버 함수*/                                                                                                    \
     arraylist new_##arraylist(void);                                                                                          \
@@ -392,6 +375,16 @@ extern "C" {
             f(&self->data[i]);                                                                                              \
     }                                                                                                                       \
                                                                                                                             \
+    static inline __attribute__((visibility("default"))) void init(type* e) {                                    \
+        static int i = 0;                                                                                                   \
+        *e = i;                                                                                                             \
+        ++i;                                                                                                                \
+    }                                                                                                                       \
+                                                                                                                            \
+    static inline __attribute__((visibility("default"))) void print(type e) {                                               \
+        printf("%d ", e);                                                                                                   \
+    }                                       \
+                                            \
     arraylist new_##arraylist(void)                                                                                           \
     {                                                                                                                       \
         static arraylist temp =                                                                                              \
@@ -421,7 +414,7 @@ extern "C" {
                 .bcontains_by = arraylist##_bcontains_by,                                                                    \
                 .for_each = arraylist##_for_each,                                                                            \
                 .for_each_ptr = arraylist##_for_each_ptr,                                                                    \
-                .for_each_cptr = arraylist##_for_each_cptr};                                                                 \
+                .for_each_cptr = arraylist##_for_each_cptr};                                                                \
         return temp;                                                                                                        \
     }                                                                                                                       \
                                                                                                                             \
@@ -446,11 +439,11 @@ extern "C" {
         return self->ptr;                                                                                                   \
     }                                                                                                                       \
                                                                                                                             \
-    bool arraylist##_iterator_equals(const arraylist##_iterator *self, const arraylist##_iterator *other)                      \
+    static __attribute__((visibility("default"))) bool arraylist##_iterator_equals(const arraylist##_iterator *self, const arraylist##_iterator *other)                      \
     {                                                                                                                       \
         return self->ptr == other->ptr;                                                                                     \
     }                                                                                                                       \
-                                                                                                                            \
+                                                                                                                                \
     arraylist##_iterator new_##arraylist##_iterator(type *p)                                                                  \
     {                                                                                                                       \
         arraylist##_iterator it =                                                                                            \
@@ -463,5 +456,6 @@ extern "C" {
                 arraylist##_iterator_equals};                                                                                \
         return it;                                                                                                          \
     }
+
 
 #endif
