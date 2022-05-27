@@ -1,8 +1,22 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "include/array.h"
-int main() {
-    puts("STL_TEST");
-    //test_func();
 
-    return 0;
+/*
+say_hello(hellofunc, int)
+
+int main(int argc, char* argv[])
+{
+    hellofunc hello = new_hellofunc();
+    hello.sethello(&hello, 30);
+    hello.gethello(&hello);
+}
+ */
+
+
+
+int main(int argc, char* argv[])
+{
+    //....
+    return (0);
 }

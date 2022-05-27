@@ -18,8 +18,9 @@ extern "C" {
 #endif
 #ifdef _GNUC_
 #define NORETERN _attribute_ ((_noreturn_))
-    static __attribute__((visibility("default"))) void helloworld##_set_hello(helloworld *self, int age);
-    static __attribute__((visibility("default"))) int helloworld##_get_hello(helloworld *self);
+    static __attribute__((visibility("default"))) void helloworld##_set_hello(helloworld *self, type age);
+    static __attribute__((visibility("default"))) int helloworld##_get_hello(const helloworld *self);
+	helloworld new_##helloworld(void);
 #endif
 
 #define say_hello(helloworld, type)                                                                         \
@@ -34,11 +35,6 @@ extern "C" {
         void (*sethello)(helloworld *, type);                                                               \
         int (*gethello)(const helloworld *);                                                                \
     };                                                                                                      \
-                                                                                                            \
-    static __attribute__((visibility("default"))) void helloworld##_set_hello(helloworld *self, type age);  \
-    static __attribute__((visibility("default"))) int helloworld##_get_hello(const helloworld *self);       \
-                                                                                                            \
-    helloworld new_##helloworld(void);                                                                      \
                                                                                                             \
     static __attribute__((visibility("default"))) void helloworld##_set_hello(helloworld *self, type age)   \
     {                                                                                                       \

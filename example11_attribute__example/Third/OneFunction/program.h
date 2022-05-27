@@ -17,7 +17,7 @@ extern "C" {
 #endif
 #ifdef _GNUC_
 #define NORETERN _attribute_ ((_noreturn_))
-    static __attribute__((visibility("default"))) int helloworld##_hello(helloworld *self, int age);
+    static __attribute__((visibility("default"))) int helloworld##_hello(helloworld *self, type age);
     helloworld new_##helloworld(void);
 #endif
                                                                                                                 \
