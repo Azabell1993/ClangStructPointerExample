@@ -42,7 +42,7 @@ rule CUSTOM_COMMAND
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S/Users/azabell/Desktop/ClangStructPointerExample/example10_glib_lib_workSpace/C_STL -B/Users/azabell/Desktop/ClangStructPointerExample/example10_glib_lib_workSpace/C_STL/cmake-build-debug
+  command = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S/Users/azabell/Desktop/ClangStructPointerExample/example05_basic_stl -B/Users/azabell/Desktop/ClangStructPointerExample/example05_basic_stl/cmake-build-debug
   description = Re-running CMake...
   generator = 1
 

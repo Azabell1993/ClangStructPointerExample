@@ -6,10 +6,8 @@
 typedef struct Person PERSON;
 typedef struct Child CHILD;
 
-/* 부모 클래스 전방 선언 */
 PERSON* new_create();
 
-/* 유사 클래스 상속 전방 선언 */
 int new_destory(), new_hello(), new_rust(), new_programming();
 char* new_name();
 
@@ -65,7 +63,7 @@ int new_destory(CHILD* ptr)
 int new_hello(CHILD* ptr)
 {
     if ((ptr->math + ptr->eng + ptr->kor) < 250) {
-        printf("3과목 점수 합이 250점 밑이야. C언어 기본을 다시 다지시오.");
+        printf("3???? ???? ???? 250?? ?????. C??? ???? ??? ???????.");
     }
     else {
         new_rust(ptr);
@@ -75,7 +73,7 @@ int new_hello(CHILD* ptr)
 int new_rust(CHILD* ptr)
 {
     if ((ptr->math + ptr->eng + ptr->kor) > 250) {
-        printf("Rust 언어로 넘어가셔도 좋습니다.");
+        printf("Rust ???? ?????? ???????.");
     }
     else {
         new_hello(ptr);
@@ -85,7 +83,7 @@ int new_rust(CHILD* ptr)
 int new_programming(CHILD* ptr)
 {
     if ((ptr->math + ptr->eng + ptr->kor) > 290) {
-        printf("프로그래밍의 신.");
+        printf("???α?????? ??.");
     }
     else {
         new_rust(ptr);
@@ -99,9 +97,9 @@ char* new_name(CHILD* ptr)
 
 int main()
 {
-    PERSON* this = PersonPtr.create(100, 100, 98, "박지우");
+    PERSON* this = PersonPtr.create(100, 100, 98, "??????");
 
-    puts("이 메세지가 뜨면 성공입니다.");
+    puts("?? ??????? ??? ????????.");
     printf("%s\n", this->hello(this));
     
     this->destory(this);

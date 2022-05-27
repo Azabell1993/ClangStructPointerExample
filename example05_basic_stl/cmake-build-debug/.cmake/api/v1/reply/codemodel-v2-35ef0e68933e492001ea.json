@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/Users/azabell/Desktop/ClangStructPointerExample/example10_glib_lib_workSpace/C_STL/cmake-build-debug",
-		"source" : "/Users/azabell/Desktop/ClangStructPointerExample/example10_glib_lib_workSpace/C_STL"
+		"build" : "/Users/azabell/Desktop/ClangStructPointerExample/example05_basic_stl/cmake-build-debug",
+		"source" : "/Users/azabell/Desktop/ClangStructPointerExample/example05_basic_stl"
 	},
 	"version" : 
 	{

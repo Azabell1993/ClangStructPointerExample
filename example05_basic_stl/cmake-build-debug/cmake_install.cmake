@@ -1,4 +1,4 @@
-# Install script for directory: /Users/azabell/Desktop/ClangStructPointerExample/example10_glib_lib_workSpace/C_STL
+# Install script for directory: /Users/azabell/Desktop/ClangStructPointerExample/example05_basic_stl
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/azabell/Desktop/ClangStructPointerExample/example10_glib_lib_workSpace/C_STL/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/azabell/Desktop/ClangStructPointerExample/example05_basic_stl/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

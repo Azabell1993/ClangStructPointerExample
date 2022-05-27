@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/Users/azabell/Desktop/ClangStructPointerExample/example10_glib_lib_workSpace/C_STL/cmake-build-debug"
+			"value" : "/Users/azabell/Desktop/ClangStructPointerExample/example05_basic_stl/cmake-build-debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -419,7 +419,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/Users/azabell/Desktop/ClangStructPointerExample/example10_glib_lib_workSpace/C_STL"
+			"value" : "/Users/azabell/Desktop/ClangStructPointerExample/example05_basic_stl"
 		},
 		{
 			"name" : "CMAKE_INSTALL_NAME_TOOL",
@@ -991,7 +991,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/azabell/Desktop/ClangStructPointerExample/example10_glib_lib_workSpace/C_STL/cmake-build-debug"
+			"value" : "/Users/azabell/Desktop/ClangStructPointerExample/example05_basic_stl/cmake-build-debug"
 		},
 		{
 			"name" : "C_STL_IS_TOP_LEVEL",
@@ -1015,7 +1015,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/azabell/Desktop/ClangStructPointerExample/example10_glib_lib_workSpace/C_STL"
+			"value" : "/Users/azabell/Desktop/ClangStructPointerExample/example05_basic_stl"
 		}
 	],
 	"kind" : "cache",
