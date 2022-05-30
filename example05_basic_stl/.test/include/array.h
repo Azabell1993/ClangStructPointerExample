@@ -33,17 +33,10 @@ extern "C" {
     static __attribute__((visibility("default"))) type arraylist##_get(const arraylist *, size_t);
     static __attribute__((visibility("default"))) type *arraylist##_get_ptr(arraylist *, size_t);
     static __attribute__((visibility("default"))) const type *arraylist##_get_cptr(const arraylist *, size_t);
-    static __attribute__((visibility("default"))) arraylist arraylist##_clone(const arraylist *);
-    static __attribute__((visibility("default"))) arraylist##_iterator arraylist##_begin(arraylist *);
-    static __attribute__((visibility("default"))) arraylist##_iterator arraylist##_end(arraylist *);
-    static __attribute__((visibility("default"))) arraylist##_iterator arraylist##_find(const arraylist *, const type);
-    static __attribute__((visibility("default"))) arraylist##_iterator arraylist##_find_by(const arraylist *, int (*)(const type *));
     static __attribute__((visibility("default"))) size_t arraylist##_indexof(const arraylist *, const type);
     static __attribute__((visibility("default"))) size_t arraylist##_indexof_by(const arraylist *, int (*)(const type *));
     static __attribute__((visibility("default"))) bool arraylist##_contains(const arraylist *, const type);
     static __attribute__((visibility("default"))) bool arraylist##_contains_by(const arraylist *, int (*)(const type *));
-    static __attribute__((visibility("default"))) arraylist##_iterator arraylist##_bfind(const arraylist *, const type);
-    static __attribute__((visibility("default"))) arraylist##_iterator arraylist##_bfind_by(const arraylist *, const type *, int (*)(const type *, const type *));
     static __attribute__((visibility("default"))) size_t arraylist##_bindexof(const arraylist *, const type);
     static __attribute__((visibility("default"))) size_t arraylist##_bindexof_by(const arraylist *, const type *, int (*)(const type *, const type *));
     static __attribute__((visibility("default"))) bool arraylist##_bcontains(const arraylist *, const type);
@@ -56,9 +49,16 @@ extern "C" {
     static __attribute__((visibility("default"))) void arraylist##_for_each_ptr(arraylist *, void (*)(type *));
     static __attribute__((visibility("default"))) void arraylist##_for_each_cptr(const arraylist *, void (*)(const type *));
 
-    /*비멤버 new 함수 선언*/
+    arraylist##_iterator arraylist##_bfind(const arraylist *, const type);
+    arraylist##_iterator arraylist##_bfind_by(const arraylist *, const type *, int (*)(const type *, const type *));
+
+    arraylist arraylist##_clone(const arraylist *);
+    arraylist##_iterator arraylist##_begin(arraylist *);
+    arraylist##_iterator arraylist##_end(arraylist *);
+    arraylist##_iterator arraylist##_find(const arraylist *, const type);
+    arraylist##_iterator arraylist##_find_by(const arraylist *, int (*)(const type *));
+
     arraylist##_iterator new_##arraylist##_iterator(type *);
-    /*비멤버 함수*/
     arraylist new_##arraylist(void);
 
     static inline __attribute__((visibility("default")))    void    arraylist##_init(type* e);
@@ -135,7 +135,7 @@ extern "C" {
         void (*for_each_cptr)(const arraylist *, void (*)(const type *));                                                    \
     };                                      \
                                             \
-    /*유사 메서드 선언*/                                                                                             \
+    /*?��?�� 메서?�� ?��?��*/                                                                                             \
     static __attribute__((visibility("default"))) size_t arraylist##_size(const arraylist *);                                                                               \
     static __attribute__((visibility("default"))) type arraylist##_get(const arraylist *, size_t);                                                                          \
     static __attribute__((visibility("default"))) type *arraylist##_get_ptr(arraylist *, size_t);                                                                           \
@@ -165,10 +165,8 @@ extern "C" {
     static inline __attribute__((visibility("default")))    void    init(int* e);                                 \
     static inline __attribute__((visibility("default")))    void    print(int e);\
                                             \
-    /*비멤버 함수*/                                                                                                    \
     arraylist new_##arraylist(void);                                                                                          \
                                                                                                                             \
-    /*배열 메서드 정의.*/                                                                                            \
     static __attribute__((visibility("default"))) size_t arraylist##_size(const arraylist *self)                                                                            \
     {                                                                                                                       \
         return length;                                                                                                      \
@@ -278,9 +276,9 @@ extern "C" {
             int comp_mid = comp(key, &self->data[middle]);                                                                  \
             if (comp_mid == 0)                                                                                              \
                 return middle;                                                                                              \
-            else if (0 < comp_mid) /*key가 중간치보다 큼*/                                                           \
+            else if (0 < comp_mid) /*key�? 중간치보?�� ?��*/                                                           \
                 --tail, head = middle;                                                                                      \
-            else /*key가 중간치보다 작음*/                                                                          \
+            else /*key�? 중간치보?�� ?��?��*/                                                                          \
                 ++head, tail = middle;                                                                                      \
         }                                                                                                                   \
     }                                                                                                                       \
@@ -418,7 +416,7 @@ extern "C" {
         return temp;                                                                                                        \
     }                                                                                                                       \
                                                                                                                             \
-    /*반복자 메서드 정의*/                                                                                          \
+    /*반복?�� 메서?�� ?��?��*/                                                                                          \
     static __attribute__((visibility("default"))) void arraylist##_iterator_next(arraylist##_iterator *self)                                                                \
     {                                                                                                                       \
         ++(self->ptr);                                                                                                      \
