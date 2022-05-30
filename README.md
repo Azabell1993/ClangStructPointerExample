@@ -491,7 +491,7 @@ static HE* new_Hello(int age) {
 ```
 
 
-> 기본 원형 두번째 예제(STL 라이브러리 기본 코어설계)  
+> 기본 원형 두번째 예제(STL 라이브러리 기본 문법 코어설계)  
 
 ```
 #pragma once
@@ -503,6 +503,10 @@ static HE* new_Hello(int age) {
 #include <assert.h>
 #include <memory.h>
 
+#define class struct
+#define public static __attribute__((visibility("default")))
+#define private static __attribute__((visibility("hidden")))
+
 #ifdef __cheaderfile
 extern "C" {
 #endif
@@ -513,17 +517,16 @@ extern "C" {
 #endif
 #ifdef _GNUC_
 #define NORETERN _attribute_ ((_noreturn_))
-    static __attribute__((visibility("default"))) void helloworld##_set_hello(helloworld *self, int age);
-    static __attribute__((visibility("default"))) int helloworld##_get_hello(helloworld *self);
-    helloworld new_##helloworld(void);
+    public void helloworld##_set_hello(helloworld *, type);
+    public int helloworld##_get_hello(helloworld *);
 #endif
 
 #define say_hello(helloworld, type)                                                                         \
                                                                                                             \
-    struct helloworld;                                                                                      \
-    typedef struct helloworld helloworld;                                                                   \
+    class helloworld;                                                                                       \
+    typedef class helloworld helloworld;                                                                    \
                                                                                                             \
-    struct helloworld                                                                                       \
+    class helloworld                                                                                        \
     {                                                                                                       \
         type age;                                                                                           \
                                                                                                             \
@@ -531,20 +534,21 @@ extern "C" {
         int (*gethello)(const helloworld *);                                                                \
     };                                                                                                      \
                                                                                                             \
+    helloworld new_##helloworld(void);                                                                      \
                                                                                                             \
-    static __attribute__((visibility("default"))) void helloworld##_set_hello(helloworld *self, type age)   \
+    public void helloworld##_set_hello(helloworld *self, type age)        				    \
     {                                                                                                       \
         self -> age = age;                                                                                  \
     }                                                                                                       \
                                                                                                             \
-    static __attribute__((visibility("default"))) int helloworld##_get_hello(const helloworld *self)        \
+    public int helloworld##_get_hello(const helloworld *self)        					    \
     {                                                                                                       \
         return printf("my age : %d\nHello World!!!!!!\n", self->age);                                       \
     }                                                                                                       \
                                                                                                             \
     helloworld new_##helloworld(void)                                                                       \
     {                                                                                                       \
-        static helloworld temp =                                                                            \
+       	static helloworld temp =                                                                            \
             {                                                                                               \
                 .age = 0,                                                                                   \
                 .sethello = helloworld##_set_hello,                                                         \
@@ -552,4 +556,4 @@ extern "C" {
             };                                                                                              \
         return temp;                                                                                        \
     }
-#endif
+#endif                                                                                           
