@@ -1,4 +1,5 @@
 ﻿# ClangStructPointerExample  
+길이 축약을 위해 메모리 헤재 함수는 편의상 뺐습니다.  
   
 ## <u>example000_Notion_Clang</u>
 노션에서 설명을 위한 리포지토리입니다. 간단한 소스코드들이 수록되어있습니다.  
