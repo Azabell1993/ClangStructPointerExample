@@ -1,3 +1,6 @@
+#ifndef EXAMPLE05_BASIC_STL_PROGRAM_H
+#define EXAMPLE05_BASIC_STL_PROGRAM_H
+
 #pragma once
 #ifndef PROGRAM_H
 #define PROGRAM_H
@@ -22,10 +25,10 @@ extern "C" {
 #ifdef _GNUC_
 #define NORETERN _attribute_ ((_noreturn_))
     public void helloworld##_set_hello(helloworld *, type);
-    public int helloworld##_get_hello(const helloworld *);
-    helloworld new_##helloworld(void);                                                                      
+    public int helloworld##_get_hello(helloworld *);
 #endif
 
+#define ArrayList(arraylist, type)                                                                          \
 #define say_hello(helloworld, type)                                                                         \
                                                                                                             \
     class helloworld;                                                                                      \
@@ -38,6 +41,8 @@ extern "C" {
         void (*sethello)(helloworld *, type);                                                               \
         int (*gethello)(const helloworld *);                                                                \
     };                                                                                                      \
+                                                                                                            \
+    helloworld new_##helloworld(void);                                                                      \
                                                                                                             \
     public void helloworld##_set_hello(helloworld *self, type age)        									\
     {                                                                                                       \
@@ -58,6 +63,44 @@ extern "C" {
                 .gethello = helloworld##_get_hello,                                                         \
             };                                                                                              \
         return temp;                                                                                        \
+    }                                                                                                       \
+                                                                                                            \
+                                                                                                            \
+    class arraylist;                                                                                        \
+    typedef class arraylist arraylist;                                                                      \
+                                                                                                            \
+    class arraylistType;                                                                                    \
+    typedef arraylistType arraylistNode;                                                                    \
+                                                                                                            \
+    class arraylistType {                                                                                   \
+        type data;                                                                                          \
+    };                                                                                                      \
+                                                                                                            \
+    class arraylist                                                                                         \
+    {                                                                                                       \
+        type element;                                                                                       \
+        type currentElement;                                                                                \
+        arraylist* node;                                                                                    \
+                                                                                                            \
+        void (*DeleteArrayList)(arraylist **);                                                              \
+        int (*IsArrayListFull)(arraylist *);                                                                \
+        int (*AddALLElement)(arraylist *, int, arraylistType element);                                      \
+        int (*RemoveALLElement)(arraylist *, int);                                                          \
+        void (*DisplayArraylist)(arraylist *);                                                              \
+        int(*GetARrayList)(arraylist *);                                                                    \
+        arraylistNode* (*GetALLElement)(arraylist *, int);                                                  \
+    };                                                                                                      \
+                                                                                                            \
+    public void deleteArrayList(arraylist *pnode) {                                                         \
+        if(pnode == NULL *nbode == NULL) {
+            return ;
+        }
+        free(((*pnode)->p))
     }
-#endif
 
+
+
+
+
+    #endif
+#endif //EXAMPLE05_BASIC_STL_PROGRAM_H

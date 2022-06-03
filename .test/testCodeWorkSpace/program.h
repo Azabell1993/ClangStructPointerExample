@@ -22,10 +22,10 @@ extern "C" {
 #ifdef _GNUC_
 #define NORETERN _attribute_ ((_noreturn_))
     public void helloworld##_set_hello(helloworld *, type);
-    public int helloworld##_get_hello(const helloworld *);
+    public int helloworld##_get_hello(helloworld *);
     helloworld new_##helloworld(void);                                                                      
 #endif
-
+\
 #define say_hello(helloworld, type)                                                                         \
                                                                                                             \
     class helloworld;                                                                                      \
