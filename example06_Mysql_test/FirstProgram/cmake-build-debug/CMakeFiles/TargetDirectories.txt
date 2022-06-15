@@ -1,0 +1,4 @@
+/Users/azabell/Desktop/ClangStructPointerExample/example06_Mysql_test/FirstProgram/cmake-build-debug/CMakeFiles/hello.dir
+/Users/azabell/Desktop/ClangStructPointerExample/example06_Mysql_test/FirstProgram/cmake-build-debug/CMakeFiles/FirstProgram.dir
+/Users/azabell/Desktop/ClangStructPointerExample/example06_Mysql_test/FirstProgram/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/azabell/Desktop/ClangStructPointerExample/example06_Mysql_test/FirstProgram/cmake-build-debug/CMakeFiles/rebuild_cache.dir

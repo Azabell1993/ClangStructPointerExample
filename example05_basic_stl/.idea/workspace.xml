@@ -15,12 +15,91 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6b6cf0eb-fde8-449f-b8f0-159f1f9a24b5" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/example05_basic_stl.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/example05_basic_stl2.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example06_Mysql_test/CLION_IDE/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example06_Mysql_test/CLION_IDE/.idea/CLION_IDE.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example06_Mysql_test/CLION_IDE/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example06_Mysql_test/CLION_IDE/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example06_Mysql_test/CLION_IDE/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example06_Mysql_test/CLION_IDE/CMakeLists.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example06_Mysql_test/CLION_IDE/cmake-build-debug/.cmake/api/v1/query/cache-v2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example06_Mysql_test/CLION_IDE/cmake-build-debug/.cmake/api/v1/query/cmakeFiles-v1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example06_Mysql_test/CLION_IDE/cmake-build-debug/.cmake/api/v1/query/codemodel-v2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example06_Mysql_test/CLION_IDE/cmake-build-debug/.cmake/api/v1/query/toolchains-v1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example06_Mysql_test/CLION_IDE/cmake-build-debug/.cmake/api/v1/reply/cache-v2-15d65e8c43cccee34c00.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example06_Mysql_test/CLION_IDE/cmake-build-debug/.cmake/api/v1/reply/cmakeFiles-v1-ba5814a49fe05c87ff01.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example06_Mysql_test/CLION_IDE/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-52f5ba7479f3dfea1dbc.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example06_Mysql_test/CLION_IDE/cmake-build-debug/.cmake/api/v1/reply/directory-.-Debug-f5ebdc15457944623624.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example06_Mysql_test/CLION_IDE/cmake-build-debug/.cmake/api/v1/reply/index-2022-06-04T04-50-18-0381.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example06_Mysql_test/CLION_IDE/cmake-build-debug/.cmake/api/v1/reply/target-CLION_IDE-Debug-ec51cb2dceb14aa190ad.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example06_Mysql_test/CLION_IDE/cmake-build-debug/.cmake/api/v1/reply/target-hello-Debug-0e1d7f47f0ba4e7663dc.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example06_Mysql_test/CLION_IDE/cmake-build-debug/.cmake/api/v1/reply/toolchains-v1-ee7ccae78da69d8d393c.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example06_Mysql_test/CLION_IDE/cmake-build-debug/.ninja_deps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example06_Mysql_test/CLION_IDE/cmake-build-debug/.ninja_log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example06_Mysql_test/CLION_IDE/cmake-build-debug/CMakeCache.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example06_Mysql_test/CLION_IDE/cmake-build-debug/CMakeFiles/3.22.0-rc2/CMakeCCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example06_Mysql_test/CLION_IDE/cmake-build-debug/CMakeFiles/3.22.0-rc2/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example06_Mysql_test/CLION_IDE/cmake-build-debug/CMakeFiles/3.22.0-rc2/CMakeSystem.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example06_Mysql_test/CLION_IDE/cmake-build-debug/CMakeFiles/3.22.0-rc2/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example06_Mysql_test/CLION_IDE/cmake-build-debug/CMakeFiles/3.22.3/CMakeCCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example06_Mysql_test/CLION_IDE/cmake-build-debug/CMakeFiles/3.22.3/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example06_Mysql_test/CLION_IDE/cmake-build-debug/CMakeFiles/3.22.3/CMakeSystem.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example06_Mysql_test/CLION_IDE/cmake-build-debug/CMakeFiles/3.22.3/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example06_Mysql_test/CLION_IDE/cmake-build-debug/CMakeFiles/CMakeError.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example06_Mysql_test/CLION_IDE/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example06_Mysql_test/CLION_IDE/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example06_Mysql_test/CLION_IDE/cmake-build-debug/CMakeFiles/clion-environment.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example06_Mysql_test/CLION_IDE/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example06_Mysql_test/CLION_IDE/cmake-build-debug/CMakeFiles/cmake.check_cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example06_Mysql_test/CLION_IDE/cmake-build-debug/CMakeFiles/rules.ninja" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example06_Mysql_test/CLION_IDE/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example06_Mysql_test/CLION_IDE/cmake-build-debug/build.ninja" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example06_Mysql_test/CLION_IDE/cmake-build-debug/cmake_install.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example06_Mysql_test/CLION_IDE/main.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example06_Mysql_test/FirstMySqlTest.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example06_Mysql_test/sqltest/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example06_Mysql_test/sqltest/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example06_Mysql_test/sqltest/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example06_Mysql_test/sqltest/.idea/sqltest.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example06_Mysql_test/sqltest/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example06_Mysql_test/sqltest/CMakeLists.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example06_Mysql_test/sqltest/cmake-build-debug/.cmake/api/v1/query/cache-v2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example06_Mysql_test/sqltest/cmake-build-debug/.cmake/api/v1/query/cmakeFiles-v1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example06_Mysql_test/sqltest/cmake-build-debug/.cmake/api/v1/query/codemodel-v2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example06_Mysql_test/sqltest/cmake-build-debug/.cmake/api/v1/query/toolchains-v1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example06_Mysql_test/sqltest/cmake-build-debug/.cmake/api/v1/reply/cache-v2-62d25ba70222aea8ab6b.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example06_Mysql_test/sqltest/cmake-build-debug/.cmake/api/v1/reply/cmakeFiles-v1-5890527b050902004d96.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example06_Mysql_test/sqltest/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-7bc3f7f273ec7462a20b.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example06_Mysql_test/sqltest/cmake-build-debug/.cmake/api/v1/reply/directory-.-Debug-f5ebdc15457944623624.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example06_Mysql_test/sqltest/cmake-build-debug/.cmake/api/v1/reply/index-2022-06-04T15-36-48-0255.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example06_Mysql_test/sqltest/cmake-build-debug/.cmake/api/v1/reply/target-hello-Debug-c821191c147baf1f5a08.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example06_Mysql_test/sqltest/cmake-build-debug/.cmake/api/v1/reply/target-sqltest-Debug-180abebb77cb5c7a1250.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example06_Mysql_test/sqltest/cmake-build-debug/.cmake/api/v1/reply/toolchains-v1-ee7ccae78da69d8d393c.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example06_Mysql_test/sqltest/cmake-build-debug/.ninja_deps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example06_Mysql_test/sqltest/cmake-build-debug/.ninja_log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example06_Mysql_test/sqltest/cmake-build-debug/CMakeCache.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example06_Mysql_test/sqltest/cmake-build-debug/CMakeFiles/3.22.0-rc2/CMakeCCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example06_Mysql_test/sqltest/cmake-build-debug/CMakeFiles/3.22.0-rc2/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example06_Mysql_test/sqltest/cmake-build-debug/CMakeFiles/3.22.0-rc2/CMakeSystem.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example06_Mysql_test/sqltest/cmake-build-debug/CMakeFiles/3.22.0-rc2/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example06_Mysql_test/sqltest/cmake-build-debug/CMakeFiles/3.22.3/CMakeCCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example06_Mysql_test/sqltest/cmake-build-debug/CMakeFiles/3.22.3/CMakeCXXCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example06_Mysql_test/sqltest/cmake-build-debug/CMakeFiles/3.22.3/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example06_Mysql_test/sqltest/cmake-build-debug/CMakeFiles/3.22.3/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example06_Mysql_test/sqltest/cmake-build-debug/CMakeFiles/3.22.3/CMakeSystem.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example06_Mysql_test/sqltest/cmake-build-debug/CMakeFiles/3.22.3/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example06_Mysql_test/sqltest/cmake-build-debug/CMakeFiles/3.22.3/CompilerIdCXX/CMakeCXXCompilerId.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example06_Mysql_test/sqltest/cmake-build-debug/CMakeFiles/CMakeError.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example06_Mysql_test/sqltest/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example06_Mysql_test/sqltest/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example06_Mysql_test/sqltest/cmake-build-debug/CMakeFiles/clion-environment.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example06_Mysql_test/sqltest/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example06_Mysql_test/sqltest/cmake-build-debug/CMakeFiles/cmake.check_cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example06_Mysql_test/sqltest/cmake-build-debug/CMakeFiles/rules.ninja" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example06_Mysql_test/sqltest/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example06_Mysql_test/sqltest/cmake-build-debug/build.ninja" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example06_Mysql_test/sqltest/cmake-build-debug/cmake_install.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example06_Mysql_test/sqltest/cmake-build-debug/sqltest" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example06_Mysql_test/sqltest/main.c" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,26 +130,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "cf.first.check.clang-format": "false",
-    "cidr.known.project.marker": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="example05_basic_stl" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="example05_basic_stl" TARGET_NAME="example05_basic_stl" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="example05_basic_stl" RUN_TARGET_NAME="example05_basic_stl">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -86,6 +160,7 @@
       <option name="presentableId" value="Default" />
       <updated>1654056431601</updated>
       <workItem from="1654056443200" duration="4516000" />
+      <workItem from="1654397607990" duration="1000" />
     </task>
     <servers />
   </component>
