@@ -1,0 +1,4 @@
+/Users/azabell/Desktop/ClangStructPointerExample/example13_Final_Project/.sort/cmake-build-debug/CMakeFiles/sort.dir
+/Users/azabell/Desktop/ClangStructPointerExample/example13_Final_Project/.sort/cmake-build-debug/CMakeFiles/_sort.dir
+/Users/azabell/Desktop/ClangStructPointerExample/example13_Final_Project/.sort/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/azabell/Desktop/ClangStructPointerExample/example13_Final_Project/.sort/cmake-build-debug/CMakeFiles/rebuild_cache.dir
