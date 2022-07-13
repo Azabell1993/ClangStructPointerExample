@@ -1,21 +1,18 @@
-#define _CRT_SECURE_NO_WARNINGS
+#include "lib/test.h"
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
 
-struct Person {
-    char name[20];
-    int age;
-    char address[100];
-};
+say_add(addFunction , int)
 
 int main(int argc, char* argv[])
 {
-    struct Person *p1 = malloc(sizeof(struct Person));
+    int a = 20;
+    int b = 40;
+    addFunction add = new_addFunction();
+    add.setAdd(&add, a, b);
+    printf("%d", add.getAdd(&add));
 
-    strcpy(p1->name, "홍길동");
-    p1->age = 30;
-
-
-
+    int result = add.getAdd(&add);
+    printf("\n \t %d", result);
 }

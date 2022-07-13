@@ -66,41 +66,6 @@ extern "C" {
     }                                                                                                       \
                                                                                                             \
                                                                                                             \
-    class arraylist;                                                                                        \
-    typedef class arraylist arraylist;                                                                      \
-                                                                                                            \
-    class arraylistType;                                                                                    \
-    typedef arraylistType arraylistNode;                                                                    \
-                                                                                                            \
-    class arraylistType {                                                                                   \
-        type data;                                                                                          \
-    };                                                                                                      \
-                                                                                                            \
-    class arraylist                                                                                         \
-    {                                                                                                       \
-        type element;                                                                                       \
-        type currentElement;                                                                                \
-        arraylist* node;                                                                                    \
-                                                                                                            \
-        void (*DeleteArrayList)(arraylist **);                                                              \
-        int (*IsArrayListFull)(arraylist *);                                                                \
-        int (*AddALLElement)(arraylist *, int, arraylistType element);                                      \
-        int (*RemoveALLElement)(arraylist *, int);                                                          \
-        void (*DisplayArraylist)(arraylist *);                                                              \
-        int(*GetARrayList)(arraylist *);                                                                    \
-        arraylistNode* (*GetALLElement)(arraylist *, int);                                                  \
-    };                                                                                                      \
-                                                                                                            \
-    public void deleteArrayList(arraylist *pnode) {                                                         \
-        if(pnode == NULL *nbode == NULL) {
-            return ;
-        }
-        free(((*pnode)->p))
-    }
-
-
-
-
 
     #endif
 #endif //EXAMPLE05_BASIC_STL_PROGRAM_H

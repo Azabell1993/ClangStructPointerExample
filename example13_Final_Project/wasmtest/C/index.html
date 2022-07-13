@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hello, HTML5</title>
+    <meta charset="utf-8" />
+    <style>
+        div {
+            font-size : 30px;
+            text-align : center;
+            color : orange;
+        }
+    </style>
+</head>
+<body>
+    <div id="textcontent"></div>
+    <p>C AddResult Function TEST!</p>
+    <input type=number size=20 id="numA"> + <input type=number size=20 id="numB">
+
+    <button class="mybutton">Run myFunction</button>
+
+
+    <script type="text/javascript">
+        //var a = document.getElementById("numA").value;
+        //var b = document.getElementById("numB").value;
+
+        document.querySelector('.mybutton').addEventListener('click', function() {
+
+        let AddResult;
+        fetch("./add.wasm")
+            .then(bytes => bytes.arrayBuffer())
+            .then(mod => WebAssembly.compile(mod))
+            .then(module => { return new WebAssembly.Instance(module)})
+            .then(Instance => {
+                AddResult = Instance.exports.AddResult(numA.value, numB.value);
+                console.log("The AddResult = " + AddResult);
+                document.getElementById("textcontent").innerHTML = "The AddResult = " + AddResult;
+                alert(AddResult);
+            });
+        });
+    </script>
+</body>
+</html>

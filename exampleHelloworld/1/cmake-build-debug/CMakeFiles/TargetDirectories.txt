@@ -1,3 +1,4 @@
+/Users/azabell/Desktop/ClangStructPointerExample/exampleHelloworld/1/cmake-build-debug/CMakeFiles/hello.dir
 /Users/azabell/Desktop/ClangStructPointerExample/exampleHelloworld/1/cmake-build-debug/CMakeFiles/1.dir
 /Users/azabell/Desktop/ClangStructPointerExample/exampleHelloworld/1/cmake-build-debug/CMakeFiles/edit_cache.dir
 /Users/azabell/Desktop/ClangStructPointerExample/exampleHelloworld/1/cmake-build-debug/CMakeFiles/rebuild_cache.dir

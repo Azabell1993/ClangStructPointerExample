@@ -1,8 +1,10 @@
 #include <stdio.h>
 #include <mysql.h>
-#include <glib.h>
-#include <gtk/gtk.h>
+#include <stdlib.h>
+//#include <glib.h>
+//#include <gtk/gtk.h>
 #include "include/student.h"
+#include <stdint.h>
 
 say_hello(hellofunc, int)
 

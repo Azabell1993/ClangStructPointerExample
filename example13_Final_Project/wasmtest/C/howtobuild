@@ -1,0 +1,5 @@
+1. write C header, Code file.
+2. emcc addFunction.c -o add.wasm --no-entry
+3. npm install http-server -g
+5. npx http-server
+6. input the html in C Function Code.
