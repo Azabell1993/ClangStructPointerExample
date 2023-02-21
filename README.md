@@ -1,7 +1,8 @@
 # 이 저장소 소개 
   
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=Azabell1993&hide_progress=true)](https://github.com/Azabell1993/ClangStructPointerExample.git)
-  
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=Azabell1993)](https://github.com/Azabell1993/ClangStructPointerExample)  
+
+
 C언어를 절차지향 사고에서 벗어나 객체지향 사고형으로 단련시켜주는 기본 소스코드 예제입니다.  
 모든 예제 소스들은 Azabell1993이 직접 만들었습니다.  
 특히, example11에서는 리눅스의 창시자이자 최대 기여자인 리누즈 토발즈가 1991년에 쓰던 문법과 유사한 C언어의 객체지향을 맛보실 수 있습니다.
