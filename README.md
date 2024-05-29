@@ -1,4 +1,5 @@
 # 이 저장소 소개 
+# Introduce This Repo
   
 [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=Azabell1993)](https://github.com/Azabell1993/ClangStructPointerExample)  
 
@@ -15,11 +16,17 @@ C언어를 절차지향 사고에서 벗어나 객체지향 사고형으로 단�
 이 저장소의 목적은 말 그대로 C언어의 객체지향, 컴구의 이해를 한층 더 돕기 위한 연습이었습니다. 자료구조를 공부하였다면 더욱 이해가 쉬울 예제들입니다.
 구조체 포인터를 특정한 디자인 패턴 없이 여러 패턴으로 작성하였기 때문에 실무에는 부접합하다고 생각이 됩니다. 다만, 실무에 있어서의 기본기 증진에는 탄탄한 발판이 되어준다고 생각합니다.
 
-# ClangStructPointerExample  
-길이 축약을 위해 메모리 해제 함수는 편의상 뺐습니다.  
   
-## <u>example000_Notion_Clang</u>
-노션에서 설명을 위한 리포지토리입니다. 간단한 소스코드들이 수록되어있습니다.  
+ This repository provides basic source code examples that help you transition from procedural thinking to object-oriented thinking using the C language. All example sources were created by Azabell1993. Particularly in example11, you can experience object-oriented programming in C language similar to the syntax used by Linus Torvalds, the founder and main contributor to Linux, in 1991. Since C does not inherently support advanced programming keywords and concepts like encapsulation, interfaces, and inheritance found in higher-level languages, I personally tried to implement similar functionalities. This approach allowed me to gain a deeper understanding of computers in a structure closer to hardware, using C language rather than C++ or JAVA code.  
+  
+ Purpose of this Repository
+The purpose of this repository is to enhance the understanding of object-oriented programming and computer architecture using the C language. Although these are simple basic examples, following them with a good understanding will allow you to fully grasp the paradigm of object-oriented programming based on C language. This repository showcases various techniques by extensively using structure pointers.  
+
+# Objective  
+The objective of this repository is to practice and improve understanding of object-oriented programming in C and computer architecture. If you have studied data structures, these examples will be easier to understand. Although the structure pointers are written in various patterns without adhering to specific design patterns, which may not be suitable for practical applications, they provide a solid foundation for improving basic skills in practical work.  
+
+
+
   
 아주 간단하게 소스코드 두 개를 예시로 들자면 아래와 같습니다.  
 > helloworld 기본 출력 소스코드  
