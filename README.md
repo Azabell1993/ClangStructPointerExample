@@ -16,6 +16,7 @@ C언어를 절차지향 사고에서 벗어나 객체지향 사고형으로 단�
 이 저장소의 목적은 말 그대로 C언어의 객체지향, 컴구의 이해를 한층 더 돕기 위한 연습이었습니다. 자료구조를 공부하였다면 더욱 이해가 쉬울 예제들입니다.
 구조체 포인터를 특정한 디자인 패턴 없이 여러 패턴으로 작성하였기 때문에 실무에는 부접합하다고 생각이 됩니다. 다만, 실무에 있어서의 기본기 증진에는 탄탄한 발판이 되어준다고 생각합니다.
 
+----- 
   
  This repository provides basic source code examples that help you transition from procedural thinking to object-oriented thinking using the C language. All example sources were created by Azabell1993. Particularly in example11, you can experience object-oriented programming in C language similar to the syntax used by Linus Torvalds, the founder and main contributor to Linux, in 1991. Since C does not inherently support advanced programming keywords and concepts like encapsulation, interfaces, and inheritance found in higher-level languages, I personally tried to implement similar functionalities. This approach allowed me to gain a deeper understanding of computers in a structure closer to hardware, using C language rather than C++ or JAVA code.  
   
@@ -25,7 +26,7 @@ The purpose of this repository is to enhance the understanding of object-oriente
 # Objective  
 The objective of this repository is to practice and improve understanding of object-oriented programming in C and computer architecture. If you have studied data structures, these examples will be easier to understand. Although the structure pointers are written in various patterns without adhering to specific design patterns, which may not be suitable for practical applications, they provide a solid foundation for improving basic skills in practical work.  
 
-
+-----   
 
   
 아주 간단하게 소스코드 두 개를 예시로 들자면 아래와 같습니다.  
