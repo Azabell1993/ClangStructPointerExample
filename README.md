@@ -1,3 +1,128 @@
+### Repository Overview
+
+**Repository:** [ClangStructPointerExample](https://github.com/Azabell1993/ClangStructPointerExample)
+
+**Top Languages:**  
+- **C Language**
+
+This repository contains fundamental source code examples designed to help developers transition from procedural programming to an object-oriented paradigm using the C language. The examples extensively use **struct pointers** to emulate features like encapsulation, inheritance, and polymorphism, typically associated with object-oriented languages like C++ and Java.
+
+All examples are original creations by **Azabell1993** and serve as a valuable resource for learning and experimenting with the object-oriented approach in C, despite it being a procedural language. In particular, **example11** showcases C syntax reminiscent of the techniques used by **Linus Torvalds**, the creator of Linux, in 1991.
+
+---
+
+### **Purpose and Objective**
+The main purpose of this repository is to:
+1. Enhance understanding of object-oriented programming (OOP) principles using the C language.
+2. Explore how hardware-oriented, low-level structures in C can simulate higher-level OOP paradigms.
+3. Provide hands-on practice to improve programming fundamentals.
+
+The examples are not tied to any specific design patterns, making them unsuitable for direct use in production. However, they are excellent for:
+- Developing a deeper understanding of **computer architecture**.
+- Strengthening the foundational skills necessary for practical programming.
+
+---
+
+### **Highlighted Examples**
+
+#### **Hello World Example**  
+A simple program that initializes a struct with a function pointer for printing "Hello World."  
+**Key Concepts:**
+- Function pointers for methods.
+- Struct initialization resembling object constructors.
+
+```c
+#include <stdio.h>
+typedef struct _Hello {
+    void (*HELLO)();
+} HELLOWORLD;
+
+void HELLO_PRINT() {
+    puts("Hello World");
+}
+
+void HELLO_INIT(HELLOWORLD *this) {
+    this->HELLO = HELLO_PRINT;
+}
+
+void main() {
+    HELLOWORLD HELLO;
+    HELLO_INIT(&HELLO);
+    HELLO.HELLO();
+}
+```
+
+---
+
+#### **Sum Example with Struct and Function Pointers**  
+A more advanced example demonstrating the use of struct pointers to implement methods for input, calculation, and result display.  
+**Key Concepts:**
+- Struct fields and method-like functions.
+- Emulation of encapsulation and functional behavior.
+
+```c
+#include <stdio.h>
+typedef struct _Result_Sum {
+    int x, y, result;
+    int (*INPUT)(struct _Result_Sum*, int, int, int);
+    int (*PUTS)(const struct _Result_Sum*);
+} SUM;
+
+int SUM_INPUT(struct _Result_Sum* this, int x, int y, int result) {
+    return this->result = this->x + this->y;
+}
+
+int SUM_RESULT(const struct _Result_Sum* this) {
+    return printf("%d + %d = %d\n", this->x, this->y, this->result);
+}
+
+void SUM_INIT(SUM* this) {
+    this->INPUT = SUM_INPUT;
+    this->PUTS = SUM_RESULT;
+}
+
+int main() {
+    SUM new_sum = {10, 20, 0};
+    SUM_INIT(&new_sum);
+    new_sum.INPUT(&new_sum, new_sum.x, new_sum.y, new_sum.result);
+    new_sum.PUTS(&new_sum);
+}
+```
+
+---
+
+#### **Inheritance Emulation (example04_Inher)**  
+This example demonstrates struct-based inheritance emulation using nested structs and function pointers.
+
+---
+
+#### **STL-like Library (example05_basic_stl)**  
+A basic implementation of an STL-like library in C, focusing on containers like `ArrayList` with dynamic resizing, similar to C++'s STL.
+
+---
+
+#### **Inline Assembly (example07_inline_asm)**  
+Examples of integrating inline assembly with a pseudo-OOP approach in C. These provide insights into low-level programming and system interaction.
+
+---
+
+#### **Attribute Visibility and Callbacks (example11_attribute__example)**  
+A detailed example showcasing the use of attribute visibility in GCC and function callbacks for modular designs.
+
+---
+
+### **Summary of the Project**
+This repository represents an early attempt to bridge procedural programming in C with object-oriented principles. While C is inherently procedural, these examples:
+- Experiment with **function pointers** and **structs** to simulate OOP concepts.
+- Highlight the flexibility of C for low-level programming and hardware-oriented designs.
+- Provide a solid foundation for exploring paradigms used in more advanced languages like C++.
+
+> These exercises were designed as a personal learning project to deeply understand how object-oriented principles can be modeled in C, even if it’s not natively supported. The repository is an excellent resource for those looking to strengthen their understanding of both programming fundamentals and computer systems.
+
+
+
+
+
 # 이 저장소 소개 
 # Introduce This Repo
   
@@ -15,16 +140,6 @@ C언어를 절차지향 사고에서 벗어나 객체지향 사고형으로 단�
 # 이 저장소 목적
 이 저장소의 목적은 말 그대로 C언어의 객체지향, 컴구의 이해를 한층 더 돕기 위한 연습이었습니다. 자료구조를 공부하였다면 더욱 이해가 쉬울 예제들입니다.
 구조체 포인터를 특정한 디자인 패턴 없이 여러 패턴으로 작성하였기 때문에 실무에는 부접합하다고 생각이 됩니다. 다만, 실무에 있어서의 기본기 증진에는 탄탄한 발판이 되어준다고 생각합니다.
-
------ 
-  
- This repository provides basic source code examples that help you transition from procedural thinking to object-oriented thinking using the C language. All example sources were created by Azabell1993. Particularly in example11, you can experience object-oriented programming in C language similar to the syntax used by Linus Torvalds, the founder and main contributor to Linux, in 1991. Since C does not inherently support advanced programming keywords and concepts like encapsulation, interfaces, and inheritance found in higher-level languages, I personally tried to implement similar functionalities. This approach allowed me to gain a deeper understanding of computers in a structure closer to hardware, using C language rather than C++ or JAVA code.  
-  
- Purpose of this Repository
-The purpose of this repository is to enhance the understanding of object-oriented programming and computer architecture using the C language. Although these are simple basic examples, following them with a good understanding will allow you to fully grasp the paradigm of object-oriented programming based on C language. This repository showcases various techniques by extensively using structure pointers.  
-
-# Objective  
-The objective of this repository is to practice and improve understanding of object-oriented programming in C and computer architecture. If you have studied data structures, these examples will be easier to understand. Although the structure pointers are written in various patterns without adhering to specific design patterns, which may not be suitable for practical applications, they provide a solid foundation for improving basic skills in practical work.  
 
 -----   
 
